@@ -1605,7 +1605,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
     minimap.classList.toggle('focused', !!(r.h || r.word));
     for (const id in mm.h) mm.h[id].classList.toggle('on', r.h ? r.h.id === id : !!r.word && r.word.hunches.includes(id));
     for (const key in mm.q) mm.q[key].forEach(c => c.classList.toggle('cur', !!r.q && r.q.key === key));
-    minimap.querySelector('.cap').innerHTML = r.word ? `“<b>${esc(r.word.t)}</b>” across ${r.word.hunches.length} hunch${r.word.hunches.length === 1 ? '' : 'es'}` : r.q ? `You are here: <b>${esc(r.h.name)}</b> · Q${r.q.n}` : r.h ? `You are here: <b>${esc(r.h.name)}</b>` : `You are here: <b>the whole web</b>`;
+    minimap.querySelector('.cap').innerHTML = r.word ? `“<b>${esc(r.word.t)}</b>” across ${r.word.hunches.length} hunch${r.word.hunches.length === 1 ? '' : 'es'}` : r.q ? `You are here: <b>${esc(r.h.name)}</b> · Q${r.q.n}` : r.h ? `You are here: <b>${esc(r.h.name)}</b>` : `You are here: <b>the thesis web</b>`;
   }
   function updateLegend(r) {
     legend.classList.toggle('hidden', r.key === 'intro');

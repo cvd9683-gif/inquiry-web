@@ -406,25 +406,36 @@ const DATA = {
   // status: `Planned`, `In progress`, or `Done`
   // media: photos or video, e.g. [{ src: `explorations/x1-tapping.jpg`, caption: `Two of us tapping` }]
   //        (.mp4 / .webm / .mov play as video). Put the files in an explorations/ folder.
+  // expect = what I think will happen; measure = how I'll know.
   // answered: `Yes`, `Partly`, or `No`. newQuestions: one question per item.
   progressUpdate3: {
-    intro: ``,
+    intro: `My research kept pointing to one idea: how people relate to a technology depends on how it involves them. In this round I'm testing that idea by making four small things, each tied to a hunch where the idea showed up most strongly: music and synchrony, authorship, learning, and trust.
+
+Each exploration is quick and rough on purpose, so I can learn from how people react before building anything bigger.`,
     explorations: [
       { id: `x1`, title: `In time with a machine`, kind: `Sensory experience`, question: `h1/q1`, status: `Planned`,
         medium: `p5.js or Max/MSP, a keyboard or tap sensor, two people`,
         plan: `Two people tap a simple beat together. Then each person taps along with a generated partner that adapts to their timing. Afterward, a quick rating: how connected did you feel? I'm comparing person-to-person sync with person-to-machine sync.`,
+        expect: `Tapping with another person will feel more connecting than tapping with the adaptive machine partner, even if the machine keeps better time.`,
+        measure: `A 1–5 "how connected did you feel?" rating after each round, plus anything people say on their own. I'll also log the taps to see whether people sync more tightly with the machine or with each other.`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
       { id: `x2`, title: `Three ways to make a loop`, kind: `Tech / workflow experiment`, question: `h2/q2`, status: `Planned`,
         medium: `Ableton Live with Magenta Studio, Suno`,
         plan: `Make a short loop three ways: fully by hand, with Magenta Studio's tools steering parts of it, and from a single Suno prompt. Journal the effort, the time, and how much each one feels like mine.`,
+        expect: `The Magenta version will feel the most like mine: less effort than doing it all by hand, but more say than a single Suno prompt.`,
+        measure: `For each version, track the time spent and the number of creative decisions I made, and rate my sense of ownership 1–5 right after finishing it.`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
       { id: `x3`, title: `The tutor that holds back`, kind: `Series: same question, different media`, question: `h4/q2`, status: `Planned`,
         medium: `A clickable Figma prototype and a deck of paper hint cards`,
         plan: `Design a hint-only study helper twice: once as a clickable Figma prototype, once as paper hint cards. Peers solve a small puzzle with each and tell me whether holding back the answer still felt helpful.`,
+        expect: `Holding back the answer will feel frustrating at first but more satisfying once people solve it, and the paper cards may feel friendlier than the screen.`,
+        measure: `Watch where people get stuck, count how many hints they use, and ask afterward: did it help, and would you use it again?`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
       { id: `x4`, title: `The yes-bot`, kind: `Sensory experience`, question: `h5/q3`, status: `Planned`,
         medium: `Wizard-of-Oz chat (I play the bot), short reflection afterward`,
         plan: `Peers chat for five minutes with a "bot" (secretly me) that agrees with everything, then with one that gently pushes back. Afterward they describe how each conversation left them feeling: heard, flattered, connected, or lonelier.`,
+        expect: `The agreeable bot will feel nicer in the moment, but people will describe the one that pushes back as more trustworthy or more real.`,
+        measure: `Ask each person to describe each chat in three words, rate how heard and how much trust they felt, and compare the two.`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] }
     ],
     // Questions for the people reading the post. Drafts; edit or replace.
@@ -1927,6 +1938,10 @@ body.mobile .top .long{display:none}
           <h4>What I'm making</h4>
           ${x.medium ? `<p class="xp-medium">${esc(x.medium)}</p>` : ''}
           ${paras(x.plan, 'To fill in: what I will make and how.')}
+          <h4>What I expect to find</h4>
+          ${paras(x.expect, 'To fill in: my hunch about what will happen.')}
+          <h4>How I'll know</h4>
+          ${paras(x.measure, 'To fill in: what I will watch, ask, or measure.')}
           <h4>Documentation</h4>
           ${x.media && x.media.length ? `<div class="xp-media">${x.media.map(m => `<figure>${isVideo(m.src)
             ? `<video src="${esc(m.src)}" controls playsinline preload="metadata"></video>`

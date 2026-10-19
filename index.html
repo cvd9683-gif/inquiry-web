@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inquiry Web · Cathy Doss</title>
+<meta name="description" content="Cathy Doss · thesis hunches, questions, and sources">
+
+<!-- ============================================================
+     CONTENT — edit everything here.
+     All text uses `backticks`, so straight quotes and apostrophes
+     are safe inside them. Sources get ids s1, s2… automatically
+     in the order listed. type is "paper" or "project".
+     Per source: takeaway = what I learned, surprised = what piqued /
+     surprised / intrigued me, quote = a quote, passage, scene or
+     interaction. Empty fields show as "to fill in".
+     ============================================================ -->
+<script>
+const DATA = {
+  title: `Inquiry Web`,
+  subtitle: `Cathy Doss · thesis hunches, questions, and sources`,
+
+  thesisQuestion: `How do people relate to AI, and how is that changing the way we trust, learn, and create?`,
+
+  stance: `I'm ambivalent about AI. I love that it empowers me to make things I couldn't make on my own, and I dislike a lot of the ethics around it. My aim isn't to judge AI or the people who use it. I want to understand the relationship people are forming with it, and what that relationship is doing to how we trust, learn, and create.`,
+
+  intro: {
+    image: `inquiry-space-map.png`,
+    imageAlt: `My inquiry space map: overlapping pastel regions for where I draw inspiration from, what I want to understand better, what people might leave with, skills I could use, possible forms, and how I want the experience to feel, with Music near the middle.`,
+    label: `Progress Update 1`,
+    blurb: `This is the inquiry space I mapped first, covering where I draw inspiration from, what I want to understand better, the skills I can use, possible forms, and how I want the experience to feel. Music kept showing up as the through-line, alongside psychology, behavior, AI, and connection. From this map I pulled out five hunches.`
+  },
+
+  // The landing page redraws the inquiry space map from this data.
+  // Coordinates match the original 970×664 sketch.
+  // hunches = which hunches each word fed into (a DRAFT mapping; edit freely).
+  // quiet: true = the grey "secondary" words; big: true = the bold ones.
+  inquirySpace: {
+    regions: [
+      { id: `inspire`,    label: `Where I draw inspiration from`,     color: `#e3bf4f`, blob: [372, 282, 192, 150], labelAt: [268, 126, -24] },
+      { id: `understand`, label: `What I want to understand better`,  color: `#b4a3dc`, blob: [618, 232, 152, 122], labelAt: [614, 86, 6] },
+      { id: `leave`,      label: `What people might leave with`,      color: `#c9bca8`, blob: [792, 366, 152, 112], labelAt: [898, 244, 38] },
+      { id: `skills`,     label: `Skills I could use`,                color: `#a9b6cf`, blob: [338, 522, 140, 116], labelAt: [262, 626, 30] },
+      { id: `forms`,      label: `Possible forms`,                    color: `#a3c19a`, blob: [562, 538, 146, 100], labelAt: [540, 642, 0] },
+      { id: `feel`,       label: `How I want the experience to feel`, color: `#dda1a6`, blob: [762, 520, 118, 84],  labelAt: [790, 608, -20] }
+    ],
+    words: [
+      { t: `Food`, r: `inspire`, x: 322, y: 163, hunches: [] },
+      { t: `How to make food`, r: `inspire`, x: 330, y: 179, quiet: true, hunches: [] },
+      { t: `Why things exist the way they do`, r: `inspire`, x: 417, y: 176, quiet: true, hunches: [`h3`] },
+      { t: `Fashion`, r: `inspire`, x: 256, y: 197, hunches: [] },
+      { t: `Friends`, r: `inspire`, x: 369, y: 215, hunches: [`h1`] },
+      { t: `Family`, r: `inspire`, x: 296, y: 228, hunches: [`h3`] },
+      { t: `My past`, r: `inspire`, x: 210, y: 242, hunches: [] },
+      { t: `How people think`, r: `inspire`, x: 408, y: 257, quiet: true, hunches: [`h3`, `h4`] },
+      { t: `Culture`, r: `inspire`, x: 229, y: 289, hunches: [`h1`] },
+      { t: `Design`, r: `inspire`, x: 309, y: 282, big: true, hunches: [`h2`, `h5`] },
+      { t: `How people make things`, r: `inspire`, x: 395, y: 310, quiet: true, hunches: [`h2`] },
+      { t: `Color theory`, r: `inspire`, x: 368, y: 350, hunches: [] },
+      { t: `How values and personality influence behavior`, r: `inspire`, x: 220, y: 382, quiet: true, hunches: [`h5`] },
+
+      { t: `How things and experiences could be better`, r: `understand`, x: 512, y: 142, quiet: true, hunches: [`h4`] },
+      { t: `The human mind`, r: `understand`, x: 578, y: 183, big: true, hunches: [`h1`, `h3`] },
+      { t: `Emotion`, r: `understand`, x: 670, y: 198, hunches: [`h1`] },
+      { t: `Psychology`, r: `understand`, x: 545, y: 220, big: true, hunches: [`h1`, `h5`] },
+      { t: `Relationships`, r: `understand`, x: 705, y: 234, hunches: [`h5`] },
+      { t: `How people feel`, r: `understand`, x: 627, y: 245, hunches: [`h1`, `h5`] },
+      { t: `Behavior`, r: `understand`, x: 504, y: 262, big: true, hunches: [`h5`] },
+      { t: `Empathy`, r: `understand`, x: 637, y: 283, hunches: [`h5`] },
+      { t: `Music psychology`, r: `understand`, x: 577, y: 325, hunches: [`h1`] },
+
+      { t: `A new way of understanding something`, r: `leave`, x: 705, y: 274, quiet: true, hunches: [`h3`, `h4`] },
+      { t: `Greater awareness`, r: `leave`, x: 742, y: 302, quiet: true, hunches: [`h3`, `h5`] },
+      { t: `A stronger sense of agency`, r: `leave`, x: 830, y: 302, quiet: true, hunches: [`h2`, `h3`] },
+      { t: `Connection`, r: `leave`, x: 763, y: 331, big: true, hunches: [`h1`, `h5`] },
+      { t: `Conversation`, r: `leave`, x: 703, y: 362, hunches: [`h5`] },
+      { t: `Community`, r: `leave`, x: 843, y: 358, hunches: [`h1`] },
+      { t: `Expression`, r: `leave`, x: 795, y: 393, hunches: [`h2`] },
+      { t: `Creativity`, r: `leave`, x: 660, y: 413, hunches: [`h2`] },
+      { t: `Comfort`, r: `leave`, x: 867, y: 418, hunches: [`h5`] },
+      { t: `Social`, r: `leave`, x: 818, y: 448, hunches: [`h1`] },
+
+      { t: `Music`, r: `overlap`, x: 531, y: 401, big: true, hunches: [`h1`, `h2`] },
+
+      { t: `AI`, r: `skills`, x: 302, y: 422, big: true, hunches: [`h2`, `h3`, `h4`, `h5`] },
+      { t: `Figma`, r: `skills`, x: 238, y: 448, hunches: [] },
+      { t: `Code`, r: `skills`, x: 375, y: 467, hunches: [] },
+      { t: `Systems thinking`, r: `skills`, x: 263, y: 475, big: true, hunches: [] },
+      { t: `Visual design`, r: `skills`, x: 331, y: 508, hunches: [] },
+      { t: `Prototyping`, r: `skills`, x: 412, y: 507, hunches: [] },
+      { t: `Max/MSP`, r: `skills`, x: 218, y: 521, quiet: true, hunches: [`h2`] },
+      { t: `Human-centered design`, r: `skills`, x: 278, y: 554, big: true, hunches: [`h4`] },
+      { t: `Research`, r: `skills`, x: 410, y: 548, hunches: [] },
+      { t: `pComp`, r: `skills`, x: 385, y: 581, quiet: true, hunches: [] },
+      { t: `Video editing`, r: `skills`, x: 265, y: 588, hunches: [] },
+      { t: `Unity`, r: `skills`, x: 345, y: 595, quiet: true, hunches: [] },
+
+      { t: `Instrument`, r: `forms`, x: 531, y: 480, hunches: [`h1`, `h2`] },
+      { t: `Analysis`, r: `forms`, x: 655, y: 477, hunches: [] },
+      { t: `Digital experience`, r: `forms`, x: 564, y: 500, big: true, hunches: [] },
+      { t: `Performance`, r: `forms`, x: 479, y: 521, quiet: true, hunches: [`h1`, `h2`] },
+      { t: `Web experience`, r: `forms`, x: 598, y: 533, hunches: [] },
+      { t: `Participatory experience`, r: `forms`, x: 617, y: 561, hunches: [`h1`] },
+      { t: `Paper or physical artifact`, r: `forms`, x: 463, y: 581, hunches: [] },
+      { t: `Mapping`, r: `forms`, x: 590, y: 605, hunches: [] },
+
+      { t: `Emotionally resonant`, r: `feel`, x: 737, y: 474, hunches: [`h1`] },
+      { t: `Interactive`, r: `feel`, x: 690, y: 508, hunches: [`h4`] },
+      { t: `Playful`, r: `feel`, x: 763, y: 503, big: true, hunches: [] },
+      { t: `Inviting`, r: `feel`, x: 831, y: 511, hunches: [] },
+      { t: `Human`, r: `feel`, x: 783, y: 548, hunches: [`h5`] },
+      { t: `Exploratory`, r: `feel`, x: 708, y: 586, hunches: [`h3`] }
+    ],
+    // thin hand-drawn connecting lines from the sketch
+    lines: [
+      [`How people make things`, `Visual design`], [`Color theory`, `Prototyping`],
+      [`How people feel`, `Conversation`], [`Relationships`, `Connection`],
+      [`Empathy`, `Emotionally resonant`], [`Music psychology`, `Music`],
+      [`Community`, `Social`], [`Interactive`, `Participatory experience`]
+    ]
+  },
+
+  // Order of hunches clockwise from the top of the web.
+  // Chosen so every cross-link joins neighbouring hunches.
+  ringOrder: [`h1`, `h5`, `h3`, `h4`, `h2`],
+
+  hunches: [
+    {
+      id: `h1`, name: `Music as a human experience`, color: `#e3bf4f`,
+      blurb: `Why does music connect and move us? Before I ask what AI does to music, I want to understand what music does for people.`,
+      questions: [
+        {
+          id: `q1`, text: `Why does moving or playing in time with someone make us feel closer to them?`,
+          sources: [
+            { type: `paper`, title: `It's All in the Timing: Interpersonal Synchrony Increases Affiliation`, authors: `Hove & Risen`, year: `2009`, venue: `Social Cognition`, url: `https://doi.org/10.1521/soco.2009.27.6.949`,
+              takeaway: `Tapping in sync with someone made people like them more.`,
+              why: `This is the simplest proof that rhythm is social. It's the baseline I'd compare any AI music experience against.`,
+              surprised: `That something as small as tapping in time with a stranger was enough to change how much people liked them.`,
+              quote: `` },
+            { type: `paper`, title: `Synchrony and Cooperation`, authors: `Wiltermuth & Heath`, year: `2009`, venue: `Psychological Science`, url: `https://doi.org/10.1111/j.1467-9280.2008.02253.x`,
+              takeaway: `Singing or moving in sync made people cooperate more afterward.`,
+              why: `Synchrony doesn't just feel nice. It changes how people treat each other.`,
+              surprised: `The effect lasted beyond the activity itself: people cooperated more afterward, not just while moving together.`,
+              quote: `` },
+            { type: `paper`, title: `Music and social bonding: "self-other" merging and neurohormonal mechanisms`, authors: `Tarr, Launay & Dunbar`, year: `2014`, venue: `Frontiers in Psychology`, url: `https://doi.org/10.3389/fpsyg.2014.01096`,
+              takeaway: `Making music together blurs 'me' and 'you' and releases feel-good brain chemicals.`,
+              why: `It names mechanisms I could design for on purpose.`,
+              surprised: `That the bond has a bodily side too. It isn't only a feeling; there's chemistry behind it.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q2`, text: `What is actually happening inside us when a song gives us chills or changes our mood?`,
+          sources: [
+            { type: `paper`, title: `Emotional responses to music: The need to consider underlying mechanisms`, authors: `Juslin & Västfjäll`, year: `2008`, venue: `Behavioral and Brain Sciences`, url: `https://doi.org/10.1017/S0140525X08005293`,
+              takeaway: `Music stirs emotion through several separate routes, like reflexes, memories, and expectations.`,
+              why: `A vocabulary for how music moves people, not just that it does.`,
+              surprised: `There isn't one way music moves us, but several separate routes working at once.`,
+              quote: `` },
+            { type: `paper`, title: `Intensely pleasurable responses to music correlate with activity in brain regions implicated in reward and emotion`, authors: `Blood & Zatorre`, year: `2001`, venue: `PNAS`, url: `https://doi.org/10.1073/pnas.191355898`,
+              takeaway: `Musical 'chills' light up the same reward areas as food and other pleasures.`,
+              why: `Shows how deep the music response goes. Does it still happen if a machine wrote the song?`,
+              surprised: `Music isn't something we need to survive, yet it uses the same reward system as food.`,
+              quote: `` },
+            { type: `paper`, title: `The role of music in adolescents' mood regulation`, authors: `Saarikallio & Erkkilä`, year: `2007`, venue: `Psychology of Music`, url: `https://doi.org/10.1177/0305735607068889`,
+              takeaway: `Teens use music on purpose to manage and lift their moods.`,
+              why: `People already treat music as an emotional tool, a lot like how some now use chatbots.`,
+              surprised: `How deliberate teens are about it: they pick music on purpose to manage their mood.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q3`, text: `If music evolved to bring people together, what changes when a machine makes it?`,
+          sources: [
+            { type: `paper`, title: `Music as a coevolved system for social bonding`, authors: `Savage et al.`, year: `2021`, venue: `Behavioral and Brain Sciences`, url: `https://doi.org/10.1017/S0140525X20000333`,
+              takeaway: `Music may have evolved mainly to bond groups of people.`,
+              why: `If bonding is music's job, I can ask whether AI-made music still does that job.`,
+              surprised: `The argument that bonding might be music's main purpose, not a side effect.`,
+              quote: `` }
+          ]
+        }
+      ]
+    },
+    {
+      id: `h2`, name: `Creating with AI`, color: `#b4a3dc`,
+      blurb: `It lets me make things I can't make. So what do we gain, and what do we lose?`,
+      questions: [
+        {
+          id: `q1`, text: `If AI made most of it, is it still mine? Does it matter to me, or to anyone else?`,
+          sources: [
+            { type: `paper`, title: `The AI Ghostwriter Effect: When Users do not Perceive Ownership of AI-Generated Text but Self-Declare as Authors`, authors: `Draxler et al.`, year: `2024`, venue: `ACM TOCHI`, url: `https://doi.org/10.1145/3637875`,
+              takeaway: `People don't feel they own AI-written text, but they still put their name on it.`,
+              why: `That gap between feeling and claiming authorship is exactly what I'm curious about.`,
+              surprised: `People still put their name on the text even when they didn't feel it was theirs.`,
+              quote: `` },
+            { type: `paper`, title: `The IKEA effect: When labor leads to love`, authors: `Norton, Mochon & Ariely`, year: `2012`, venue: `Journal of Consumer Psychology`, url: `https://doi.org/10.1016/j.jcps.2011.08.002`,
+              takeaway: `We value things more when we put effort into making them.`,
+              why: `If AI does the labor, do we lose some of the love?`,
+              surprised: `Effort itself makes us value something more, even when the result isn't any better.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q2`, text: `Which kinds of control make me feel like the author, and not just the audience?`,
+          sources: [
+            { type: `paper`, title: `Novice-AI Music Co-Creation via AI-Steering Tools for Deep Generative Models (Cococo)`, authors: `Louie et al.`, year: `2020`, venue: `CHI '20`, url: `https://doi.org/10.1145/3313831.3376739`,
+              takeaway: `Giving people simple steering controls made them feel more ownership over AI-made music.`,
+              why: `A direct design precedent: control can protect authorship.`,
+              surprised: `Even simple controls were enough to shift how much ownership people felt.`,
+              quote: `` },
+            { type: `project`, title: `Magenta Studio`, authors: `Google Magenta`, year: `2019–`, venue: `Ableton Live / Max for Live tools`, url: `https://magenta.withgoogle.com/studio/`,
+              takeaway: `Small AI tools that sit inside a musician's own workflow instead of making the whole song.`,
+              why: `A model of AI as a steerable assist, and it fits my Max/MSP skills.`,
+              surprised: `It deliberately does less: small tools inside the musician's workflow instead of making the whole song.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q3`, text: `What happens to an artist's voice, and to authorship, when anyone can perform with it?`,
+          sources: [
+            { type: `project`, title: `Holly+`, authors: `Holly Herndon & Mat Dryhurst`, year: `2021`, venue: `Artwork / voice instrument`, url: `https://herndondryhurst.studio/projects/holly-plus`,
+              takeaway: `An AI twin of Herndon's voice that anyone can sing through.`,
+              why: `An artist choosing to share her voice turns ownership into a live experiment.`,
+              surprised: `An artist chose to share her own voice instead of protecting it.`,
+              quote: `` },
+            { type: `project`, title: `Suno`, authors: `Suno, Inc.`, year: `2023–`, venue: `Text-to-song product`, url: `https://suno.com`,
+              takeaway: `Type a prompt, get a full song.`,
+              why: `The 'full output' end of the spectrum, where it's hardest to say who the author is.`,
+              surprised: `How little the person does: one prompt and you get a full song.`,
+              quote: `` }
+          ]
+        }
+      ]
+    },
+    {
+      id: `h3`, name: `Learning with AI`, color: `#c9bca8`,
+      blurb: `AI to learn, not to teach. How do we educate kids about AI safety? How do we use it when we know it's unsafe and can't predict what's next?`,
+      questions: [
+        {
+          id: `q1`, text: `How do kids decide whether to trust a machine that talks back?`,
+          sources: [
+            { type: `paper`, title: `"Hey Google is it OK if I eat you?" Initial Explorations in Child-Agent Interaction`, authors: `Druga, Williams, Breazeal & Resnick`, year: `2017`, venue: `IDC '17`, url: `https://doi.org/10.1145/3078072.3084330`,
+              takeaway: `Kids aged 3–10 mostly saw voice assistants as friendly and trustworthy, and poked at their limits.`,
+              why: `Kids form a relationship with AI very early, before anyone explains it.`,
+              surprised: `Kids as young as 3 were already testing what the assistant could and couldn't do.`,
+              quote: `` },
+            { type: `paper`, title: `Children's trust in and learning from voice assistants`, authors: `Girouard-Hallam & Danovitch`, year: `2022`, venue: `Developmental Psychology`, url: `https://doi.org/10.1037/dev0001318`,
+              takeaway: `As kids get older they trust the device for facts and a person for personal things.`,
+              why: `Trust in AI isn't all or nothing. Kids sort it by topic.`,
+              surprised: `Kids get more selective as they grow, trusting the device for facts but a person for personal things.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q2`, text: `What should 'AI safety' actually mean to a 10-year-old, and who teaches it?`,
+          sources: [
+            { type: `project`, title: `Day of AI (MIT RAISE)`, authors: `MIT RAISE`, year: `2022–`, venue: `Free PreK–12 AI literacy curriculum`, url: `https://dayofai.org/curriculum-resources`,
+              takeaway: `Free classroom lessons that teach kids how AI works and how to question it.`,
+              why: `A real example of teaching kids about AI instead of just with it.`,
+              surprised: `It teaches kids to question AI, not just use it.`,
+              quote: `` },
+            { type: `paper`, title: `AI competency framework for students`, authors: `UNESCO (Miao, Shiohira & Lao)`, year: `2024`, venue: `UNESCO`, url: `https://www.unesco.org/en/articles/ai-competency-framework-students`,
+              takeaway: `12 skills for students, starting with a human-centred mindset and AI ethics.`,
+              why: `It puts human agency first, which is the kind of AI literacy I care about.`,
+              surprised: `The framework starts with a human-centred mindset, before any technical skills.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q3`, text: `How do we keep using something we know isn't fully safe and can't predict?`,
+          sources: [
+            { type: `paper`, title: `AI Risk Assessment: Social AI Companions`, authors: `Common Sense Media`, year: `2025`, venue: `Risk assessment`, url: `https://institute.commonsensemedia.org/risk-assessments/social-ai-companions`,
+              takeaway: `Rated AI companion apps an 'unacceptable risk' for anyone under 18.`,
+              why: `Shows the gap between how kids actually use AI and what's safe for them.`,
+              surprised: `Calling these apps an 'unacceptable risk' for anyone under 18 is a much stronger stance than I expected.`,
+              quote: `` },
+            { type: `paper`, title: `The Impact of Generative AI on Critical Thinking`, authors: `Lee et al. (Microsoft Research)`, year: `2025`, venue: `CHI '25`, url: `https://doi.org/10.1145/3706598.3713778`,
+              takeaway: `The more people trusted AI, the less critical thinking they reported doing.`,
+              why: `Using AI safely may depend on staying a little skeptical.`,
+              surprised: `More trust in AI went with less critical thinking, which is the opposite of how trust usually helps.`,
+              quote: `` }
+          ]
+        }
+      ]
+    },
+    {
+      id: `h4`, name: `Teaching with AI`, color: `#a3c19a`,
+      blurb: `Tools for students that help, instead of doing the thinking for them.`,
+      questions: [
+        {
+          id: `q1`, text: `When does AI help turn into AI doing the work for me?`,
+          sources: [
+            { type: `paper`, title: `Generative AI without guardrails can harm learning: Evidence from high school mathematics`, authors: `Bastani et al.`, year: `2025`, venue: `PNAS`, url: `https://doi.org/10.1073/pnas.2422633122`,
+              takeaway: `Plain ChatGPT raised practice scores but lowered test scores later; a hint-only tutor mostly avoided that drop.`,
+              why: `The clearest evidence that design choices decide whether AI helps or hurts learning.`,
+              surprised: `Practice scores went up while test scores went down. It looked like help but hurt learning.`,
+              quote: `` },
+            { type: `paper`, title: `The generation effect: Delineation of a phenomenon`, authors: `Slamecka & Graf`, year: `1978`, venue: `JEP: Human Learning and Memory`, url: `https://doi.org/10.1037/0278-7393.4.6.592`,
+              takeaway: `We remember what we come up with ourselves better than what we just read.`,
+              why: `The argument for an AI that holds back the answer.`,
+              surprised: `This was found in 1978, long before AI, but it explains exactly why answer-giving AI is a problem.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q2`, text: `Can a tutor hold back the answer and still feel helpful to a student?`,
+          sources: [
+            { type: `project`, title: `Khanmigo`, authors: `Khan Academy`, year: `2023–`, venue: `AI tutor`, url: `https://www.khanmigo.ai/learners`,
+              takeaway: `An AI tutor built to ask questions and give hints, not answers.`,
+              why: `The best-known attempt at 'guardrailed' AI for students.`,
+              surprised: `A major education company chose to design its tutor to hold back answers.`,
+              quote: `` },
+            { type: `project`, title: `ChatGPT Study Mode`, authors: `OpenAI`, year: `2025`, venue: `Product feature`, url: `https://openai.com/index/chatgpt-study-mode/`,
+              takeaway: `A mode that walks students through problems step by step instead of solving them.`,
+              why: `A sign the big companies see this problem too.`,
+              surprised: `Even OpenAI built a mode that slows students down on purpose.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q3`, text: `How much struggle is the good kind, and can a tool protect it?`,
+          sources: [
+            { type: `paper`, title: `Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning`, authors: `Bjork & Bjork`, year: `2011`, venue: `Psychology and the Real World (book chapter)`, url: `https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/11/Making-Things-Hard-on-Yourself-but-in-a-Good-Way-20111.pdf`,
+              takeaway: `Some kinds of difficulty, like spacing and self-testing, make learning stick.`,
+              why: `Friction isn't always a bug. Could I design the good kind into an AI tool?`,
+              surprised: `Making learning harder in the right ways is what makes it stick.`,
+              quote: `` }
+          ]
+        }
+      ]
+    },
+    {
+      id: `h5`, name: `Trust & dark patterns`, color: `#dda1a6`,
+      blurb: `How has trust in technology changed? Which design tricks make AI feel trustworthy, or keep us hooked?`,
+      questions: [
+        {
+          id: `q1`, text: `Who do we trust now, and why do we sometimes trust machines more than people?`,
+          sources: [
+            { type: `paper`, title: `2025 Edelman Trust Barometer: Trust and the Crisis of Grievance`, authors: `Edelman Trust Institute`, year: `2025`, venue: `Global survey, 28 countries`, url: `https://www.edelman.com/trust/2025/trust-barometer`,
+              takeaway: `About 6 in 10 people feel institutions work against them, and that eats away at trust.`,
+              why: `The bigger trust climate AI is arriving into.`,
+              surprised: `How widespread the feeling is: about 6 in 10 people feel institutions work against them.`,
+              quote: `` },
+            { type: `paper`, title: `Complacency and Bias in Human Use of Automation: An Attentional Integration`, authors: `Parasuraman & Manzey`, year: `2010`, venue: `Human Factors`, url: `https://doi.org/10.1177/0018720810376055`,
+              takeaway: `People over-trust automated systems and stop checking them, even experts.`,
+              why: `Over-trust in AI isn't new. It's a known human pattern.`,
+              surprised: `Even experts stop checking automated systems.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q2`, text: `Which design tricks make AI feel trustworthy, or keep us coming back?`,
+          sources: [
+            { type: `paper`, title: `Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites`, authors: `Mathur et al.`, year: `2019`, venue: `CSCW / PACM HCI`, url: `https://doi.org/10.1145/3359183`,
+              takeaway: `Manipulative design tricks showed up on about 1 in 10 shopping sites they crawled.`,
+              why: `Gives me names for tricks I might start spotting in AI products.`,
+              surprised: `Manipulative design was common enough to show up on about 1 in 10 shopping sites.`,
+              quote: `` },
+            { type: `paper`, title: `Sycophancy in GPT-4o: What happened and what we're doing about it`, authors: `OpenAI`, year: `2025`, venue: `Company post-mortem`, url: `https://openai.com/index/sycophancy-in-gpt-4o/`,
+              takeaway: `OpenAI pulled an update because ChatGPT got too flattering after it was tuned on thumbs-up feedback.`,
+              why: `A real case where optimizing for 'liked' made the AI less honest.`,
+              surprised: `The flattery came from training on thumbs-up feedback, so the AI got worse by trying to be liked.`,
+              quote: `` },
+            { type: `paper`, title: `Towards Understanding Sycophancy in Language Models`, authors: `Sharma et al. (Anthropic)`, year: `2023`, venue: `arXiv / ICLR 2024`, url: `https://arxiv.org/abs/2310.13548`,
+              takeaway: `AI assistants tend to tell people what they want to hear, partly because people rate that higher.`,
+              why: `The flattery comes partly from us, which makes it a human story too.`,
+              surprised: `People rate agreeable answers higher, so part of the problem comes from us.`,
+              quote: `` }
+          ]
+        },
+        {
+          id: `q3`, text: `Does a chatbot that always agrees with us leave us more connected, or lonelier?`,
+          sources: [
+            { type: `paper`, title: `How AI and Human Behaviors Shape Psychosocial Effects of Extended Chatbot Use: A Longitudinal Randomized Controlled Study`, authors: `Fang et al. (MIT Media Lab & OpenAI)`, year: `2025`, venue: `arXiv preprint`, url: `https://arxiv.org/abs/2503.17473`,
+              takeaway: `In a 4-week study, people who used chatbots most felt lonelier and more dependent.`,
+              why: `Suggests 'more engagement' and 'better for people' can pull apart.`,
+              surprised: `The heaviest users felt lonelier and more dependent, the opposite of what you'd hope for.`,
+              quote: `` },
+            { type: `paper`, title: `AI Companions Reduce Loneliness`, authors: `De Freitas et al.`, year: `2025`, venue: `Journal of Consumer Research`, url: `https://doi.org/10.1093/jcr/ucaf040`,
+              takeaway: `AI companions eased loneliness in the short term, mainly by making people feel heard.`,
+              why: `A counterpoint that keeps me from judging too fast.`,
+              surprised: `Feeling heard was the key ingredient, and an AI could provide it, at least in the short term.`,
+              quote: `` }
+          ]
+        }
+      ]
+    }
+  ],
+
+  // Faint dotted lines between related questions in different hunches.
+  // "hunchId/questionId" pairs; note is a short hint shown on hover.
+  crossLinks: [
+    { a: `h3/q3`, b: `h5/q1`, note: `trust and over-reliance` },
+    { a: `h2/q1`, b: `h4/q1`, note: `authorship vs. "doing it for me"` },
+    { a: `h1/q1`, b: `h5/q3`, note: `music bonding vs. AI loneliness` }
+  ],
+
+  // Progress Update 2 panel. Empty strings show as placeholders.
+  // Separate paragraphs with a blank line.
+  // Mirrors the three parts of the assignment.
+  progressUpdate2: {
+    // 1. Findings. Per-source findings live on each source above.
+    whatIFound: `The biggest pattern across my sources is that people's relationship with a technology is shaped less by what it can do and more by how it's designed to involve them. The synchrony studies show that simply moving in time together makes people like and cooperate with each other more, so music's power seems to come from participating, not just listening.
+
+On the AI side, the same idea shows up as a warning. When a tool does the work for us, we feel less ownership (the Ghostwriter effect), we learn less (Bastani et al.), we think less critically (Lee et al.), and heavy use can leave us lonelier (Fang et al.).
+
+What surprised me most was how often the difference came down to small design choices: a hint-only tutor instead of an answer machine, simple steering controls in Cococo, or a thumbs-up signal that accidentally trained ChatGPT to flatter. Design isn't neutral here. It decides whether AI empowers people or quietly replaces their effort.`,
+    otherResearch: `Planned: interview one of the NYU experts below, and keep a short journal of my own AI use while making things, noting when it feels like help and when it feels like it's doing the work for me.`,
+
+    // 2. Reflection + refined diagram
+    howSourcesConnect: `My sources fall into three threads that cut across the five hunches.
+
+Participation creates value. Synchrony (Hove & Risen; Wiltermuth & Heath), music-making together (Tarr et al.; Savage et al.), the IKEA effect, and the generation effect all say the same thing from different angles: we bond with, value, and remember what we actively take part in.
+
+Over-trust is an old human pattern. Kids trusting voice assistants (Druga et al.; Girouard-Hallam & Danovitch), automation complacency (Parasuraman & Manzey), and less critical thinking with more AI trust (Lee et al.) suggest AI is inheriting a long history of people handing judgment to machines.
+
+Engagement and wellbeing can pull apart. Dark patterns (Mathur et al.), sycophancy (OpenAI; Sharma et al.), and the chatbot loneliness study (Fang et al.) show that systems optimized to be liked or used more aren't always good for people. De Freitas et al. is the counterpoint: feeling heard can genuinely help.
+
+The design precedents (Cococo, Magenta Studio, Holly+, Khanmigo, Study Mode) sit where these threads meet. Each one tries to keep people participating and in control.`,
+    refinedInquirySpace: `My first map was wide: food, fashion, color theory, and lots of skills and possible forms. After researching, I narrowed it to one question about how people relate to AI, with five hunches feeding into it.
+
+Music stayed at the center as my lens, because it's the clearest example of an experience whose value comes from people taking part together. I added trust as its own area: it showed up in almost every source but wasn't on my original map. Turn on "Show what carried into my hunches" on the map to see what carried forward and what I've set aside for now, like food, fashion, and most of my tool skills.`,
+    refinedImage: ``,            // optional, e.g. `refined-inquiry-space.png`
+
+    // 3. NYU experts. interview: e.g. `Emailed Oct 20`, `Meeting Nov 3`
+    experts: [
+      { name: `Dan O'Sullivan`, program: `ITP`, focus: `Shared Minds`,
+        relatesTo: `His Shared Minds class looks at how people think and make things together using AI and networked tools. That connects to whether AI brings people together or replaces them (Creating with AI; Trust & dark patterns).`, interview: `` },
+      { name: `Pablo Ripollés`, program: `Music Technology & Psychology / MARL`, focus: ``,
+        relatesTo: `He studies music, reward, and memory in the brain. That fits Music as a human experience, and the question of whether AI-made music moves us the same way.`, interview: `` },
+      { name: `Luisa Pereira`, program: `ITP`, focus: `The Code of Music`,
+        relatesTo: `Her Code of Music class teaches music through code and interactive tools, a model for creating with computation while staying the author (Creating with AI; my Max/MSP skills).`, interview: `` }
+    ]
+  }
+};
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f5f0; --panel:#fffdf8;
+  --ink:#1f1d1a; --ink-2:#4b4740; --ink-3:#6f6a61;
+  --line:rgba(31,29,26,.52); --hair:rgba(31,29,26,.13);
+  --header:64px;
+  --ease:cubic-bezier(.45,0,.2,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+  font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{overflow:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px;font-weight:500}
+.sw{display:inline-block;width:9px;height:9px;border-radius:50%;flex:none}
+
+/* ---------- header ---------- */
+.top{position:fixed;top:0;left:0;right:0;height:var(--header);z-index:30;display:flex;align-items:center;gap:22px;padding:0 24px;
+  background:linear-gradient(var(--bg) 62%,rgba(247,245,240,0))}
+.brand{font-weight:600;font-size:14px;letter-spacing:.01em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.crumbs{min-width:0;flex:1}
+.crumbs ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;font-size:13px;color:var(--ink-3);min-width:0}
+.crumbs li{display:flex;align-items:center;white-space:nowrap;min-width:0;flex:0 1 auto;overflow:hidden}
+.crumbs li:nth-child(-n+2){flex-shrink:0}
+.crumbs li+li::before{content:'›';margin:0 9px;color:#a29d93;flex:none}
+.crumbs a,.crumbs [aria-current]{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:3px 0}
+.crumbs a{text-decoration:none;color:var(--ink-2);border-bottom:1px solid transparent;transition:border-color .2s}
+.crumbs a:hover{border-bottom-color:currentColor}
+.crumbs a .sw{margin-right:6px;vertical-align:0}
+.crumbs [aria-current]{color:var(--ink)}
+.crumbs .q{font-style:italic}
+.actions{display:flex;gap:8px;flex:none}
+.btn{font-size:13px;border:1px solid var(--hair);background:rgba(255,255,255,.55);border-radius:999px;padding:7px 14px;cursor:pointer;
+  display:inline-flex;gap:7px;align-items:center;text-decoration:none;color:var(--ink);transition:background .2s,border-color .2s,opacity .2s}
+.btn:hover{background:#fff;border-color:rgba(31,29,26,.3)}
+.btn[disabled]{opacity:.32;cursor:default;pointer-events:none}
+.btn-primary{background:var(--ink);color:var(--bg);border-color:var(--ink);font-size:15px;padding:12px 22px}
+.btn-primary:hover{background:#000;border-color:#000}
+.btn-primary span{transition:transform .25s var(--ease)}
+.btn-primary:hover span{transform:translateX(4px)}
+
+/* ---------- stage & scenes ---------- */
+#stage{position:fixed;inset:0;overflow:hidden}
+#inner{position:absolute;inset:0;transform-origin:0 0;transition:transform .6s var(--ease),opacity .6s}
+.scene{position:absolute;inset:0;transform-origin:0 0}
+.scene-svg{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.layer{position:absolute;left:0;top:0;transform-origin:0 0}
+.blob{mix-blend-mode:multiply;transition:opacity .35s,fill-opacity .35s;transform-box:fill-box;transform-origin:center;animation:drift 18s ease-in-out infinite}
+.blob.hl{fill-opacity:.62}
+.link{fill:none;stroke:var(--line);stroke-width:1;transition:opacity .3s,stroke .3s}
+.link.faint{stroke:rgba(31,29,26,.3)}
+.link.cross{stroke:rgba(31,29,26,.5);stroke-width:1.1;stroke-dasharray:1.5 5;stroke-linecap:round}
+.link.cross.xhl{stroke:var(--ink);stroke-width:1.5}
+.scene.dimming .dimmable:not(.hl){opacity:.2}
+.scene.dimming .link.dimmable.hl{stroke:var(--ink)}
+
+.node{position:absolute;width:0;height:0;text-decoration:none;color:var(--ink);transition:opacity .3s;cursor:pointer}
+.node .dot{position:absolute;left:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:var(--ink);z-index:0;transition:transform .25s var(--ease)}
+.node .dot::after{content:'';position:absolute;inset:-6px;border-radius:50%;background:var(--c,rgba(31,29,26,.25));z-index:-1;opacity:0;
+  animation:halo 5.5s ease-in-out infinite;animation-delay:var(--d,0s)}
+.node .dot.ring{background:var(--bg);border:1.6px solid var(--ink)}
+.node-hunch .dot{left:-6px;top:-6px;width:12px;height:12px}
+.node:hover .dot,.node:focus-visible .dot,.node.active .dot{transform:scale(1.45)}
+.node:focus-visible{outline:none}
+.node:focus-visible .label{outline:2px solid var(--ink);outline-offset:5px;border-radius:6px}
+.label{position:absolute;display:block;width:max-content;max-width:var(--mw,240px);
+  text-shadow:0 0 6px rgba(247,245,240,.9),0 0 2px rgba(247,245,240,.9)}
+.side-right{left:17px;top:0;transform:translateY(-50%);text-align:left}
+.side-left{right:17px;top:0;transform:translateY(-50%);text-align:right}
+.side-above{bottom:17px;left:0;transform:translateX(-50%);text-align:center}
+.side-below{top:17px;left:0;transform:translateX(-50%);text-align:center}
+.side-in-l-up{right:14px;bottom:9px;text-align:right}
+.side-in-l-down{right:14px;top:9px;text-align:right}
+.side-in-r-up{left:14px;bottom:9px;text-align:left}
+.side-in-r-down{left:14px;top:9px;text-align:left}
+.l-name{display:block;font-size:15.5px;font-weight:500;line-height:1.25}
+.l-sub,.l-meta{display:block;font-size:12px;color:var(--ink-3);margin-top:4px;font-style:normal}
+.l-q{display:block;font-style:italic;font-size:16.5px;line-height:1.42}
+.l-tag{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.l-title{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:14.5px;font-weight:500;line-height:1.38}
+.l-rel{color:var(--ink-2)}
+.node:hover .l-name,.node:hover .l-q,.node:hover .l-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:rgba(31,29,26,.35)}
+.node.active .l-title{text-decoration:underline;text-underline-offset:4px}
+
+.mini{position:absolute;width:0;height:0;cursor:pointer;transition:opacity .3s}
+.mini::before{content:'';position:absolute;left:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:#6c675e;transition:transform .2s,background .2s}
+.mini::after{content:'';position:absolute;left:-11px;top:-11px;width:22px;height:22px;border-radius:50%}
+.mini:hover::before{transform:scale(1.6);background:var(--ink)}
+
+.center{position:absolute;transform:translate(-50%,-50%);text-align:center;outline:none}
+.center-web{width:310px}
+.center-web .thesis-q{font-size:21px;font-weight:400;line-height:1.38;margin:0 0 14px;letter-spacing:-.005em}
+.center-dot{display:block;width:14px;height:14px;border-radius:50%;background:var(--ink);margin:0 auto 14px;box-shadow:0 0 0 6px rgba(31,29,26,.07)}
+.chip{font-size:12.5px;border:1px solid var(--hair);background:rgba(255,253,248,.85);border-radius:999px;padding:6px 13px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;transition:background .2s,border-color .2s}
+.chip:hover{background:#fff;border-color:rgba(31,29,26,.32)}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--ink);display:inline-block}
+.center-word{width:max-content;max-width:300px}
+.center-word h2{font-size:clamp(34px,3.4vw,46px);font-weight:300;letter-spacing:-.02em;line-height:1.1;margin:0 0 10px}
+.center-word .wsub{font-size:13px;color:var(--ink-3);margin:0}
+.q-small .dot{left:-4px;top:-4px;width:8px;height:8px;background:#5d5850}
+.q-small .l-q{font-size:13.5px;line-height:1.38}
+.center-hunch{width:380px}
+.center-hunch h2{font-size:30px;font-weight:400;letter-spacing:-.015em;line-height:1.15;margin:0 0 12px}
+.center-hunch p.blurb{font-size:15.5px;line-height:1.55;color:var(--ink-2);margin:0}
+.center-q{width:440px}
+.center-q .eyebrow{display:inline-flex;align-items:center;gap:8px}
+.center-q h2{font-size:23px;font-weight:400;font-style:italic;line-height:1.4;margin:0 0 18px;letter-spacing:-.005em}
+.rels{display:flex;flex-direction:column;gap:8px;align-items:center}
+.rel-chip{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border:1px dashed rgba(31,29,26,.3);background:rgba(255,253,248,.75);border-radius:14px;padding:8px 14px;text-align:left;max-width:420px;transition:background .2s,border-color .2s}
+.rel-chip:hover{background:#fff;border-color:rgba(31,29,26,.5);border-style:solid}
+.rel-chip .k{display:block;font-size:11px;color:var(--ink-3);letter-spacing:.02em}
+.rel-chip .t{display:block;font-size:13px;font-style:italic;line-height:1.35}
+
+/* ---------- intro: the inquiry space map is the page ---------- */
+.intro{position:absolute;inset:0;overflow:hidden}
+.imap{position:absolute;left:0;top:0;width:970px;height:664px;transform-origin:0 0;transition:transform .6s var(--ease);visibility:hidden}
+.imap.ready{visibility:visible}
+.iwin{position:absolute;left:24px;top:76px;width:340px;max-height:calc(100% - 100px);display:flex;flex-direction:column;z-index:3;
+  background:rgba(255,253,248,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--hair);border-radius:18px;
+  box-shadow:0 26px 60px -32px rgba(40,30,10,.38);overflow:hidden}
+.iwin-bar{display:flex;align-items:center;gap:10px;padding:10px 10px 10px 14px;border-bottom:1px solid var(--hair);font-size:12px;font-weight:500;flex:none}
+.iwin-bar .lights{display:flex;gap:5px}
+.iwin-bar .lights i{width:9px;height:9px;border-radius:50%;display:block}
+.iwin-bar .ttl{flex:1;color:var(--ink-2)}
+.iwin-min{width:26px;height:26px;border-radius:8px;border:1px solid var(--hair);background:transparent;cursor:pointer;display:grid;place-items:center;font-size:14px;line-height:1}
+.iwin-min:hover{background:#fff}
+.iwin-body{overflow:auto;padding:20px 22px 22px}
+.iwin.min{width:auto}
+.iwin.min .iwin-body{display:none}
+.iwin.min .iwin-bar{border-bottom:0;padding-right:10px}
+.iwin.min .iwin-bar .ttl{flex:none}
+.iwin h1{font-size:44px;font-weight:300;letter-spacing:-.025em;line-height:1;margin:0 0 10px}
+.iwin .sub{font-size:14px;color:var(--ink-2);margin:0 0 18px}
+.iwin .blurb{font-size:14px;line-height:1.6;color:var(--ink-2);margin:0 0 16px;padding-top:16px;border-top:1px solid var(--hair)}
+.iwin .blurb strong{color:var(--ink);font-weight:500}
+.iwin .hint{font-size:12.5px;color:var(--ink-3);margin:0 0 12px;display:flex;gap:8px;align-items:baseline}
+.hunch-list{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.hunch-list a{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;text-decoration:none;padding:5px 11px 5px 9px;border-radius:999px;background:var(--tint);transition:filter .2s}
+.hunch-list a:hover{filter:saturate(1.4) brightness(.97)}
+.intro-cta{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.intro-cta .orig{font-size:12.5px;color:var(--ink-3)}
+.toggle{font-size:12.5px;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--hair);background:rgba(255,253,248,.7);border-radius:999px;padding:6px 13px 6px 7px;cursor:pointer;margin:0 0 18px;text-align:left}
+@media (max-height: 820px){
+  .iwin{top:70px;max-height:calc(100% - 86px)}
+  .iwin-body{padding:16px 18px 18px}
+  .iwin h1{font-size:34px;margin-bottom:6px}
+  .iwin .sub{font-size:13px;margin-bottom:12px}
+  .iwin .blurb{font-size:13px;line-height:1.5;padding-top:12px;margin-bottom:12px}
+  .iwin .hint{margin-bottom:10px}
+  .toggle{margin-bottom:12px}
+  .hunch-list{margin-bottom:14px}
+  .hunch-list a{font-size:12px;padding:4px 10px 4px 8px}
+}
+.toggle .knob{width:26px;height:16px;border-radius:999px;background:rgba(31,29,26,.16);position:relative;transition:background .25s;flex:none}
+.toggle .knob::after{content:'';position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:#fff;transition:transform .25s var(--ease);box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.toggle[aria-pressed="true"] .knob{background:var(--ink)}
+.toggle[aria-pressed="true"] .knob::after{transform:translateX(10px)}
+.imap svg{position:absolute;inset:0;overflow:visible;pointer-events:none}
+.imap .rblob{mix-blend-mode:multiply;transform-box:fill-box;transform-origin:center;animation:drift 20s ease-in-out infinite;transition:fill-opacity .3s}
+.imap .rlabel{font-size:11.5px;letter-spacing:.01em;font-weight:500}
+.word{position:absolute;display:flex;align-items:center;gap:6px;border:0;background:none;padding:2px 4px 2px 0;margin:0;cursor:pointer;
+  font:inherit;font-size:11px;color:var(--ink);white-space:nowrap;transform:translate(-4px,-50%);border-radius:5px;transition:opacity .3s,background .2s}
+.word::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ink);flex:none}
+.word.fed{cursor:zoom-in}
+.word.big{font-size:13.5px;font-weight:500}
+.word.big::before{width:8px;height:8px}
+.word.quiet{font-size:9.5px;color:#6a655c}
+.word.quiet::before{width:8px;height:8px;background:#77726a}
+.word:hover,.word.on{background:rgba(255,253,248,.92);box-shadow:0 0 0 1px var(--hair)}
+.word:hover span.t,.word.on span.t{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(31,29,26,.4)}
+.word .pips{display:none;gap:2px}
+.word .pips i{width:5px;height:5px;border-radius:50%;display:block;box-shadow:0 0 0 .5px rgba(31,29,26,.35)}
+.imap.carry .word:not(.fed){opacity:.26}
+.imap.carry .word .pips{display:inline-flex}
+.imap.carry .rblob{fill-opacity:.2}
+.imap.carry .sketch{opacity:.25}
+.sketch{fill:none;stroke:rgba(31,29,26,.5);stroke-width:.7;transition:opacity .3s}
+.wordpop{position:absolute;z-index:5;width:260px;background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:16px 18px 14px;
+  box-shadow:0 24px 50px -24px rgba(40,30,10,.4);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .25s var(--ease);pointer-events:none}
+.wordpop.on{opacity:1;transform:none;pointer-events:auto}
+.wordpop .eyebrow{margin-bottom:4px}
+.wordpop .w{font-size:19px;font-weight:500;margin:0 0 12px;line-height:1.25}
+.wordpop .k{font-size:11px;color:var(--ink-3);margin:0 0 7px}
+.wordpop ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.wordpop ul a{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:13.5px;padding:7px 10px;border-radius:10px;background:var(--tint);transition:filter .2s}
+.wordpop ul a:hover{filter:saturate(1.4) brightness(.97)}
+.wordpop ul a b{margin-left:auto;font-weight:400}
+.wordpop .none{font-size:13px;color:var(--ink-2);font-style:italic;margin:0;line-height:1.5}
+.wordpop .x{position:absolute;top:10px;right:10px;width:26px;height:26px;font-size:15px}
+
+/* ---------- minimap & legend ---------- */
+#minimap{position:fixed;left:20px;bottom:20px;z-index:20;width:196px;padding:10px 10px 9px;border-radius:16px;
+  background:rgba(255,253,248,.62);border:1px solid var(--hair);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity .4s}
+#minimap svg{display:block;width:100%;height:auto}
+#minimap .mm-h{transition:opacity .4s}
+#minimap.focused .mm-h:not(.on){opacity:.22}
+#minimap .mm-q{fill:#6c675e;transition:r .3s}
+#minimap .mm-q.cur{fill:var(--ink)}
+#minimap .mm-ring{fill:none;stroke:var(--ink);stroke-width:1;opacity:0;transition:opacity .3s}
+#minimap .mm-ring.cur{opacity:1}
+#minimap a{cursor:pointer}
+#minimap .cap{font-size:11px;line-height:1.35;color:var(--ink-3);margin-top:4px}
+#minimap .cap b{color:var(--ink);font-weight:500}
+#legend{position:fixed;right:24px;bottom:20px;z-index:20;font-size:12px;color:var(--ink-3);display:flex;gap:16px;align-items:center;transition:opacity .4s}
+#legend span{display:inline-flex;align-items:center;gap:7px}
+#legend .ld{width:8px;height:8px;border-radius:50%;background:var(--ink)}
+#legend .lr{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink)}
+#legend .lm{width:6px;height:6px;border-radius:50%;background:#6c675e}
+#legend svg{display:block}
+.hidden{opacity:0;pointer-events:none;visibility:hidden}
+
+/* ---------- source card ---------- */
+#card{position:fixed;top:76px;right:20px;bottom:20px;width:min(440px,calc(100vw - 40px));z-index:25;background:var(--panel);
+  border:1px solid var(--hair);border-radius:20px;box-shadow:0 30px 70px -30px rgba(40,30,10,.35);overflow:auto;
+  transform:translateX(calc(100% + 40px));transition:transform .55s var(--ease);padding:30px 32px 28px}
+#card.open{transform:none}
+#card .card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}
+#card .ctx{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-3)}
+.x{width:32px;height:32px;border-radius:50%;border:1px solid var(--hair);background:transparent;cursor:pointer;font-size:17px;line-height:1;display:grid;place-items:center;flex:none}
+.x:hover{background:#fff}
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.tag .ld{width:8px;height:8px;border-radius:50%;background:var(--ink)} .tag .lr{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink)}
+#card h2{font-size:22px;font-weight:500;line-height:1.32;margin:0 0 12px;letter-spacing:-.01em;outline:none}
+#card .by{font-size:14px;margin:0 0 3px}
+#card .venue{font-size:13px;color:var(--ink-3);margin:0 0 24px}
+#card h3{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin:0 0 6px}
+#card section{padding:16px 0;border-top:1px solid var(--hair)}
+#card section p{margin:0;font-size:15.5px;line-height:1.58}
+#card section.why p{font-style:italic;color:var(--ink-2)}
+#card section p.todo{font-size:13px;color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.2);border-radius:10px;padding:9px 12px}
+#card blockquote{margin:0;padding:2px 0 2px 14px;border-left:2px solid var(--c,var(--ink));font-size:15.5px;line-height:1.58;font-style:italic}
+.read{display:flex;justify-content:space-between;align-items:center;margin-top:12px;text-decoration:none;background:var(--ink);color:var(--bg);
+  border-radius:14px;padding:15px 18px;font-size:16px;font-weight:500;transition:background .2s}
+.read:hover{background:#000}
+.read span{transition:transform .25s var(--ease)} .read:hover span{transform:translateX(4px)}
+.read-url{font-size:11.5px;color:var(--ink-3);margin:8px 2px 0;word-break:break-all}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:22px;font-size:12.5px}
+.pager a{text-decoration:none;color:var(--ink-2);border-bottom:1px solid var(--hair);padding-bottom:2px}
+.pager a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* ---------- overlays ---------- */
+#scrim{position:fixed;inset:0;z-index:40;background:rgba(40,36,30,.18);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .35s}
+#scrim.on{opacity:1;pointer-events:auto}
+#stance{position:fixed;left:50%;top:50%;z-index:50;width:min(460px,calc(100vw - 32px));background:var(--panel);border-radius:20px;padding:30px 32px;
+  border:1px solid var(--hair);box-shadow:0 30px 80px -30px rgba(40,30,10,.4);opacity:0;pointer-events:none;transform:translate(-50%,-46%);transition:opacity .35s,transform .45s var(--ease)}
+#stance.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+#stance p.body{font-size:17px;line-height:1.62;margin:0;font-weight:300}
+#stance .x{position:absolute;top:18px;right:18px}
+#pu2{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(640px,100vw);background:var(--panel);border-left:1px solid var(--hair);
+  box-shadow:-30px 0 80px -40px rgba(40,30,10,.35);overflow:auto;padding:34px 40px 50px;transform:translateX(102%);transition:transform .55s var(--ease)}
+#pu2.open{transform:none}
+#pu2 .x{position:absolute;top:24px;right:24px}
+#pu2 h2{font-size:28px;font-weight:300;letter-spacing:-.015em;line-height:1.2;margin:0 0 18px;padding-right:40px;outline:none}
+#pu2 .lede{color:var(--ink-2);margin:0 0 18px;font-size:14.5px}
+#pu2 .stats{display:flex;gap:22px;margin:0 0 10px;padding:14px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+#pu2 .stats div{font-size:12px;color:var(--ink-3)} #pu2 .stats b{display:block;font-size:22px;font-weight:400;color:var(--ink)}
+#pu2 section{padding:22px 0 6px}
+#pu2 h3{font-size:16px;font-weight:500;margin:0 0 10px;display:flex;align-items:center;gap:10px}
+#pu2 h3 .n{font-size:11px;color:var(--ink-3);font-weight:400;letter-spacing:.1em}
+#pu2 p{font-size:15px;line-height:1.6;margin:0 0 10px}
+#pu2 .ph{color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.22);border-radius:12px;padding:14px 16px;font-size:14px}
+#pu2 img{max-width:100%;border-radius:12px;box-shadow:0 0 0 1px var(--hair);margin-bottom:10px}
+#pu2 section{border-top:1px solid var(--hair);margin-top:18px}
+#pu2 h3{font-size:19px;font-weight:500}
+#pu2 h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin:22px 0 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#pu2 .ask{font-size:13px;color:var(--ink-3);font-style:italic;margin:0 0 14px}
+#pu2 .todo{color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.22);border-radius:10px;padding:9px 12px;font-size:13px;margin:6px 0 0}
+.meter{display:flex;gap:8px;flex-wrap:wrap}
+.meter span{font-size:12px;color:var(--ink-3);background:rgba(31,29,26,.05);border-radius:999px;padding:5px 11px}
+.meter b{color:var(--ink);font-weight:500}
+.mk{display:inline-block;width:8px;height:8px;border-radius:50%;border:1.3px solid rgba(31,29,26,.4)}
+.mk.on{background:var(--ink);border-color:var(--ink)}
+.legend-mk{display:inline-flex;align-items:center;gap:5px;text-transform:none;letter-spacing:0;font-size:11px}
+.legend-mk .mk{margin-left:6px}
+.src-group{border-radius:12px;background:var(--tint);margin:0 0 6px}
+.src-group summary{cursor:pointer;padding:10px 14px;font-size:14px;display:flex;align-items:center;gap:8px;list-style:none}
+.src-group summary::-webkit-details-marker{display:none}
+.src-group summary .cnt{margin-left:auto;font-size:12px;color:var(--ink-3)}
+.src-group ul{list-style:none;margin:0;padding:0 8px 8px}
+.src-group li a{display:flex;gap:12px;align-items:center;text-decoration:none;font-size:13px;line-height:1.35;padding:8px 8px;border-radius:8px;background:rgba(255,253,248,.75);margin-top:4px}
+.src-group li a:hover{background:#fff}
+.src-group .st{flex:1;min-width:0}
+.src-group .mks{display:inline-flex;gap:4px;flex:none}
+.xl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.xl li{border:1px dashed rgba(31,29,26,.25);border-radius:12px;padding:10px 12px;display:grid;gap:4px}
+.xl a{display:flex;gap:8px;align-items:baseline;text-decoration:none;font-size:13px;line-height:1.4}
+.xl a:hover em{text-decoration:underline}
+.xl .via{font-size:11px;color:var(--ink-3);padding-left:17px}
+.pu2-cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.expert p{font-size:13.5px;margin:8px 0 0}
+.expert .iv{display:inline-block;margin-top:10px;font-size:11.5px;font-style:normal;color:var(--ink-3);border:1px solid var(--hair);border-radius:999px;padding:3px 10px}
+.expert .iv.on{color:var(--ink);background:rgba(163,193,154,.35);border-color:transparent}
+.experts{display:grid;gap:10px}
+.expert{border:1px solid var(--hair);border-radius:14px;padding:14px 16px;background:rgba(255,255,255,.5)}
+.expert b{display:block;font-weight:500;font-size:15.5px}
+.expert span{display:block;font-size:13px;color:var(--ink-3);margin-top:2px}
+
+#tip{position:fixed;z-index:35;pointer-events:none;max-width:270px;background:var(--panel);border:1px solid var(--hair);border-radius:12px;
+  padding:9px 12px;font-size:13px;line-height:1.4;box-shadow:0 14px 30px -18px rgba(40,30,10,.4);opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s}
+#tip.on{opacity:1;transform:none}
+#tip .h{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-3);margin-bottom:3px}
+#tip em{display:block}
+#tip .x2{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+
+/* ---------- mobile list ---------- */
+#list{display:none}
+body.mobile{overflow:auto}
+body.mobile #stage,body.mobile #minimap,body.mobile #legend,body.mobile #card,body.mobile .crumbs,body.mobile #backBtn{display:none}
+body.mobile #list{display:block;padding:76px 16px 60px}
+body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--hair)}
+#list h1{font-size:44px;font-weight:300;letter-spacing:-.02em;margin:0 0 8px}
+#list .sub{color:var(--ink-2);margin:0 0 20px}
+#list figure{margin:0 0 14px} #list img{width:100%;border-radius:12px;box-shadow:0 0 0 1px var(--hair)}
+#list .blurb{font-size:15px;line-height:1.6;color:var(--ink-2)}
+#list .m-thesis{margin:32px 0;padding:22px 20px;border-radius:18px;background:#fff;border:1px solid var(--hair)}
+#list .m-thesis h2{font-size:21px;font-weight:400;line-height:1.38;margin:0 0 14px}
+#list summary{cursor:pointer}
+#list .m-thesis details p{font-size:15px;line-height:1.6;color:var(--ink-2)}
+.m-hunch{margin:0 0 22px;padding:20px 18px 10px;border-radius:20px;background:var(--tint);scroll-margin-top:72px}
+.m-hunch h3{font-size:22px;font-weight:500;margin:0 0 6px}
+.m-hunch>p{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0 0 12px}
+.m-hunch details{background:rgba(255,253,248,.82);border-radius:14px;margin:0 0 10px;padding:0 14px;scroll-margin-top:72px}
+.m-hunch summary{padding:14px 0;font-style:italic;font-size:15.5px;line-height:1.42;list-style:none;display:flex;gap:10px}
+.m-hunch summary::-webkit-details-marker{display:none}
+.m-hunch summary::before{content:'+';font-style:normal;color:var(--ink-3);flex:none;width:12px}
+.m-hunch details[open] summary::before{content:'–'}
+.m-src{list-style:none;margin:0;padding:0 0 6px}
+.m-src li{padding:14px 0;border-top:1px solid var(--hair)}
+.m-src .t{font-weight:500;font-size:15px;line-height:1.38;margin:2px 0 3px}
+.m-src .m{font-size:12.5px;color:var(--ink-3);margin:0 0 8px}
+.m-src p{font-size:14px;line-height:1.55;margin:0 0 6px}
+.m-src p b{font-weight:500}
+.m-src .w{font-style:italic;color:var(--ink-2)}
+.m-src a.go{display:inline-block;margin-top:4px;font-weight:500;font-size:14px}
+.m-rel{display:block;font-size:13px;margin:0 0 14px;color:var(--ink-2)}
+
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(0) scale(1)}33%{transform:translate(4px,-5px) rotate(1.2deg) scale(1.012)}66%{transform:translate(-4px,3px) rotate(-.8deg) scale(.992)}}
+@keyframes halo{0%,100%{transform:scale(.55);opacity:0}50%{transform:scale(1.3);opacity:.5}}
+@media (prefers-reduced-motion: reduce){
+  .blob,.node .dot::after{animation:none}
+  #inner,#card,#pu2,#stance{transition-duration:.01s}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#/"><i aria-hidden="true"></i><span id="brandName"></span></a>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
+  <div class="actions">
+    <button class="btn" id="backBtn" type="button" aria-label="Go up one level"><span aria-hidden="true">←</span> Back</button>
+    <button class="btn" id="pu2Btn" type="button" aria-haspopup="dialog">Progress Update 2</button>
+  </div>
+</header>
+
+<main id="stage" aria-label="Inquiry web"><div id="inner"></div></main>
+
+<div id="minimap" aria-hidden="true"></div>
+<div id="legend" aria-hidden="true"></div>
+
+<aside id="card" aria-label="Source details" inert></aside>
+
+<div id="list"></div>
+
+<div id="scrim"></div>
+<div id="stance" role="dialog" aria-modal="true" aria-labelledby="stanceTitle" inert>
+  <button class="x" type="button" data-close aria-label="Close">×</button>
+  <p class="eyebrow" id="stanceTitle" tabindex="-1" data-focus>My stance</p>
+  <p class="body" id="stanceBody"></p>
+</div>
+<div id="pu2" role="dialog" aria-modal="true" aria-labelledby="pu2Title" inert></div>
+<div id="tip" role="tooltip"></div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const NS = 'http://www.w3.org/2000/svg';
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DUR = reduce ? 1 : 650;
+  const EASE = 'cubic-bezier(.45,0,.2,1)';
+  const $ = id => document.getElementById(id);
+  const stage = $('stage'), inner = $('inner'), card = $('card'), minimap = $('minimap'), legend = $('legend');
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const trunc = (s, n) => s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s;
+  const f = n => Math.round(n * 10) / 10;
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+  /* ---------- index the data ---------- */
+  const HUNCH = {};
+  DATA.hunches.forEach((h, i) => {
+    h.n = i + 1; HUNCH[h.id] = h;
+    h.ink = shade(h.color, .56);
+    h.tint = alpha(h.color, .3);
+    h.questions.forEach((q, j) => {
+      q.n = j + 1; q.hunch = h; q.key = h.id + '/' + q.id;
+      q.sources.forEach((s, k) => { s.id = 's' + (k + 1); s.q = q; s.key = q.key + '/' + s.id; });
+    });
+  });
+  const ORDER = (DATA.ringOrder || []).filter(id => HUNCH[id]);
+  DATA.hunches.forEach(h => { if (!ORDER.includes(h.id)) ORDER.push(h.id); });
+  const Q = key => { const [h, q] = key.split('/'); return HUNCH[h] && HUNCH[h].questions.find(x => x.id === q); };
+  const related = q => DATA.crossLinks.flatMap(l => l.a === q.key ? [{ q: Q(l.b), note: l.note }] : l.b === q.key ? [{ q: Q(l.a), note: l.note }] : []).filter(r => r.q);
+
+  function shade(hex, amt) {
+    const n = parseInt(hex.slice(1), 16);
+    return `rgb(${[n >> 16, n >> 8 & 255, n & 255].map(v => Math.round(v * (1 - amt))).join(',')})`;
+  }
+  function alpha(hex, a) {
+    const n = parseInt(hex.slice(1), 16);
+    return `rgba(${n >> 16},${n >> 8 & 255},${n & 255},${a})`;
+  }
+
+  /* ---------- routing ---------- */
+  function parseHash() {
+    const p = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+    if (!p.length || p[0] === 'intro') return { key: 'intro' };
+    if (p[0] === 'web') return { key: 'web' };
+    if (p[0] === 'w') { const w = WORD[p[1]]; return w ? { key: 'w:' + w.slug, word: w } : { key: 'intro' }; }
+    const h = HUNCH[p[0]];
+    if (!h) return { key: 'intro' };
+    const q = p[1] && h.questions.find(x => x.id === p[1]);
+    if (!q) return { key: h.id, h };
+    const s = p[2] && q.sources.find(x => x.id === p[2]);
+    return { key: q.key, h, q, s: s || null };
+  }
+  // via = the map word you zoomed in through; it takes the thesis web's
+  // place in the path, so Back/Esc and breadcrumbs return to that word.
+  let via = null;
+  function pathOf(key) {
+    if (key === 'intro') return ['intro'];
+    if (key === 'web' || key.startsWith('w:')) return ['intro', key];
+    const mid = via ? 'w:' + via : 'web';
+    const [h, q] = key.split('/');
+    return q ? ['intro', mid, h, key] : ['intro', mid, h];
+  }
+  const hashFor = key => key === 'intro' ? '#/' : key.startsWith('w:') ? '#/w/' + key.slice(2) : '#/' + key;
+  function parentHash(r) {
+    if (r.s) return hashFor(r.key);
+    const p = pathOf(r.key);
+    return p.length > 1 ? hashFor(p[p.length - 2]) : null;
+  }
+  function goUp() { const r = parseHash(); const p = parentHash(r); if (p) location.hash = p; }
+
+  /* ---------- drawing helpers ---------- */
+  function S(tag, attrs, parent) {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function E(tag, cls, html, parent) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function rng(a) {
+    return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  }
+  function blobPath(cx, cy, rx, ry, seed, n = 9, w = .16) {
+    const r = rng(seed * 7919 + 13), off = r() * Math.PI * 2, pts = [];
+    for (let i = 0; i < n; i++) {
+      const a = off + i / n * Math.PI * 2 + (r() - .5) * .35, k = 1 + (r() - .5) * 2 * w;
+      pts.push([cx + Math.cos(a) * rx * k, cy + Math.sin(a) * ry * k]);
+    }
+    let d = '';
+    for (let i = 0; i < n; i++) {
+      const p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+      if (!i) d += `M${f(p1[0])},${f(p1[1])}`;
+      d += `C${f(p1[0] + (p2[0] - p0[0]) / 6)},${f(p1[1] + (p2[1] - p0[1]) / 6)} ${f(p2[0] - (p3[0] - p1[0]) / 6)},${f(p2[1] - (p3[1] - p1[1]) / 6)} ${f(p2[0])},${f(p2[1])}`;
+    }
+    return d + 'Z';
+  }
+  function curve(a, b, bend = .08) {
+    const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y;
+    return `M${f(a.x)},${f(a.y)} Q${f(mx - dy * bend)},${f(my + dx * bend)} ${f(b.x)},${f(b.y)}`;
+  }
+  const rad = d => d * Math.PI / 180;
+
+  function geo() {
+    const W = stage.clientWidth, H = stage.clientHeight, top = 64, bottom = 24, h = H - top - bottom;
+    return { W, H, h, cx: W / 2, cy: top + h / 2, m: Math.min(W, h) };
+  }
+
+  /* ---------- scene scaffolding ---------- */
+  function newScene(key, g) {
+    const el = E('div', 'scene');
+    el.dataset.key = key;
+    const svg = S('svg', { class: 'scene-svg', width: g.W, height: g.H, 'aria-hidden': 'true' }, el);
+    return { key, path: pathOf(key), el, svg, g, gBlobs: S('g', {}, svg), gLinks: S('g', {}, svg), pos: {}, spokes: [], C: { x: g.cx, y: g.cy }, center: null };
+  }
+  function addNode(sc, o) {
+    const a = E('a', 'node dimmable bloom ' + (o.cls || ''), null, sc.root || sc.el);
+    a.href = o.href;
+    a.style.left = o.x + 'px'; a.style.top = o.y + 'px';
+    if (o.color) a.style.setProperty('--c', alpha(o.color, .8));
+    a.style.setProperty('--d', (-(o.x + o.y) % 5.5).toFixed(2) + 's');
+    if (o.branch) a.dataset.branch = o.branch;
+    if (o.key) a.dataset.key = o.key;
+    a.innerHTML = `<span class="dot ${o.dotCls || ''}" aria-hidden="true"></span><span class="label side-${o.side}" style="--mw:${o.mw || 240}px">${o.html}</span>`;
+    a._x = o.x; a._y = o.y;
+    return a;
+  }
+  function addCenter(sc, cls, html, x, y) {
+    const c = E('div', 'center ' + cls, html, sc.root || sc.el);
+    c.style.left = x + 'px'; c.style.top = y + 'px';
+    c.tabIndex = -1;
+    sc.center = c; sc.C = { x, y };
+    return c;
+  }
+  // Spokes start at the edge of the center label so lines never run under text.
+  function drawSpokes(sc) {
+    if (!sc.center) return;
+    sc.gLinks.querySelectorAll('.spoke').forEach(p => p.remove());
+    const hw = sc.center.offsetWidth / 2 + 16, hh = sc.center.offsetHeight / 2 + 14, C = sc.C;
+    sc.spokes.forEach(sp => {
+      const dx = sp.to.x - C.x, dy = sp.to.y - C.y;
+      const t = Math.min(hw / Math.max(Math.abs(dx), 1e-6), hh / Math.max(Math.abs(dy), 1e-6), .8);
+      const from = { x: C.x + dx * t, y: C.y + dy * t };
+      S('path', { d: curve(from, sp.to, sp.bend ?? .07), class: 'link spoke dimmable bloom-line', pathLength: 1, 'data-branch': sp.branch || '' }, sc.gLinks);
+    });
+  }
+
+  /* ---------- level 0: the inquiry space map ---------- */
+  const IS = DATA.inquirySpace;
+  const REGION = Object.fromEntries(IS.regions.map(r => [r.id, r]));
+  const slugify = t => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const WORD = {};
+  IS.words.forEach(w => { w.slug = slugify(w.t); WORD[w.slug] = w; });
+  let carryMode = false, winOpen = true;
+
+  // geometry helpers for laying out the map
+  function smoothClosed(pts) {
+    const n = pts.length;
+    let d = '';
+    for (let i = 0; i < n; i++) {
+      const p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+      if (!i) d += `M${f(p1[0])},${f(p1[1])}`;
+      d += `C${f(p1[0] + (p2[0] - p0[0]) / 6)},${f(p1[1] + (p2[1] - p0[1]) / 6)} ${f(p2[0] - (p3[0] - p1[0]) / 6)},${f(p2[1] - (p3[1] - p1[1]) / 6)} ${f(p2[0])},${f(p2[1])}`;
+    }
+    return d + 'Z';
+  }
+  function convexHull(pts) {
+    pts = pts.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    const cr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+    const lo = [], up = [];
+    for (const p of pts) { while (lo.length >= 2 && cr(lo[lo.length - 2], lo[lo.length - 1], p) <= 0) lo.pop(); lo.push(p); }
+    for (const p of pts.reverse()) { while (up.length >= 2 && cr(up[up.length - 2], up[up.length - 1], p) <= 0) up.pop(); up.push(p); }
+    return lo.slice(0, -1).concat(up.slice(0, -1));
+  }
+  function rayDist(c, ang, H) {
+    const dx = Math.cos(ang), dy = Math.sin(ang);
+    let best = 0;
+    for (let i = 0; i < H.length; i++) {
+      const p = H[i], q = H[(i + 1) % H.length], ex = q[0] - p[0], ey = q[1] - p[1];
+      const den = dx * ey - dy * ex;
+      if (Math.abs(den) < 1e-9) continue;
+      const t = ((p[0] - c[0]) * ey - (p[1] - c[1]) * ex) / den, u = ((p[0] - c[0]) * dy - (p[1] - c[1]) * dx) / den;
+      if (t > 0 && u >= -1e-6 && u <= 1 + 1e-6) best = Math.max(best, t);
+    }
+    return best;
+  }
+
+  function buildIntro(sc) {
+    const I = DATA.intro;
+    const fedCount = IS.words.filter(w => w.hunches.length).length;
+    const wrap = E('div', 'intro', `
+      <div class="imap ${carryMode ? 'carry' : ''}" role="group" aria-label="${esc(I.imageAlt)}"></div>
+      <aside class="iwin ${winOpen ? '' : 'min'}" aria-label="About the Inquiry Web">
+        <div class="iwin-bar">
+          <span class="lights" aria-hidden="true">${DATA.hunches.slice(0, 3).map(h => `<i style="background:${h.color}"></i>`).join('')}</span>
+          <span class="ttl">${esc(DATA.title)}</span>
+          <button class="iwin-min" type="button" aria-expanded="${winOpen}" aria-label="${winOpen ? 'Minimize' : 'Expand'} the Inquiry Web window">${winOpen ? '–' : '+'}</button>
+        </div>
+        <div class="iwin-body">
+          <h1>${esc(DATA.title)}</h1>
+          <p class="sub">${esc(DATA.subtitle)}</p>
+          <p class="blurb"><strong>${esc(I.label)}:</strong> ${esc(I.blurb)}</p>
+          <p class="hint"><span aria-hidden="true">↗</span>Click a word to zoom into the hunches it fed. Words that didn't feed a hunch yet show a note instead.</p>
+          <button class="toggle" type="button" aria-pressed="${carryMode}" data-carry><span class="knob" aria-hidden="true"></span>Show what carried into my hunches (${fedCount} of ${IS.words.length})</button>
+          <ul class="hunch-list" aria-label="Five hunches">
+            ${DATA.hunches.map(h => `<li><a href="#/${h.id}" style="--tint:${h.tint}"><span class="sw" style="background:${h.color}"></span>${esc(h.name)}</a></li>`).join('')}
+          </ul>
+          <div class="intro-cta">
+            <a class="btn btn-primary" href="#/web">Enter the web <span aria-hidden="true">→</span></a>
+            <a class="orig" href="${esc(I.image)}" target="_blank" rel="noopener">Original sketch ↗</a>
+          </div>
+        </div>
+      </aside>`, sc.el);
+    const map = wrap.querySelector('.imap'), win = wrap.querySelector('.iwin');
+    const svg = S('svg', { width: 970, height: 664, 'aria-hidden': 'true' }, map);
+    const gb = S('g', {}, svg), gl = S('g', {}, svg);
+
+    const btns = IS.words.map(w => {
+      const b = E('button', 'word' + (w.big ? ' big' : '') + (w.quiet ? ' quiet' : '') + (w.hunches.length ? ' fed' : ''), null, map);
+      b.type = 'button';
+      b.innerHTML = `<span class="t">${esc(w.t)}</span><span class="pips" aria-hidden="true">${w.hunches.map(id => HUNCH[id] ? `<i style="background:${HUNCH[id].color}"></i>` : '').join('')}</span>`;
+      b.setAttribute('aria-label', `${w.t}: ${w.hunches.length ? 'zoom into ' + w.hunches.length + ' hunch' + (w.hunches.length > 1 ? 'es' : '') : 'not in a hunch yet'}`);
+      b._w = w;
+      return b;
+    });
+
+    // 1) nudge words apart until none overlap, 2) grow each region's shape around its words
+    function layout() {
+      const PAD = 5;
+      const B = btns.map(b => ({ b, w: b._w, x: b._w.x, y: b._w.y,
+        bw: b.offsetWidth + b._w.hunches.length * 7 + 2, bh: b.offsetHeight }));
+      for (let it = 0; it < 300; it++) {
+        let moved = false;
+        for (let i = 0; i < B.length; i++) for (let j = i + 1; j < B.length; j++) {
+          const p = B[i], q = B[j];
+          const ox = Math.min(p.x - 4 + p.bw, q.x - 4 + q.bw) - Math.max(p.x - 4, q.x - 4) + PAD;
+          const oy = Math.min(p.y + p.bh / 2, q.y + q.bh / 2) - Math.max(p.y - p.bh / 2, q.y - q.bh / 2) + PAD;
+          if (ox <= 0 || oy <= 0) continue;
+          moved = true;
+          if (oy <= ox) { const d = (p.y < q.y || (p.y === q.y && i < j) ? -1 : 1) * oy / 2; p.y += d; q.y -= d; }
+          else { const d = (p.x < q.x ? -1 : 1) * ox / 2; p.x += d; q.x -= d; }
+        }
+        if (!moved) break;
+      }
+      B.forEach(o => { o.b.style.left = f(o.x) + 'px'; o.b.style.top = f(o.y) + 'px'; o.b._x = o.x; o.b._y = o.y; });
+
+      gb.innerHTML = ''; gl.innerHTML = '';
+      const bb = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
+      const grow = (x, y) => { bb.x0 = Math.min(bb.x0, x); bb.y0 = Math.min(bb.y0, y); bb.x1 = Math.max(bb.x1, x); bb.y1 = Math.max(bb.y1, y); };
+      B.forEach(o => { grow(o.x - 4, o.y - o.bh / 2); grow(o.x - 4 + o.bw, o.y + o.bh / 2); });
+      IS.regions.forEach((r, ri) => {
+        const mine = B.filter(o => o.w.r === r.id);
+        if (!mine.length) return;
+        const px = 20, py = 18, pts = [];
+        mine.forEach(o => {
+          const l = o.x - 4 - px, rr = o.x - 4 + o.bw + px, t = o.y - o.bh / 2 - py, bt = o.y + o.bh / 2 + py;
+          pts.push([l, t], [rr, t], [l, bt], [rr, bt], [(l + rr) / 2, t - 6], [(l + rr) / 2, bt + 6]);
+        });
+        const H = convexHull(pts);
+        const c = [H.reduce((s, p) => s + p[0], 0) / H.length, H.reduce((s, p) => s + p[1], 0) / H.length];
+        const rnd = rng(ri * 97 + 7), N = 18, off = rnd() * Math.PI;
+        const ring = [];
+        for (let i = 0; i < N; i++) {
+          const ang = off + i / N * Math.PI * 2, d = rayDist(c, ang, H) * (1.07 + rnd() * .06);
+          ring.push([c[0] + Math.cos(ang) * d, c[1] + Math.sin(ang) * d]);
+        }
+        ring.forEach(p => grow(p[0], p[1]));
+        S('path', { d: smoothClosed(ring), fill: r.color, 'fill-opacity': .32, class: 'rblob', style: `animation-delay:-${ri * 3}s` }, gb);
+        // region label sits just outside the shape, on the side it had in the sketch
+        const [lx0, ly0, rot] = r.labelAt;
+        const la = Math.atan2(ly0 - c[1], lx0 - c[0]);
+        const t = S('text', { 'text-anchor': 'middle', 'dominant-baseline': 'middle', class: 'rlabel', fill: shade(r.color, .5) }, gl);
+        t.textContent = r.label;
+        const half = (t.getComputedTextLength ? t.getComputedTextLength() : r.label.length * 6.6) / 2;
+        const ra = rad(rot), ux = Math.cos(ra), uy = Math.sin(ra);
+        // walk outward until no point along the (rotated) label touches a word
+        const clear = (lx, ly) => {
+          for (let k = -half; k <= half; k += 6) for (const v of [-7, 0, 7]) {
+            const px = lx + ux * k - uy * v, py = ly + uy * k + ux * v;
+            if (B.some(o => px > o.x - 7 && px < o.x - 1 + o.bw && py > o.y - o.bh / 2 - 3 && py < o.y + o.bh / 2 + 3)) return false;
+          }
+          return true;
+        };
+        let ld = rayDist(c, la, H) * 1.08 + 12, lx, ly;
+        for (let step = 0; step < 30; step++, ld += 6) {
+          lx = c[0] + Math.cos(la) * ld; ly = c[1] + Math.sin(la) * ld;
+          if (clear(lx, ly)) break;
+        }
+        t.setAttribute('x', f(lx)); t.setAttribute('y', f(ly));
+        t.setAttribute('transform', `rotate(${rot} ${f(lx)} ${f(ly)})`);
+        [-half, half].forEach(k => [-9, 9].forEach(v => grow(lx + ux * k - uy * v, ly + uy * k + ux * v)));
+      });
+      const at = {};
+      B.forEach(o => { at[o.w.t] = o; });
+      IS.lines.forEach(([a, b]) => {
+        const p = at[a], q = at[b];
+        if (p && q) S('path', { d: curve({ x: p.x, y: p.y }, { x: q.x, y: q.y }, .12), class: 'sketch' }, gl);
+      });
+      return bb;
+    }
+
+    let bounds = null;
+    function fit() {
+      const W = sc.el.clientWidth, Ht = sc.el.clientHeight;
+      const side = winOpen && W > 760 ? win.offsetLeft + win.offsetWidth + 16 : 24;
+      const box = { x: side, y: 72, w: W - side - 24, h: Ht - 72 - 20 };
+      const bw = bounds.x1 - bounds.x0, bh = bounds.y1 - bounds.y0;
+      const s = Math.min(box.w / bw, box.h / bh, 1.6);
+      const tx = box.x + (box.w - bw * s) / 2 - bounds.x0 * s, ty = box.y + (box.h - bh * s) / 2 - bounds.y0 * s;
+      map.style.transform = `translate(${f(tx)}px,${f(ty)}px) scale(${s.toFixed(4)})`;
+      sc.pos.web = { x: box.x + box.w / 2, y: box.y + box.h / 2 };
+    }
+    // zoom transitions start from the clicked word
+    const wordPos = b => { const r = b.getBoundingClientRect(), s0 = sc.el.getBoundingClientRect(); return { x: r.left - s0.left + 8, y: r.top - s0.top + r.height / 2 }; };
+
+    const pop = E('div', 'wordpop', null, sc.el);
+    pop.setAttribute('role', 'dialog'); pop.setAttribute('aria-label', 'Word details');
+    pop.inert = true;
+    sc.closePop = (refocus) => {
+      if (!pop.classList.contains('on')) return false;
+      pop.classList.remove('on'); pop.inert = true;
+      const on = map.querySelector('.word.on');
+      if (on) { on.classList.remove('on'); if (refocus) on.focus({ preventScroll: true }); }
+      return true;
+    };
+    function openPop(b) {
+      const w = b._w, r = REGION[w.r] || {};
+      map.querySelectorAll('.word.on').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      pop.innerHTML = `
+        <button class="x" type="button" data-popclose aria-label="Close">×</button>
+        <p class="eyebrow" style="color:${r.color ? shade(r.color, .55) : 'inherit'}">${esc(r.label || 'Where the regions overlap')}</p>
+        <p class="w">${esc(w.t)}</p>
+        <p class="none">Part of my inquiry space, but not in a hunch yet.</p>`;
+      const br = b.getBoundingClientRect(), sr = sc.el.getBoundingClientRect();
+      const x = br.left - sr.left, y = br.top - sr.top;
+      pop.classList.add('on'); pop.inert = false;
+      const pw = pop.offsetWidth, ph = pop.offsetHeight;
+      pop.style.left = clamp(x - 10, 12, sr.width - pw - 12) + 'px';
+      pop.style.top = (y + br.height + 10 + ph > sr.height - 12 ? y - ph - 10 : y + br.height + 10) + 'px';
+      if (kb) requestAnimationFrame(() => pop.querySelector('.x').focus({ preventScroll: true }));
+    }
+    map.addEventListener('click', e => {
+      const b = e.target.closest('.word');
+      if (!b) return;
+      e.stopPropagation();
+      if (b._w.hunches.length) {
+        sc.closePop();
+        sc.pos['w:' + b._w.slug] = wordPos(b);
+        location.hash = hashFor('w:' + b._w.slug);
+      } else b.classList.contains('on') ? sc.closePop() : openPop(b);
+    });
+    pop.addEventListener('click', e => { if (e.target.closest('[data-popclose]')) sc.closePop(true); });
+    sc.el.addEventListener('click', e => { if (!e.target.closest('.wordpop, .word')) sc.closePop(); });
+    wrap.querySelector('[data-carry]').addEventListener('click', e => {
+      carryMode = !carryMode;
+      e.currentTarget.setAttribute('aria-pressed', carryMode);
+      map.classList.toggle('carry', carryMode);
+    });
+    const minBtn = wrap.querySelector('.iwin-min');
+    minBtn.addEventListener('click', () => {
+      winOpen = !winOpen;
+      win.classList.toggle('min', !winOpen);
+      minBtn.textContent = winOpen ? '–' : '+';
+      minBtn.setAttribute('aria-expanded', winOpen);
+      minBtn.setAttribute('aria-label', `${winOpen ? 'Minimize' : 'Expand'} the Inquiry Web window`);
+      sc.closePop();
+      fit();
+    });
+
+    sc.center = wrap.querySelector('h1'); sc.center.tabIndex = -1;
+    sc.after = () => {
+      bounds = layout();
+      map.style.transition = 'none';
+      fit();
+      map.getBoundingClientRect();
+      map.style.transition = '';
+      map.classList.add('ready');
+      btns.forEach(b => { if (b._w.hunches.length) sc.pos['w:' + b._w.slug] = wordPos(b); });
+    };
+  }
+
+  /* ---------- level 1: thesis web ---------- */
+  function ringGeometry(W, h, cx, cy, brFixed) {
+    const rx = Math.min(W * .3, 520), ry = h * .335, br = brFixed || clamp(Math.min(W, h) * .14, 70, 128);
+    const pts = {};
+    ORDER.forEach((id, i) => {
+      const a = rad(-90 + i * 360 / ORDER.length);
+      pts[id] = { x: cx + Math.cos(a) * rx, y: cy + Math.sin(a) * ry };
+    });
+    return { rx, ry, br, pts };
+  }
+  function buildWeb(sc, g) {
+    const C = { x: g.cx, y: g.cy };
+    const { br, pts } = ringGeometry(g.W, g.h, C.x, C.y);
+    addCenter(sc, 'center-web', `
+      <span class="center-dot" aria-hidden="true"></span>
+      <p class="eyebrow">Thesis question</p>
+      <h1 class="thesis-q">${esc(DATA.thesisQuestion)}</h1>
+      <button class="chip" type="button" data-stance><i aria-hidden="true"></i>My stance</button>`, C.x, C.y);
+
+    ORDER.forEach(id => drawHunch(sc, HUNCH[id], pts[id], C, br));
+    drawCrossLinks(sc, C);
+    sc.after = () => drawSpokes(sc);
+  }
+
+  // A hunch as it appears on the web: blob, node, and its question dots.
+  function drawHunch(sc, h, pt, C, br, sub) {
+    const id = h.id, { x, y } = pt;
+    const side = x < C.x - 1 ? 'left' : 'right', hs = side === 'left' ? -1 : 1, vs = y < C.y ? -1 : 1;
+    S('path', { d: blobPath(x + hs * br * .34, y + vs * br * .16, br * 1.1, br * .92, h.n), fill: h.color, 'fill-opacity': .42,
+      class: 'blob dimmable', 'data-branch': id, style: `animation-delay:-${h.n * 3.3}s` }, sc.gBlobs);
+    addNode(sc, { x, y, href: '#/' + id, side, cls: 'node-hunch', branch: id, color: h.color, mw: sub ? 230 : 210, key: id,
+      html: `<span class="l-name">${esc(h.name)}</span><span class="l-sub">${sub ? esc(sub) : `${h.questions.length} question${h.questions.length === 1 ? '' : 's'}`}</span>` });
+    sc.pos[id] = { x, y };
+    sc.spokes.push({ to: { x, y }, branch: id });
+    // small question dots, fanned away from the center
+    const base = vs < 0 ? -90 : 90, n = h.questions.length, d = br * .62;
+    h.questions.forEach((q, j) => {
+      const a = rad(n > 1 ? base - 46 + j * 92 / (n - 1) : base);
+      const mx = x + Math.cos(a) * d, my = y + Math.sin(a) * d;
+      S('path', { d: `M${f(x)},${f(y)} L${f(mx)},${f(my)}`, class: 'link faint dimmable bloom-line', pathLength: 1, 'data-branch': id }, sc.gLinks);
+      const m = E('a', 'mini dimmable bloom', null, sc.el);
+      m.href = '#/' + q.key; m.tabIndex = -1; m.setAttribute('aria-hidden', 'true');
+      m.dataset.branch = id; m.dataset.q = q.key;
+      m.style.left = mx + 'px'; m.style.top = my + 'px'; m._x = mx; m._y = my;
+      sc.pos[q.key] = { x: mx, y: my };
+    });
+  }
+  // cross-links bow outward so they stay clear of the center
+  function drawCrossLinks(sc, C) {
+    DATA.crossLinks.forEach(l => {
+      const a = sc.pos[l.a], b = sc.pos[l.b];
+      if (!a || !b) return;
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      const ux = mx - C.x, uy = my - C.y, L = Math.hypot(ux, uy) || 1, k = Math.hypot(b.x - a.x, b.y - a.y) * .3;
+      S('path', { d: `M${f(a.x)},${f(a.y)} Q${f(mx + ux / L * k)},${f(my + uy / L * k)} ${f(b.x)},${f(b.y)}`,
+        class: 'link cross dimmable bloom-fade', 'data-branch': `${l.a.split('/')[0]} ${l.b.split('/')[0]}`, 'data-x': `${l.a} ${l.b}` }, sc.gLinks);
+    });
+  }
+
+  /* ---------- level 1b: a word from the map, zoomed in ---------- */
+  function buildWord(sc, g, w) {
+    const hs = w.hunches.map(id => HUNCH[id]).filter(Boolean);
+    const C = { x: g.cx, y: g.cy - (hs.length > 2 ? g.h * .035 : 0) }, r = REGION[w.r] || {};
+    const n = hs.length, br = clamp(g.m * .12, 64, 112);
+    const rx = Math.min(g.W * (n > 2 ? .24 : .3), 460), ry = g.h * (n > 2 ? .25 : .3), d = 64;
+    const angles = { 1: [0], 2: [180, 0], 3: [-90, 25, 155], 4: [-145, -35, 35, 145] }[n] || hs.map((_, i) => -90 + i * 360 / n);
+    const mw = clamp(C.x - rx - d - 40, 150, 230);
+    const gap = clamp(g.h * (n > 2 ? .085 : .11), 58, 92);
+    if (r.color) S('path', { d: blobPath(C.x, C.y, 170, 105, 77, 9, .14), fill: r.color, 'fill-opacity': .22, class: 'blob' }, sc.gBlobs);
+    addCenter(sc, 'center-word', `
+      <p class="eyebrow" style="color:${r.color ? shade(r.color, .55) : 'inherit'}">${esc(r.label || 'Where the regions overlap')}</p>
+      <h2>${esc(w.t)}</h2>
+      <p class="wsub">${n ? `Shows up in ${n} of my hunches` : 'Not in a hunch yet'}</p>`, C.x, C.y);
+    hs.forEach((h, i) => {
+      const a = rad(angles[i]);
+      const x = C.x + Math.cos(a) * rx, y = C.y + Math.sin(a) * ry * (n === 2 ? 0 : 1);
+      const side = x < C.x - 1 ? -1 : 1;
+      const nq = h.questions.length;
+      S('path', { d: blobPath(x + side * (d * .9), y, d * 1.9, Math.max(br, (nq - 1) * gap * .5 + 60), h.n + 40, 9, .12), fill: h.color, 'fill-opacity': .36,
+        class: 'blob dimmable', 'data-branch': h.id, style: `animation-delay:-${h.n * 3.3}s` }, sc.gBlobs);
+      // title sits on the inner side, away from the spoke, so the question column stays clear
+      const lab = `in-${side > 0 ? 'l' : 'r'}-${y > C.y + 1 ? 'down' : 'up'}`;
+      addNode(sc, { x, y, href: '#/' + h.id, side: lab, cls: 'node-hunch', branch: h.id, color: h.color, mw: 200, key: h.id,
+        html: `<span class="l-name">${esc(h.name)}</span><span class="l-sub">${esc(trunc(h.blurb, 80))}</span>` });
+      sc.pos[h.id] = { x, y };
+      sc.spokes.push({ to: { x, y }, branch: h.id });
+      h.questions.forEach((q, j) => {
+        const qx = x + side * d, qy = y + (j - (nq - 1) / 2) * gap;
+        S('path', { d: curve({ x, y }, { x: qx, y: qy }, side * .18), class: 'link faint dimmable bloom-line', pathLength: 1, 'data-branch': h.id }, sc.gLinks);
+        addNode(sc, { x: qx, y: qy, href: '#/' + q.key, side: side < 0 ? 'left' : 'right', cls: 'q-small', branch: h.id, color: h.color, mw, key: q.key,
+          html: `<span class="l-q">${esc(q.text)}</span>` });
+        sc.pos[q.key] = { x: qx, y: qy };
+      });
+    });
+    sc.after = () => drawSpokes(sc);
+  }
+
+  /* ---------- level 2: hunch ---------- */
+  const fan = (n, sets) => sets[n] || Array.from({ length: n }, (_, i) => -90 + i * 360 / n);
+  function buildHunch(sc, g, h) {
+    const C = { x: g.cx, y: g.cy + g.h * .02 };
+    S('path', { d: blobPath(C.x, C.y, Math.min(g.W * .36, 600), g.h * .45, h.n + 10, 10, .13), fill: h.color, 'fill-opacity': .3, class: 'blob' }, sc.gBlobs);
+    S('path', { d: blobPath(C.x - g.W * .05, C.y + g.h * .04, Math.min(g.W * .2, 330), g.h * .26, h.n + 20), fill: h.color, 'fill-opacity': .26, class: 'blob', style: 'animation-delay:-7s' }, sc.gBlobs);
+    addCenter(sc, 'center-hunch', `
+      <p class="eyebrow" style="color:${h.ink}">Hunch ${h.n}</p>
+      <h2>${esc(h.name)}</h2>
+      <p class="blurb">${esc(h.blurb)}</p>`, C.x, C.y);
+    const rx = Math.min(g.W * .31, 500), ry = g.h * .34;
+    const angles = fan(h.questions.length, { 1: [-90], 2: [-150, -30], 3: [-150, -30, 90] });
+    h.questions.forEach((q, i) => {
+      const a = rad(angles[i]), x = C.x + Math.cos(a) * rx, y = C.y + Math.sin(a) * ry;
+      const rel = related(q).length, n = q.sources.length;
+      addNode(sc, { x, y, href: '#/' + q.key, side: y < C.y - 1 ? 'above' : 'below', branch: q.key, color: h.color, mw: 270, key: q.key,
+        html: `<span class="l-q">${esc(q.text)}</span><span class="l-meta">${n} source${n === 1 ? '' : 's'}${rel ? ` · <span class="l-rel">↔ linked to another hunch</span>` : ''}</span>` });
+      sc.pos[q.key] = { x, y };
+      sc.spokes.push({ to: { x, y }, branch: q.key });
+    });
+    sc.after = () => drawSpokes(sc);
+  }
+
+  /* ---------- level 3: question ---------- */
+  function buildQuestion(sc, g, q) {
+    const h = q.hunch, C = { x: g.cx, y: g.cy + g.h * .08 };
+    S('path', { d: blobPath(C.x, C.y, Math.min(g.W * .25, 390), g.h * .3, h.n * 3 + q.n), fill: h.color, 'fill-opacity': .34, class: 'blob' }, sc.gBlobs);
+    const rels = related(q);
+    addCenter(sc, 'center-q', `
+      <p class="eyebrow" style="color:${h.ink}"><span class="sw" style="background:${h.color}"></span>Hunch ${h.n} · ${esc(h.name)}</p>
+      <h2>${esc(q.text)}</h2>
+      ${rels.length ? `<div class="rels">${rels.map(r => `
+        <a class="rel-chip" href="#/${r.q.key}" title="${esc(r.note)}">
+          <span class="sw" style="background:${r.q.hunch.color}"></span>
+          <span><span class="k">Related in another hunch → ${esc(r.q.hunch.name)}</span><span class="t">${esc(r.q.text)}</span></span>
+        </a>`).join('')}</div>` : ''}`, C.x, C.y);
+    const rx = Math.min(g.W * .31, 500), ry = g.h * .36;
+    const angles = fan(q.sources.length, { 1: [-90], 2: [-148, -32], 3: [-155, -90, -25] });
+    q.sources.forEach((s, i) => {
+      const a = rad(angles[i]), x = C.x + Math.cos(a) * rx, y = C.y + Math.sin(a) * ry;
+      addNode(sc, { x, y, href: '#/' + s.key, side: y < C.y - 1 ? 'above' : 'below', branch: s.key, color: h.color, mw: 250, key: s.key,
+        dotCls: s.type === 'project' ? 'ring' : '',
+        html: `<span class="l-tag">${s.type === 'project' ? 'Project' : 'Paper'}</span><span class="l-title">${esc(s.title)}</span><span class="l-meta">${esc(s.authors)} · ${esc(s.year)}</span>` });
+      sc.pos[s.key] = { x, y };
+      sc.spokes.push({ to: { x, y }, branch: s.key });
+    });
+    sc.after = () => drawSpokes(sc);
+  }
+
+  // Below this width the word view is laid out larger and scaled to fit.
+  const WORD_MIN_W = 1240;
+  function build(route, g) {
+    const sc = newScene(route.key, g);
+    if (route.word && g.W < WORD_MIN_W) {
+      const k = g.W / WORD_MIN_W;
+      const gl = { W: g.W / k, H: g.H / k, h: g.h / k, cx: g.cx / k, cy: g.cy / k };
+      gl.m = Math.min(gl.W, gl.h);
+      sc.k = k;
+      sc.root = E('div', 'layer', null, sc.el);
+      sc.root.style.transform = `scale(${k.toFixed(4)})`;
+      sc.root.appendChild(sc.svg);
+      sc.svg.setAttribute('width', gl.W); sc.svg.setAttribute('height', gl.H);
+      buildWord(sc, gl, route.word);
+      wireHover(sc);
+      return sc;
+    }
+    if (route.key === 'intro') buildIntro(sc);
+    else if (route.key === 'web') buildWeb(sc, g);
+    else if (route.word) buildWord(sc, g, route.word);
+    else if (route.q) buildQuestion(sc, g, route.q);
+    else buildHunch(sc, g, route.h);
+    wireHover(sc);
+    return sc;
+  }
+  function mount(sc) {
+    inner.appendChild(sc.el);
+    if (sc.after) sc.after();
+    if (sc.k) for (const key in sc.pos) sc.pos[key] = { x: sc.pos[key].x * sc.k, y: sc.pos[key].y * sc.k };
+  }
+
+  /* ---------- hover: highlight a branch ---------- */
+  const tip = $('tip');
+  function setHL(sc, b) {
+    sc.el.classList.toggle('dimming', !!b);
+    sc.el.querySelectorAll('[data-branch]').forEach(e => e.classList.toggle('hl', !!b && e.dataset.branch.split(' ').includes(b)));
+  }
+  function wireHover(sc) {
+    sc.el.addEventListener('mouseover', e => {
+      const n = e.target.closest('.node[data-branch]');
+      if (n) setHL(sc, n.dataset.branch);
+      const m = e.target.closest('.mini');
+      if (m) showTip(m, sc);
+    });
+    sc.el.addEventListener('mouseout', e => {
+      const n = e.target.closest('.node[data-branch], .mini');
+      if (n && !n.contains(e.relatedTarget)) { setHL(sc, null); hideTip(sc); }
+    });
+    sc.el.addEventListener('focusin', e => { const n = e.target.closest('.node[data-branch]'); if (n) setHL(sc, n.dataset.branch); });
+    sc.el.addEventListener('focusout', () => setHL(sc, null));
+  }
+  function showTip(m, sc) {
+    const q = Q(m.dataset.q), h = q.hunch, rels = related(q);
+    tip.innerHTML = `<span class="h"><span class="sw" style="background:${h.color}"></span>${esc(h.name)}</span><em>${esc(q.text)}</em>` +
+      rels.map(r => `<span class="x2">┄ ${esc(r.note)} · ${esc(r.q.hunch.name)}</span>`).join('');
+    sc.svg.querySelectorAll('.cross').forEach(p => p.classList.toggle('xhl', p.dataset.x.split(' ').includes(q.key)));
+    const r = m.getBoundingClientRect();
+    tip.classList.add('on');
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    tip.style.left = clamp(r.left - tw / 2, 12, innerWidth - tw - 12) + 'px';
+    tip.style.top = (r.top - th - 14 < 70 ? r.bottom + 14 : r.top - th - 14) + 'px';
+  }
+  function hideTip(sc) {
+    tip.classList.remove('on');
+    sc.svg.querySelectorAll('.cross.xhl').forEach(p => p.classList.remove('xhl'));
+  }
+
+  /* ---------- motion ---------- */
+  function findPos(pos, key) {
+    const p = pathOf(key);
+    for (let i = p.length - 1; i >= 0; i--) if (pos[p[i]]) return pos[p[i]];
+    return null;
+  }
+  const isPrefix = (a, b) => a.length < b.length && a.every((x, i) => x === b[i]);
+  const tf = (x, y, s) => `translate(${f(x)}px,${f(y)}px) scale(${s})`;
+
+  function bloom(sc) {
+    if (reduce) return;
+    const C = sc.C;
+    if (sc.center && sc.center.classList.contains('center')) sc.center.animate([{ opacity: 0, transform: 'translate(-50%,-50%) scale(.94)' }, { opacity: 1, transform: 'translate(-50%,-50%) scale(1)' }],
+      { duration: 600, delay: 120, easing: EASE, fill: 'backwards' });
+    sc.el.querySelectorAll('.bloom').forEach((k, i) => {
+      k.animate([{ transform: `translate(${f((C.x - k._x) * .6)}px,${f((C.y - k._y) * .6)}px)`, opacity: 0 }, { transform: 'translate(0,0)', opacity: 1 }],
+        { duration: 760, delay: 200 + i * 55, easing: 'cubic-bezier(.2,.75,.25,1)', fill: 'backwards' });
+    });
+    sc.svg.querySelectorAll('.bloom-line').forEach((l, i) => {
+      l.animate([{ strokeDasharray: '1 1', strokeDashoffset: 1 }, { strokeDasharray: '1 1', strokeDashoffset: 0 }],
+        { duration: 820, delay: 160 + i * 35, easing: EASE, fill: 'backwards' });
+    });
+    sc.svg.querySelectorAll('.bloom-fade').forEach(l => l.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 900, delay: 700, fill: 'backwards' }));
+    sc.gBlobs.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 900, delay: 60, easing: EASE, fill: 'backwards' });
+  }
+
+  function transition(old, nw) {
+    const g = nw.g, C = { x: g.cx, y: g.cy }, s = 2.6, k = .3;
+    const op = old.path, np = nw.path;
+    const opts = { duration: DUR, easing: EASE };
+    old.el.inert = true; old.el.style.pointerEvents = 'none';
+    let oa;
+    if (isPrefix(op, np)) {            // deeper: dive into the clicked node
+      const p = findPos(old.pos, nw.key) || C;
+      oa = old.el.animate([{ transform: tf(0, 0, 1), opacity: 1 }, { transform: tf(C.x - s * p.x, C.y - s * p.y, s), opacity: 0 }], { ...opts, fill: 'forwards' });
+      nw.el.animate([{ transform: tf(p.x - k * C.x, p.y - k * C.y, k), opacity: 0 }, { transform: tf(0, 0, 1), opacity: 1 }], opts);
+      bloom(nw);
+    } else if (isPrefix(np, op)) {     // up: shrink back into the parent node
+      const q = findPos(nw.pos, old.key) || C;
+      oa = old.el.animate([{ transform: tf(0, 0, 1), opacity: 1 }, { transform: tf(q.x - k * C.x, q.y - k * C.y, k), opacity: 0 }], { ...opts, fill: 'forwards' });
+      nw.el.animate([{ transform: tf(C.x - s * q.x, C.y - s * q.y, s), opacity: 0 }, { transform: tf(0, 0, 1), opacity: 1 }], opts);
+    } else {                           // sideways: soft crossfade
+      oa = old.el.animate([{ opacity: 1, transform: tf(0, 0, 1) }, { opacity: 0, transform: tf(C.x * .04, C.y * .04, .96) }], { ...opts, fill: 'forwards' });
+      nw.el.animate([{ opacity: 0, transform: tf(-C.x * .04, -C.y * .04, 1.04) }, { opacity: 1, transform: tf(0, 0, 1) }], { ...opts, delay: 120, fill: 'backwards' });
+      bloom(nw);
+    }
+    oa.onfinish = () => old.el.remove();
+  }
+
+  /* ---------- chrome: crumbs, minimap, legend, card ---------- */
+  function updateCrumbs(r) {
+    const items = [{ label: 'Intro', href: '#/' }];
+    const vw = r.word || (via && r.h ? WORD[via] : null);
+    if (vw) items.push({ label: `“${vw.t}”`, href: hashFor('w:' + vw.slug) });
+    else if (r.key !== 'intro') items.push({ label: 'Thesis', href: '#/web' });
+    if (r.h) items.push({ label: r.h.name, href: '#/' + r.h.id, color: r.h.color });
+    if (r.q) items.push({ label: trunc(r.q.text, 46), href: '#/' + r.q.key, title: r.q.text, cls: 'q' });
+    if (r.s) items.push({ label: trunc(r.s.title, 40), title: r.s.title });
+    $('crumbs').innerHTML = items.map((it, i) => {
+      const sw = it.color ? `<span class="sw" style="background:${it.color}"></span>` : '';
+      const t = it.title ? ` title="${esc(it.title)}"` : '';
+      return i === items.length - 1
+        ? `<li><span aria-current="page" class="${it.cls || ''}"${t}>${esc(it.label)}</span></li>`
+        : `<li><a href="${it.href}" class="${it.cls || ''}"${t}>${sw}${esc(it.label)}</a></li>`;
+    }).join('');
+    $('backBtn').disabled = r.key === 'intro';
+  }
+
+  const mm = { h: {}, q: {} };
+  function buildMinimap() {
+    const W = 176, H = 112, C = { x: W / 2, y: H / 2 + 2 };
+    const { br, pts } = ringGeometry(W, H, C.x, C.y, 13);
+    const r = .62;
+    const svg = S('svg', { viewBox: `0 0 ${W} ${H}` }, minimap);
+    const lines = S('g', {}, svg), body = S('g', {}, svg);
+    const qp = {};
+    ORDER.forEach(id => {
+      const h = HUNCH[id], p = pts[id], vs = p.y < C.y ? -1 : 1;
+      S('line', { x1: C.x, y1: C.y, x2: p.x, y2: p.y, stroke: 'rgba(31,29,26,.35)', 'stroke-width': .7 }, lines);
+      const a = S('a', { href: '#/' + id, tabindex: -1, class: 'mm-h' }, body);
+      mm.h[id] = a;
+      S('title', {}, a).textContent = h.name;
+      S('path', { d: blobPath(p.x, p.y + vs * 3, br * 1.15, br * .95, h.n), fill: h.color, 'fill-opacity': .55, style: 'mix-blend-mode:multiply' }, a);
+      S('circle', { cx: p.x, cy: p.y, r: 2.6 * r * 1.6, fill: '#1f1d1a' }, a);
+      const n = h.questions.length, base = vs < 0 ? -90 : 90;
+      h.questions.forEach((q, j) => {
+        const ang = rad(n > 1 ? base - 46 + j * 92 / (n - 1) : base);
+        const x = p.x + Math.cos(ang) * br * .7, y = p.y + Math.sin(ang) * br * .7;
+        qp[q.key] = { x, y };
+        S('line', { x1: p.x, y1: p.y, x2: x, y2: y, stroke: 'rgba(31,29,26,.3)', 'stroke-width': .5 }, a);
+        mm.q[q.key] = [S('circle', { cx: x, cy: y, r: 1.6, class: 'mm-q' }, a), S('circle', { cx: x, cy: y, r: 3.6, class: 'mm-ring' }, a)];
+      });
+    });
+    DATA.crossLinks.forEach(l => {
+      const a = qp[l.a], b = qp[l.b];
+      if (!a || !b) return;
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, ux = mx - C.x, uy = my - C.y, L = Math.hypot(ux, uy) || 1, k = Math.hypot(b.x - a.x, b.y - a.y) * .3;
+      S('path', { d: `M${f(a.x)},${f(a.y)} Q${f(mx + ux / L * k)},${f(my + uy / L * k)} ${f(b.x)},${f(b.y)}`, fill: 'none', stroke: 'rgba(31,29,26,.45)', 'stroke-width': .6, 'stroke-dasharray': '1 2' }, lines);
+    });
+    S('circle', { cx: C.x, cy: C.y, r: 3.4, fill: '#1f1d1a' }, body);
+    E('div', 'cap', '', minimap);
+  }
+  function updateMinimap(r) {
+    minimap.classList.toggle('hidden', r.key === 'intro');
+    minimap.classList.toggle('focused', !!(r.h || r.word));
+    for (const id in mm.h) mm.h[id].classList.toggle('on', r.h ? r.h.id === id : !!r.word && r.word.hunches.includes(id));
+    for (const key in mm.q) mm.q[key].forEach(c => c.classList.toggle('cur', !!r.q && r.q.key === key));
+    minimap.querySelector('.cap').innerHTML = r.word ? `“<b>${esc(r.word.t)}</b>” across ${r.word.hunches.length} hunch${r.word.hunches.length === 1 ? '' : 'es'}` : r.q ? `You are here: <b>${esc(r.h.name)}</b> · Q${r.q.n}` : r.h ? `You are here: <b>${esc(r.h.name)}</b>` : `You are here: <b>the whole web</b>`;
+  }
+  function updateLegend(r) {
+    legend.classList.toggle('hidden', r.key === 'intro');
+    if (r.word) legend.innerHTML = `<span>Select a hunch to zoom in</span><span><i class="lm"></i>question</span><span>Esc to return to the map</span>`;
+    else if (r.key === 'web') legend.innerHTML = `<span>Select a hunch to zoom in</span>
+      <span><i class="lm"></i>question</span>
+      <span><svg width="26" height="6"><path d="M1 3H25" stroke="#1f1d1a" stroke-opacity=".55" stroke-dasharray="1.5 4" stroke-linecap="round"/></svg>related across hunches</span>`;
+    else if (r.q) legend.innerHTML = `<span><i class="ld"></i>paper</span><span><i class="lr"></i>project</span><span>Select a source to read it</span>`;
+    else if (r.h) legend.innerHTML = `<span>Select a question to see its sources</span><span>Esc to go back</span>`;
+  }
+
+  function fitForCard(open) {
+    if (!open || !current) { inner.style.transform = ''; inner.style.opacity = ''; return; }
+    const W = innerWidth, cw = card.offsetWidth + 40, avail = W - cw;
+    const g = current.g, half = Math.min(W * .31, 500) + 135;
+    const s = clamp(avail / (half * 2), .6, 1);
+    const tx = avail / 2 - s * g.cx, ty = g.cy - s * g.cy;
+    inner.style.transform = `translate(${f(tx)}px,${f(ty)}px) scale(${s.toFixed(3)})`;
+  }
+  function updateCard(r) {
+    current && current.el.querySelectorAll('.node.active').forEach(n => n.classList.remove('active'));
+    if (!r.s) {
+      card.classList.remove('open'); card.inert = true; fitForCard(false);
+      return;
+    }
+    const s = r.s, q = s.q, h = q.hunch, i = q.sources.indexOf(s), prev = q.sources[i - 1], next = q.sources[i + 1];
+    card.innerHTML = `
+      <div class="card-top">
+        <span class="ctx"><span class="sw" style="background:${h.color}"></span>${esc(h.name)} · Q${q.n} · ${i + 1} of ${q.sources.length}</span>
+        <a class="x" href="${hashFor(q.key)}" aria-label="Close source">×</a>
+      </div>
+      <span class="tag"><i class="${s.type === 'project' ? 'lr' : 'ld'}"></i>${s.type === 'project' ? 'Project' : 'Paper'}</span>
+      <h2 tabindex="-1">${esc(s.title)}</h2>
+      <p class="by">${esc(s.authors)}</p>
+      <p class="venue">${esc(s.year)} · ${esc(s.venue)}</p>
+      <section><h3>What I learned</h3><p>${esc(s.takeaway)}</p></section>
+      <section><h3>What surprised or intrigued me</h3>${s.surprised ? `<p>${esc(s.surprised)}</p>` : `<p class="todo">To fill in: what piqued my interest here.</p>`}</section>
+      <section><h3>Quote / passage</h3>${s.quote ? `<blockquote>${esc(s.quote)}</blockquote>` : `<p class="todo">To fill in: a quote, passage, scene, or interaction.</p>`}</section>
+      <section class="why"><h3>Why it matters to me</h3><p>${esc(s.why)}</p></section>
+      <a class="read" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">Read it <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      <p class="read-url">${esc(s.url.replace(/^https?:\/\//, ''))}</p>
+      <nav class="pager" aria-label="Other sources for this question">
+        <span>${prev ? `<a href="#/${prev.key}">← ${esc(trunc(prev.title, 34))}</a>` : ''}</span>
+        <span>${next ? `<a href="#/${next.key}">${esc(trunc(next.title, 34))} →</a>` : ''}</span>
+      </nav>`;
+    card.style.setProperty('--c', h.color);
+    card.inert = false; card.classList.add('open');
+    const n = current && current.el.querySelector(`.node[data-key="${s.key}"]`);
+    if (n) n.classList.add('active');
+    fitForCard(true);
+    requestAnimationFrame(() => card.querySelector('h2').focus({ preventScroll: true }));
+  }
+
+  /* ---------- render ---------- */
+  let current = null, kb = false, mobile = null;
+  addEventListener('keydown', () => { kb = true; }, true);
+  addEventListener('pointerdown', () => { kb = false; }, true);
+
+  function describe(r) {
+    if (r.s) return `Source: ${r.s.title}`;
+    if (r.q) return `Question: ${r.q.text}`;
+    if (r.h) return `Hunch ${r.h.n}: ${r.h.name}`;
+    if (r.key === 'web') return 'Thesis web';
+    if (r.word) return `Word: ${r.word.t}`;
+    return 'Intro';
+  }
+  function render() {
+    const r = parseHash();
+    if (r.word) via = r.word.slug;
+    else if (!(r.h && via && WORD[via].hunches.includes(r.h.id))) via = null;
+    closeOverlays(false);
+    hideTipAll();
+    document.title = (r.key === 'intro' ? '' : trunc(describe(r).replace(/^\w+ ?\d*: /, ''), 50) + ' · ') + DATA.title + ' · Cathy Doss';
+    if (mobile) return renderList(r);
+    updateCrumbs(r); updateMinimap(r); updateLegend(r);
+    $('live').textContent = describe(r);
+    if (!current || current.key !== r.key) {
+      const sc = build(r, geo());
+      mount(sc);
+      if (current) transition(current, sc); else bloom(sc);
+      current = sc;
+      if (kb && !r.s && sc.center) sc.center.focus({ preventScroll: true });
+    }
+    updateCard(r);
+  }
+  function hideTipAll() { tip.classList.remove('on'); }
+  function rebuild() {
+    const r = parseHash();
+    if (r.word) via = r.word.slug;
+    if (current) current.el.remove();
+    inner.querySelectorAll('.scene').forEach(e => e.remove());
+    current = build(r, geo());
+    mount(current);
+    updateCard(r);
+  }
+
+  /* ---------- overlays: stance & Progress Update 2 ---------- */
+  const scrim = $('scrim'), stance = $('stance'), pu2 = $('pu2');
+  let lastFocus = null;
+  function openOverlay(el) {
+    lastFocus = document.activeElement;
+    scrim.classList.add('on'); el.inert = false; el.classList.add('open');
+    requestAnimationFrame(() => el.querySelector('[data-focus]').focus({ preventScroll: true }));
+  }
+  function closeOverlays(restore = true) {
+    const open = [stance, pu2].filter(e => e.classList.contains('open'));
+    open.forEach(e => { e.classList.remove('open'); e.inert = true; });
+    scrim.classList.remove('on');
+    if (open.length && restore && lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
+    return open.length > 0;
+  }
+  const paras = (txt, ph) => txt && txt.trim()
+    ? txt.trim().split(/\n\s*\n/).map(p => `<p>${esc(p)}</p>`).join('')
+    : `<p class="ph">${ph}</p>`;
+  function buildPU2() {
+    const P = DATA.progressUpdate2;
+    const qs = DATA.hunches.flatMap(h => h.questions), ss = qs.flatMap(q => q.sources);
+    const proj = ss.filter(s => s.type === 'project').length;
+    const filled = k => ss.filter(s => s[k] && s[k].trim()).length;
+    const mark = (on, label) => `<i class="mk ${on ? 'on' : ''}" title="${label}: ${on ? 'recorded' : 'to fill in'}"></i>`;
+    pu2.innerHTML = `
+      <button class="x" type="button" data-close aria-label="Close">×</button>
+      <p class="eyebrow">Progress Update 2</p>
+      <h2 id="pu2Title" tabindex="-1" data-focus>Research findings + refined inquiry space</h2>
+      <div class="stats">
+        <div><b>${DATA.hunches.length}</b>hunches</div><div><b>${qs.length}</b>questions</div>
+        <div><b>${ss.length - proj}</b>papers</div><div><b>${proj}</b>projects</div>
+      </div>
+
+      <section>
+        <h3><span class="n">01</span>Research findings</h3>
+        <p class="ask">From each source: what did I learn, and what piqued my interest, surprised or intrigued me? Specific quotes, passages, scenes, images, interactions.</p>
+        <div class="meter">
+          <span><b>${filled('takeaway')}/${ss.length}</b> learned</span>
+          <span><b>${filled('surprised')}/${ss.length}</b> surprises</span>
+          <span><b>${filled('quote')}/${ss.length}</b> quotes / passages</span>
+        </div>
+        <h4>Across everything</h4>
+        ${paras(P.whatIFound, 'To fill in: what stood out across all my sources.')}
+        <h4>Interviews, journaling, observation</h4>
+        ${paras(P.otherResearch, 'To fill in: notes from interviews, journal entries, and things I observed.')}
+        <h4>By source <span class="legend-mk">${mark(1, 'Learned')} learned ${mark(1, 'Surprise')} surprise ${mark(1, 'Quote')} quote</span></h4>
+        ${DATA.hunches.map(h => `
+          <details class="src-group" style="--tint:${h.tint}">
+            <summary><span class="sw" style="background:${h.color}"></span>${esc(h.name)}<span class="cnt">${h.questions.reduce((n, q) => n + q.sources.length, 0)}</span></summary>
+            <ul>${h.questions.flatMap(q => q.sources).map(s => `
+              <li><a href="#/${s.key}"><span class="st">${esc(s.title)}</span><span class="mks">${mark(!!s.takeaway, 'Learned')}${mark(!!s.surprised, 'Surprise')}${mark(!!s.quote, 'Quote')}</span></a></li>`).join('')}
+            </ul>
+          </details>`).join('')}
+      </section>
+
+      <section>
+        <h3><span class="n">02</span>Reflection + refined diagram</h3>
+        <p class="ask">How do my sources relate to each other? Does the inquiry space need refining: an area removed or added, narrowed, or more specific directions?</p>
+        <h4>How my sources relate</h4>
+        ${paras(P.howSourcesConnect, 'To fill in: the threads that run between my sources.')}
+        <h4>Links across hunches</h4>
+        <ul class="xl">${DATA.crossLinks.map(l => { const qa = Q(l.a), qb = Q(l.b); return qa && qb ? `
+          <li><a href="#/${qa.key}"><span class="sw" style="background:${qa.hunch.color}"></span><em>${esc(qa.text)}</em></a>
+            <span class="via">┄ ${esc(l.note)} ┄</span>
+            <a href="#/${qb.key}"><span class="sw" style="background:${qb.hunch.color}"></span><em>${esc(qb.text)}</em></a></li>` : ''; }).join('')}</ul>
+        <h4>Refined inquiry space</h4>
+        ${P.refinedImage ? `<img src="${esc(P.refinedImage)}" alt="Refined inquiry space diagram">` : ''}
+        ${paras(P.refinedInquirySpace, 'To fill in: what changed from the Progress Update 1 map, and why.')}
+        <div class="pu2-cta">
+          <a class="btn" href="#/web">Open the refined web →</a>
+          <button class="btn" type="button" data-compare>Compare with the original map</button>
+        </div>
+      </section>
+
+      <section>
+        <h3><span class="n">03</span>NYU experts</h3>
+        <p class="ask">Three people at NYU working on areas related to my findings. Ask one for an interview, now or once the concept is more formed.</p>
+        <div class="experts">${P.experts.map(x => `
+          <div class="expert">
+            <b>${esc(x.name)}</b>
+            <span>${esc([x.program, x.focus].filter(Boolean).join(' · '))}</span>
+            ${x.relatesTo ? `<p>${esc(x.relatesTo)}</p>` : `<p class="todo">To fill in: how their work relates to my findings.</p>`}
+            <em class="iv ${x.interview ? 'on' : ''}">Interview: ${esc(x.interview || 'not requested yet')}</em>
+          </div>`).join('')}</div>
+      </section>`;
+  }
+
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-stance]')) { e.preventDefault(); openOverlay(stance); }
+    else if (e.target.closest('[data-compare]')) {
+      carryMode = true;
+      closeOverlays(false);
+      if (current && current.key === 'intro') {
+        const t = current.el.querySelector('[data-carry]');
+        t.setAttribute('aria-pressed', 'true'); current.el.querySelector('.imap').classList.add('carry');
+      } else location.hash = '#/';
+    }
+    else if (e.target.closest('[data-close]') || e.target === scrim) closeOverlays();
+  });
+  $('pu2Btn').addEventListener('click', () => openOverlay(pu2));
+  $('backBtn').addEventListener('click', goUp);
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (closeOverlays()) return;
+    if (current && current.closePop && current.closePop(true)) return;
+    if (!mobile) goUp();
+  });
+
+  /* ---------- mobile: stacked list ---------- */
+  function buildList() {
+    const I = DATA.intro;
+    $('list').innerHTML = `
+      <h1>${esc(DATA.title)}</h1>
+      <p class="sub">${esc(DATA.subtitle)}</p>
+      <figure><img src="${esc(I.image)}" alt="${esc(I.imageAlt)}"></figure>
+      <p class="blurb"><strong>${esc(I.label)}:</strong> ${esc(I.blurb)}</p>
+      <section class="m-thesis">
+        <p class="eyebrow">Thesis question</p>
+        <h2>${esc(DATA.thesisQuestion)}</h2>
+        <details><summary class="chip">My stance</summary><p>${esc(DATA.stance)}</p></details>
+      </section>
+      ${DATA.hunches.map(h => `
+        <section class="m-hunch" id="m-${h.id}" style="--tint:${h.tint}">
+          <p class="eyebrow" style="color:${h.ink}">Hunch ${h.n}</p>
+          <h3>${esc(h.name)}</h3>
+          <p>${esc(h.blurb)}</p>
+          ${h.questions.map(q => `
+            <details id="m-${h.id}-${q.id}">
+              <summary>${esc(q.text)}</summary>
+              <ul class="m-src">${q.sources.map(s => `
+                <li>
+                  <span class="tag"><i class="${s.type === 'project' ? 'lr' : 'ld'}"></i>${s.type === 'project' ? 'Project' : 'Paper'}</span>
+                  <p class="t">${esc(s.title)}</p>
+                  <p class="m">${esc(s.authors)} · ${esc(s.year)} · ${esc(s.venue)}</p>
+                  <p><b>What I learned:</b> ${esc(s.takeaway)}</p>
+                  ${s.surprised ? `<p><b>What surprised me:</b> ${esc(s.surprised)}</p>` : ''}
+                  ${s.quote ? `<p class="w">“${esc(s.quote)}”</p>` : ''}
+                  <p class="w">${esc(s.why)}</p>
+                  <a class="go" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">Read it →</a>
+                </li>`).join('')}</ul>
+              ${related(q).map(r => `<a class="m-rel" href="#/${r.q.key}">Related in another hunch → <em>${esc(r.q.hunch.name)}</em></a>`).join('')}
+            </details>`).join('')}
+        </section>`).join('')}`;
+  }
+  function renderList(r) {
+    let target = null;
+    if (r.q) { target = $(`m-${r.h.id}-${r.q.id}`); target.open = true; }
+    else if (r.h) target = $(`m-${r.h.id}`);
+    if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  /* ---------- boot ---------- */
+  const mq = matchMedia('(max-width: 760px)');
+  function applyMode() {
+    const m = mq.matches;
+    if (m === mobile) return;
+    mobile = m;
+    document.body.classList.toggle('mobile', m);
+    if (m) { if (!$('list').childElementCount) buildList(); }
+    else { current = null; inner.innerHTML = ''; }
+    render();
+  }
+  $('brandName').textContent = DATA.title;
+  $('stanceBody').textContent = DATA.stance;
+  buildPU2();
+  buildMinimap();
+  addEventListener('hashchange', render);
+  mq.addEventListener('change', applyMode);
+  let rt;
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (!mobile && current) rebuild(); }, 160); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (mobile || !current) return; if (current.key === 'intro') rebuild(); else drawSpokes(current); });
+  applyMode();
+})();
+</script>
+</body>
+</html>

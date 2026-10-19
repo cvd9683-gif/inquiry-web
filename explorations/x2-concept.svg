@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="640" height="400" fill="#fbf9f4"/>
+<ellipse cx="320" cy="220" rx="300" ry="160" fill="#b4a3dc" opacity=".22"/>
+<rect x="16" y="14" width="236" height="24" rx="12" fill="#fff" stroke="#1f1d1a" stroke-opacity=".18"/><text x="134" y="30" text-anchor="middle" font-size="11" letter-spacing=".8" fill="#6f6a61">CONCEPT SKETCH · NOT MADE YET</text>
+<g stroke="#1f1d1a" stroke-width="1.5" fill="#fff"><rect x="34" y="64" width="176" height="250" rx="14"/><rect x="232" y="64" width="176" height="250" rx="14"/><rect x="430" y="64" width="176" height="250" rx="14"/></g>
+<g font-size="14" font-weight="600" fill="#1f1d1a" text-anchor="middle"><text x="122" y="90">1 · By hand</text><text x="320" y="90">2 · Steered</text><text x="518" y="90">3 · One prompt</text></g>
+<g font-size="11" fill="#6f6a61" text-anchor="middle"><text x="122" y="106">every note placed myself</text><text x="320" y="106">Magenta Studio helps</text><text x="518" y="106">Suno makes all of it</text></g>
+<g stroke="#1f1d1a" stroke-opacity=".12"><path d="M50 122 h144 M50 138 h144 M50 154 h144 M50 170 h144 M50 186 h144 M50 202 h144 M50 218 h144"/><path d="M248 122 h144 M248 138 h144 M248 154 h144 M248 170 h144 M248 186 h144"/></g>
+<g fill="#b4a3dc" stroke="#1f1d1a" stroke-width="1"><rect x="52" y="124" width="22" height="12" rx="2"/><rect x="80" y="156" width="16" height="12" rx="2"/><rect x="100" y="140" width="28" height="12" rx="2"/><rect x="132" y="188" width="14" height="12" rx="2"/><rect x="150" y="172" width="24" height="12" rx="2"/><rect x="60" y="204" width="30" height="12" rx="2"/><rect x="176" y="124" width="16" height="12" rx="2"/><rect x="110" y="204" width="18" height="12" rx="2"/>
+<rect x="252" y="140" width="24" height="12" rx="2"/><rect x="300" y="124" width="20" height="12" rx="2"/><rect x="340" y="156" width="30" height="12" rx="2"/></g>
+<g fill="#e7e1f4" stroke="#1f1d1a" stroke-width="1" stroke-dasharray="3 2"><rect x="280" y="172" width="22" height="12" rx="2"/><rect x="356" y="140" width="22" height="12" rx="2"/><rect x="262" y="188" width="18" height="12" rx="2"/></g>
+<g font-size="10" fill="#6f6a61"><text x="250" y="222">temperature</text><text x="250" y="252">variation</text></g>
+<g stroke="#1f1d1a" stroke-width="1.5"><line x1="320" y1="218" x2="392" y2="218"/><line x1="320" y1="248" x2="392" y2="248"/></g>
+<circle cx="350" cy="218" r="6" fill="#1f1d1a"/><circle cx="372" cy="248" r="6" fill="#1f1d1a"/>
+<rect x="448" y="124" width="140" height="44" rx="10" fill="#fbf9f4" stroke="#1f1d1a" stroke-opacity=".4"/>
+<text x="458" y="142" font-size="11" fill="#4b4740">"dreamy lofi loop,</text><text x="458" y="158" font-size="11" fill="#4b4740">90 bpm, soft keys"</text>
+<path d="M518 176 v18 m-6 -6 l6 6 l6 -6" fill="none" stroke="#1f1d1a" stroke-width="1.5"/>
+<path d="M452 226 q6 -26 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#b4a3dc" stroke-width="3"/>
+<g font-size="11" fill="#4b4740" text-anchor="middle"><text x="122" y="278">Feels like mine?</text><text x="320" y="278">Feels like mine?</text><text x="518" y="278">Feels like mine?</text></g>
+<g fill="none" stroke="#1f1d1a" stroke-width="1.2"><circle cx="90" cy="296" r="6"/><circle cx="106" cy="296" r="6"/><circle cx="122" cy="296" r="6"/><circle cx="138" cy="296" r="6"/><circle cx="154" cy="296" r="6"/><circle cx="288" cy="296" r="6"/><circle cx="304" cy="296" r="6"/><circle cx="320" cy="296" r="6"/><circle cx="336" cy="296" r="6"/><circle cx="352" cy="296" r="6"/><circle cx="486" cy="296" r="6"/><circle cx="502" cy="296" r="6"/><circle cx="518" cy="296" r="6"/><circle cx="534" cy="296" r="6"/><circle cx="550" cy="296" r="6"/></g>
+<text x="320" y="356" text-anchor="middle" font-size="12" fill="#6f6a61">Same short loop, three workflows: track time, decisions, and ownership for each</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="640" height="400" fill="#fbf9f4"/>
+<ellipse cx="170" cy="215" rx="155" ry="150" fill="#e3bf4f" opacity=".26"/>
+<ellipse cx="470" cy="215" rx="155" ry="150" fill="#b4a3dc" opacity=".24"/>
+<rect x="16" y="14" width="236" height="24" rx="12" fill="#fff" stroke="#1f1d1a" stroke-opacity=".18"/><text x="134" y="30" text-anchor="middle" font-size="11" letter-spacing=".8" fill="#6f6a61">CONCEPT SKETCH · NOT MADE YET</text>
+<text x="170" y="74" text-anchor="middle" font-size="14" fill="#1f1d1a" font-weight="600">Round 1 · with a person</text>
+<text x="470" y="74" text-anchor="middle" font-size="14" fill="#1f1d1a" font-weight="600">Round 2 · with a machine</text>
+<g stroke="#1f1d1a" stroke-opacity=".3" stroke-dasharray="2 3">
+<line x1="80" y1="102" x2="80" y2="136"/><line x1="125" y1="102" x2="125" y2="136"/><line x1="170" y1="102" x2="170" y2="136"/><line x1="215" y1="102" x2="215" y2="136"/><line x1="260" y1="102" x2="260" y2="136"/>
+<line x1="380" y1="102" x2="380" y2="136"/><line x1="425" y1="102" x2="425" y2="136"/><line x1="470" y1="102" x2="470" y2="136"/><line x1="515" y1="102" x2="515" y2="136"/><line x1="560" y1="102" x2="560" y2="136"/>
+</g>
+<g fill="#1f1d1a"><circle cx="80" cy="104" r="5"/><circle cx="125" cy="104" r="5"/><circle cx="170" cy="104" r="5"/><circle cx="215" cy="104" r="5"/><circle cx="260" cy="104" r="5"/>
+<circle cx="83" cy="134" r="5"/><circle cx="122" cy="134" r="5"/><circle cx="172" cy="134" r="5"/><circle cx="212" cy="134" r="5"/><circle cx="262" cy="134" r="5"/>
+<circle cx="380" cy="104" r="5"/><circle cx="425" cy="104" r="5"/><circle cx="470" cy="104" r="5"/><circle cx="515" cy="104" r="5"/><circle cx="560" cy="104" r="5"/></g>
+<g fill="none" stroke="#1f1d1a" stroke-width="1.6"><circle cx="381" cy="134" r="5"/><circle cx="426" cy="134" r="5"/><circle cx="470" cy="134" r="5"/><circle cx="514" cy="134" r="5"/><circle cx="560" cy="134" r="5"/></g>
+<text x="52" y="108" font-size="10" fill="#6f6a61" text-anchor="end">A</text><text x="52" y="138" font-size="10" fill="#6f6a61" text-anchor="end">B</text>
+<text x="352" y="108" font-size="10" fill="#6f6a61" text-anchor="end">you</text><text x="352" y="138" font-size="10" fill="#6f6a61" text-anchor="end">AI</text>
+<g stroke="#1f1d1a" stroke-width="1.6" fill="#fff">
+<rect x="78" y="250" width="80" height="44" rx="12"/><rect x="182" y="250" width="80" height="44" rx="12"/>
+<rect x="104" y="196" width="24" height="52" rx="12"/><rect x="208" y="190" width="24" height="52" rx="12"/>
+<rect x="378" y="250" width="80" height="44" rx="12"/><rect x="404" y="192" width="24" height="52" rx="12"/>
+<rect x="482" y="178" width="118" height="78" rx="8"/><path d="M470 270 h142 l-10 -14 h-122 z"/>
+</g>
+<g fill="none" stroke="#1f1d1a" stroke-opacity=".5"><path d="M96 200 q-8 10 0 20"/><path d="M240 194 q8 10 0 20"/><path d="M396 196 q-8 10 0 20"/></g>
+<circle cx="541" cy="217" r="9" fill="#b4a3dc"/><circle cx="541" cy="217" r="18" fill="none" stroke="#b4a3dc" stroke-width="2"/><circle cx="541" cy="217" r="28" fill="none" stroke="#b4a3dc" stroke-opacity=".5" stroke-width="2"/>
+<text x="541" y="290" text-anchor="middle" font-size="11" fill="#6f6a61">adapts to your timing</text>
+<g font-size="12" fill="#4b4740" text-anchor="middle"><text x="170" y="336">How connected did you feel?</text><text x="470" y="336">How connected did you feel?</text></g>
+<g fill="none" stroke="#1f1d1a" stroke-width="1.3"><circle cx="130" cy="356" r="7"/><circle cx="150" cy="356" r="7"/><circle cx="170" cy="356" r="7"/><circle cx="190" cy="356" r="7"/><circle cx="210" cy="356" r="7"/>
+<circle cx="430" cy="356" r="7"/><circle cx="450" cy="356" r="7"/><circle cx="470" cy="356" r="7"/><circle cx="490" cy="356" r="7"/><circle cx="510" cy="356" r="7"/></g>
+</svg>

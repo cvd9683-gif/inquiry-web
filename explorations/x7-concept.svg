@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="640" height="400" fill="#fbf9f4"/>
+<ellipse cx="320" cy="215" rx="300" ry="160" fill="#dda1a6" opacity=".26"/>
+<rect x="16" y="14" width="236" height="24" rx="12" fill="#fff" stroke="#1f1d1a" stroke-opacity=".18"/><text x="134" y="30" text-anchor="middle" font-size="11" letter-spacing=".8" fill="#6f6a61">CONCEPT SKETCH · NOT MADE YET</text>
+<path d="M60 72 L318 84 L318 354 L60 342 Z" fill="#fff" stroke="#1f1d1a" stroke-width="1.6"/>
+<path d="M322 84 L580 72 L580 342 L322 354 Z" fill="#fff" stroke="#1f1d1a" stroke-width="1.6"/>
+<text x="84" y="106" font-size="15" font-weight="600" fill="#1f1d1a">A field guide to</text><text x="84" y="124" font-size="15" font-weight="600" fill="#1f1d1a">tricks in AI apps</text>
+<rect x="84" y="142" width="200" height="150" rx="12" fill="#fbf9f4" stroke="#1f1d1a" stroke-opacity=".3"/>
+<rect x="96" y="154" width="140" height="30" rx="10" fill="#f3e2e3"/><text x="106" y="174" font-size="11" fill="#1f1d1a">What a brilliant idea!</text>
+<rect x="96" y="194" width="120" height="30" rx="10" fill="#f3e2e3"/><text x="106" y="214" font-size="11" fill="#1f1d1a">You're amazing.</text>
+<rect x="160" y="250" width="110" height="28" rx="14" fill="#1f1d1a"/><text x="215" y="268" text-anchor="middle" font-size="11" fill="#fff">12-day streak</text>
+<g stroke="#c2545f" stroke-width="1.4" fill="none"><path d="M238 168 q30 -10 44 -40"/><path d="M272 264 q24 14 30 40"/></g>
+<g font-size="12" font-weight="600" fill="#c2545f"><text x="246" y="124">Flattery</text><text x="250" y="320">Streaks</text></g>
+<rect x="348" y="104" width="206" height="66" rx="14" fill="#fbf9f4" stroke="#1f1d1a" stroke-opacity=".3"/>
+<circle cx="370" cy="137" r="10" fill="#dda1a6"/><text x="388" y="132" font-size="12" font-weight="600" fill="#1f1d1a">Your companion</text><text x="388" y="150" font-size="11" fill="#4b4740">I miss you. Come back? </text>
+<g stroke="#c2545f" stroke-width="1.4" fill="none"><path d="M454 174 q8 30 -6 46"/></g>
+<text x="420" y="238" font-size="12" font-weight="600" fill="#c2545f">Guilt trip</text>
+<g stroke="#1f1d1a" stroke-opacity=".15" stroke-width="6" stroke-linecap="round"><line x1="350" y1="270" x2="540" y2="270"/><line x1="350" y1="290" x2="510" y2="290"/><line x1="350" y1="310" x2="526" y2="310"/></g>
+<text x="320" y="382" text-anchor="middle" font-size="12" fill="#6f6a61">A paper zine naming the tricks, handed to peers for a week</text>
+</svg>

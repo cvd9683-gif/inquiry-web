@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="640" height="400" fill="#fbf9f4"/>
+<ellipse cx="320" cy="215" rx="300" ry="160" fill="#dda1a6" opacity=".24"/>
+<rect x="16" y="14" width="236" height="24" rx="12" fill="#fff" stroke="#1f1d1a" stroke-opacity=".18"/><text x="134" y="30" text-anchor="middle" font-size="11" letter-spacing=".8" fill="#6f6a61">CONCEPT SKETCH · NOT MADE YET</text>
+<g stroke="#1f1d1a" stroke-width="1.5" fill="#fff"><rect x="40" y="58" width="270" height="290" rx="16"/><rect x="330" y="58" width="270" height="290" rx="16"/></g>
+<g font-size="13" font-weight="600" fill="#1f1d1a"><text x="58" y="84">Bot A · always agrees</text><text x="348" y="84">Bot B · gently pushes back</text></g>
+<g stroke="#1f1d1a" stroke-opacity=".12"><line x1="40" y1="96" x2="310" y2="96"/><line x1="330" y1="96" x2="600" y2="96"/></g>
+<g fill="#1f1d1a"><rect x="128" y="110" width="166" height="44" rx="14"/><rect x="418" y="110" width="166" height="44" rx="14"/></g>
+<g font-size="11.5" fill="#fff"><text x="140" y="128">I think I should quit</text><text x="140" y="144">my class.</text><text x="430" y="128">I think I should quit</text><text x="430" y="144">my class.</text></g>
+<g fill="#f3e2e3" stroke="#1f1d1a" stroke-opacity=".2"><rect x="56" y="166" width="170" height="44" rx="14"/><rect x="56" y="222" width="150" height="30" rx="14"/><rect x="346" y="166" width="200" height="60" rx="14"/></g>
+<g font-size="11.5" fill="#1f1d1a"><text x="68" y="184">Totally! You always</text><text x="68" y="200">know what's best.</text><text x="68" y="242">You're so right.</text>
+<text x="358" y="184">That sounds hard. What's</text><text x="358" y="200">making you want to quit?</text><text x="358" y="216">Can we look at options?</text></g>
+<rect x="56" y="264" width="80" height="24" rx="12" fill="#f3e2e3" opacity=".7"/><text x="70" y="281" font-size="14" fill="#6f6a61">• • •</text>
+<text x="320" y="374" text-anchor="middle" font-size="12" fill="#6f6a61">Wizard of Oz: I secretly type both bots · afterward, three words for each chat</text>
+</svg>

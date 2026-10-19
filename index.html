@@ -399,48 +399,74 @@ const DATA = {
 
   // Progress Update 2 panel. Empty strings show as placeholders.
   // Separate paragraphs with a blank line.
-  // Progress Update 3: creative explorations (2–5, each addressing a different question).
+  // Progress Update 3: creative explorations. None are made yet: this is a bank of ideas,
+  // and I'll pick 2–5 to make, each addressing a different question.
   // question = the "hunchId/questionId" it explores; it links both ways on the site.
   // kind: `Sensory experience`, `Tech / workflow experiment`,
   //       `Series: same question, different media`, `Series: same medium, different questions`
-  // status: `Planned`, `In progress`, or `Done`
+  // status: `Idea` (not made yet), `Picked`, `In progress`, or `Done`
+  // concept: an illustrated sketch of what it could look like (not documentation)
   // media: photos or video, e.g. [{ src: `explorations/x1-tapping.jpg`, caption: `Two of us tapping` }]
   //        (.mp4 / .webm / .mov play as video). Put the files in an explorations/ folder.
   // expect = what I think will happen; measure = how I'll know.
   // answered: `Yes`, `Partly`, or `No`. newQuestions: one question per item.
   progressUpdate3: {
-    intro: `My research kept pointing to one idea: how people relate to a technology depends on how it involves them. In this round I'm testing that idea by making four small things, each tied to a hunch where the idea showed up most strongly: music and synchrony, authorship, learning, and trust.
+    intro: `My research kept pointing to one idea: how people relate to a technology depends on how it involves them. These are ideas for testing that idea by making small things, spread across all five hunches: music and synchrony, authorship, learning, teaching, and trust.
 
-Each exploration is quick and rough on purpose, so I can learn from how people react before building anything bigger.`,
+I haven't made any of them yet. I'll pick 2–5 to try first, keeping each one quick and rough so I can learn from how people react before building anything bigger.`,
     explorations: [
-      { id: `x1`, title: `In time with a machine`, kind: `Sensory experience`, question: `h1/q1`, status: `Planned`,
+      { id: `x1`, title: `In time with a machine`, kind: `Sensory experience`, question: `h1/q1`, status: `Idea`, concept: `explorations/x1-concept.svg`,
         medium: `p5.js or Max/MSP, a keyboard or tap sensor, two people`,
         plan: `Two people tap a simple beat together. Then each person taps along with a generated partner that adapts to their timing. Afterward, a quick rating: how connected did you feel? I'm comparing person-to-person sync with person-to-machine sync.`,
         expect: `Tapping with another person will feel more connecting than tapping with the adaptive machine partner, even if the machine keeps better time.`,
         measure: `A 1–5 "how connected did you feel?" rating after each round, plus anything people say on their own. I'll also log the taps to see whether people sync more tightly with the machine or with each other.`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
-      { id: `x2`, title: `Three ways to make a loop`, kind: `Tech / workflow experiment`, question: `h2/q2`, status: `Planned`,
+      { id: `x2`, title: `Three ways to make a loop`, kind: `Tech / workflow experiment`, question: `h2/q2`, status: `Idea`, concept: `explorations/x2-concept.svg`,
         medium: `Ableton Live with Magenta Studio, Suno`,
         plan: `Make a short loop three ways: fully by hand, with Magenta Studio's tools steering parts of it, and from a single Suno prompt. Journal the effort, the time, and how much each one feels like mine.`,
         expect: `The Magenta version will feel the most like mine: less effort than doing it all by hand, but more say than a single Suno prompt.`,
         measure: `For each version, track the time spent and the number of creative decisions I made, and rate my sense of ownership 1–5 right after finishing it.`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
-      { id: `x3`, title: `The tutor that holds back`, kind: `Series: same question, different media`, question: `h4/q2`, status: `Planned`,
+      { id: `x3`, title: `The tutor that holds back`, kind: `Series: same question, different media`, question: `h4/q2`, status: `Idea`, concept: `explorations/x3-concept.svg`,
         medium: `A clickable Figma prototype and a deck of paper hint cards`,
         plan: `Design a hint-only study helper twice: once as a clickable Figma prototype, once as paper hint cards. Peers solve a small puzzle with each and tell me whether holding back the answer still felt helpful.`,
         expect: `Holding back the answer will feel frustrating at first but more satisfying once people solve it, and the paper cards may feel friendlier than the screen.`,
         measure: `Watch where people get stuck, count how many hints they use, and ask afterward: did it help, and would you use it again?`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
-      { id: `x4`, title: `The yes-bot`, kind: `Sensory experience`, question: `h5/q3`, status: `Planned`,
+      { id: `x4`, title: `The yes-bot`, kind: `Sensory experience`, question: `h5/q3`, status: `Idea`, concept: `explorations/x4-concept.svg`,
         medium: `Wizard-of-Oz chat (I play the bot), short reflection afterward`,
         plan: `Peers chat for five minutes with a "bot" (secretly me) that agrees with everything, then with one that gently pushes back. Afterward they describe how each conversation left them feeling: heard, flattered, connected, or lonelier.`,
         expect: `The agreeable bot will feel nicer in the moment, but people will describe the one that pushes back as more trustworthy or more real.`,
         measure: `Ask each person to describe each chat in three words, rate how heard and how much trust they felt, and compare the two.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
+      { id: `x5`, title: `Who would you ask?`, kind: `Sensory experience`, question: `h3/q1`, status: `Idea`, concept: `explorations/x5-concept.svg`,
+        medium: `Printed question cards and two labelled zones on a table`,
+        plan: `People sort a stack of questions ("What's 7 × 8?", "Is it OK to feel sad?", "Is my drawing good?") into two piles: ones they'd ask a voice assistant, and ones they'd ask a person. They explain each choice out loud as they go.`,
+        expect: `People will trust the device for quick facts and a person for anything personal, like the kids in Girouard-Hallam & Danovitch.`,
+        measure: `Where each card lands, which cards make people hesitate, and the reasons they give out loud.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
+      { id: `x6`, title: `AI safety, for a 10-year-old`, kind: `Series: same medium, different questions`, question: `h3/q2`, status: `Idea`, concept: `explorations/x6-concept.svg`,
+        medium: `A short paper comic (part of a paper series with "A field guide to AI tricks")`,
+        plan: `Draw a three-panel comic that explains one idea about AI safety in a kid's words: an AI can be wrong, so check it the way you'd check a friend's advice. Read it with a kid (with a parent's OK) or show it to a teacher.`,
+        expect: `Framing safety as "check it like a friend's advice" will land better with kids than rules or warnings.`,
+        measure: `Which panel they react to, what they repeat back in their own words, and what questions they ask.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
+      { id: `x7`, title: `A field guide to AI tricks`, kind: `Series: same medium, different questions`, question: `h5/q2`, status: `Idea`, concept: `explorations/x7-concept.svg`,
+        medium: `A small paper zine (part of a paper series with "AI safety, for a 10-year-old")`,
+        plan: `Collect screenshots of design tricks in AI apps (flattery, streaks, guilt-trip notifications) and make a zine that names and annotates each one. Hand it to peers for a week.`,
+        expect: `Once the tricks have names, people will start noticing them in apps they already use.`,
+        measure: `After a week, ask which tricks they spotted on their own and whether it changed how they used the app.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
+      { id: `x8`, title: `From hint to "write it for me"`, kind: `Tech / workflow experiment`, question: `h4/q1`, status: `Idea`, concept: `explorations/x8-concept.svg`,
+        medium: `A simple web prototype (p5.js or Figma) with a help slider`,
+        plan: `A writing tool with one slider, from "a hint" to "an outline", "a sentence", "a draft", and "write it for me". Peers write a short paragraph at each setting.`,
+        expect: `There's a point on the slider where help turns into "doing it for me", and people will feel it before they can explain it.`,
+        measure: `After each setting, a 1–5 rating of "whose work is this?", plus marking the point where it stopped feeling like theirs.`,
         media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] }
     ],
     // Questions for the people reading the post. Drafts; edit or replace.
     questionsForReaders: [
-      { who: `Advisor`, q: `Which of these explorations seems most worth pushing into the next research-by-making cycle?` },
+      { who: `Advisor`, q: `None of these are made yet. Which 2–5 seem most worth making first?` },
       { who: `Resident`, q: `For "In time with a machine", is p5.js or Max/MSP the better tool for measuring tapping in sync?` },
       { who: `Peers`, q: `Would you try the yes-bot? What would make you trust, or stop trusting, a bot that always agrees?` }
     ]
@@ -882,9 +908,16 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
 
 /* ---------- Progress Update 3 ---------- */
 .xp-overview{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.xp-overview a{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;text-decoration:none;padding:10px 12px;border-radius:12px;background:var(--tint);font-size:14px}
+.xp-overview a{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;text-decoration:none;padding:10px 12px;border-radius:12px;background:var(--tint);font-size:14px}
 .xp-overview a:hover{filter:saturate(1.3) brightness(.98)}
 .xp-overview .n{font-size:12px;color:var(--ink-3)}
+.xp-overview .thumb{width:64px;height:40px;object-fit:cover;border-radius:6px;box-shadow:0 0 0 1px var(--hair);display:block;margin:0}
+.not-yet{font-size:13.5px !important;line-height:1.5;background:rgba(227,191,79,.18);border:1px solid rgba(227,191,79,.5);border-radius:12px;padding:10px 14px;margin:0 0 14px !important}
+.not-yet b{font-weight:600}
+.concept{margin:0 0 12px}
+.concept img{width:100%;aspect-ratio:8/5;object-fit:cover;display:block;border-radius:12px;box-shadow:0 0 0 1px var(--hair);margin:0}
+.concept figcaption{font-size:11.5px;color:var(--ink-3);margin-top:6px;font-style:italic}
+.status.idea{border-style:dashed;color:var(--ink-3)}
 .xp-overview .k{display:block;font-size:11.5px;color:var(--ink-3);margin-top:2px}
 .status{font-size:11px;border-radius:999px;padding:3px 9px;border:1px solid var(--hair);background:var(--panel);white-space:nowrap;color:var(--ink-2)}
 .status.done{background:rgba(163,193,154,.45);border-color:transparent;color:var(--ink)}
@@ -1458,7 +1491,7 @@ body.mobile .top .long{display:none}
           <h2><a href="#/${h.id}">${esc(h.name)} <span aria-hidden="true">→</span></a></h2>
           <p class="bl">${esc(h.blurb)}</p>
           <ul class="lp-qs">${h.questions.map(q => `
-            <li><a class="lp-q" href="#/${q.key}" data-key="${q.key}"><em>${esc(q.text)}${xpsFor(q).length ? `<span class="xpb">✦ exploration</span>` : ''}</em><span class="m">${q.sources.length} source${q.sources.length === 1 ? '' : 's'} →</span></a></li>`).join('')}
+            <li><a class="lp-q" href="#/${q.key}" data-key="${q.key}"><em>${esc(q.text)}${xpsFor(q).length ? `<span class="xpb">✦ exploration idea</span>` : ''}</em><span class="m">${q.sources.length} source${q.sources.length === 1 ? '' : 's'} →</span></a></li>`).join('')}
           </ul>
         </section>`).join('')}
     </div>`, sc.el);
@@ -1481,7 +1514,7 @@ body.mobile .top .long{display:none}
           </a>`).join('')}</div>` : ''}
         ${xpsFor(q).length ? `<div class="lp-xps">${xpsFor(q).map(x => `
           <button class="xp-chip" type="button" data-xp="${x.id}"><span class="spark" aria-hidden="true">✦</span>
-            <span><span class="k">Creative exploration ${x.n} · ${esc(x.status || 'Planned')}</span>${esc(x.title)}</span></button>`).join('')}</div>` : ''}
+            <span><span class="k">Exploration idea ${x.n} · ${esc(x.status && x.status !== 'Idea' ? x.status : 'not made yet')}</span>${esc(x.title)}</span></button>`).join('')}</div>` : ''}
       </header>
       <p class="lp-count">${q.sources.length} source${q.sources.length === 1 ? '' : 's'}</p>
       <ol class="lp-srcs" style="--tint:${h.tint}">${q.sources.map(s => `
@@ -1909,39 +1942,9 @@ body.mobile .top .long{display:none}
   const XPS = PU3.explorations.map((x, i) => ({ ...x, n: i + 1, q: Q(x.question || '') }));
   const xpsFor = q => XPS.filter(x => x.q === q);
   const isVideo = src => /\.(mp4|webm|mov|m4v)$/i.test(src);
-  function buildPU3() {
-    const statusCls = st => (st || 'Planned').toLowerCase().replace(/\s+/g, '-');
-    pu3.innerHTML = `
-      <button class="x" type="button" data-close aria-label="Close">×</button>
-      <p class="eyebrow">Progress Update 3</p>
-      <h2 id="pu3Title" tabindex="-1" data-focus>Creative explorations</h2>
-      <p class="ask">Explore the inquiry space by making: 2–5 explorations, each addressing a different question. For each, what did I learn, did it answer my question, and what new questions came up for the next research-by-making cycle?</p>
-      ${PU3.intro ? paras(PU3.intro, '') : ''}
-      <div class="stats">
-        <div><b>${XPS.length}</b>explorations</div>
-        <div><b>${XPS.filter(x => x.status === 'Done').length}</b>done</div>
-        <div><b>${new Set(XPS.map(x => x.q && x.q.hunch.id).filter(Boolean)).size}</b>hunches explored</div>
-      </div>
-      <h4>The plan</h4>
-      <ol class="xp-overview">${XPS.map(x => `
-        <li><a href="#xp-${x.id}" data-xp="${x.id}" style="--tint:${x.q ? x.q.hunch.tint : 'rgba(31,29,26,.05)'}">
-          <span class="n">${String(x.n).padStart(2, '0')}</span>
-          <span>${esc(x.title)}<span class="k">${esc(x.kind)}${x.q ? ` · ${esc(x.q.hunch.name)}` : ''}</span></span>
-          <span class="status ${statusCls(x.status)}">${esc(x.status || 'Planned')}</span>
-        </a></li>`).join('')}
-      </ol>
-      ${XPS.map(x => `
-        <section class="xp" id="xp-${x.id}">
-          <div class="xp-head"><h3><span class="n">${String(x.n).padStart(2, '0')}</span>${esc(x.title)}</h3><span class="status ${statusCls(x.status)}">${esc(x.status || 'Planned')}</span></div>
-          <div class="xp-tags"><span>${esc(x.kind)}</span>${x.q ? `<span>${esc(x.q.hunch.name)}</span>` : ''}</div>
-          ${x.q ? `<a class="xp-q" href="#/${x.q.key}"><span class="sw" style="background:${x.q.hunch.color}"></span><em>${esc(x.q.text)}</em><b>${x.q.sources.length} sources →</b></a>` : ''}
-          <h4>What I'm making</h4>
-          ${x.medium ? `<p class="xp-medium">${esc(x.medium)}</p>` : ''}
-          ${paras(x.plan, 'To fill in: what I will make and how.')}
-          <h4>What I expect to find</h4>
-          ${paras(x.expect, 'To fill in: my hunch about what will happen.')}
-          <h4>How I'll know</h4>
-          ${paras(x.measure, 'To fill in: what I will watch, ask, or measure.')}
+  const statusLabel = st => !st || st === 'Idea' ? 'Idea · not made yet' : st;
+  const hasResults = x => !!(x.media && x.media.length || x.learned || x.answered || x.answerNote || x.newQuestions && x.newQuestions.length);
+  const resultsHTML = x => `
           <h4>Documentation</h4>
           ${x.media && x.media.length ? `<div class="xp-media">${x.media.map(m => `<figure>${isVideo(m.src)
             ? `<video src="${esc(m.src)}" controls playsinline preload="metadata"></video>`
@@ -1953,6 +1956,43 @@ body.mobile .top .long{display:none}
           ${x.answered || x.answerNote ? `${x.answered ? `<span class="ans ${x.answered.toLowerCase()}">${esc(x.answered)}</span>` : ''}${paras(x.answerNote, '')}` : `<p class="todo">To fill in: yes, partly, or no, and why.</p>`}
           <h4>New questions for the next cycle</h4>
           ${x.newQuestions && x.newQuestions.length ? `<ul class="nq">${x.newQuestions.map(n => `<li>${esc(n)}</li>`).join('')}</ul>` : `<p class="todo">To fill in: questions this raised for the next research-by-making cycle.</p>`}
+`;
+  function buildPU3() {
+    const statusCls = st => (st || 'Idea').toLowerCase().replace(/\s+/g, '-');
+    pu3.innerHTML = `
+      <button class="x" type="button" data-close aria-label="Close">×</button>
+      <p class="eyebrow">Progress Update 3</p>
+      <h2 id="pu3Title" tabindex="-1" data-focus>${XPS.some(x => x.status === 'Done') ? 'Creative explorations' : 'Creative exploration ideas'}</h2>
+      ${XPS.some(x => x.status === 'Done') ? '' : `<p class="not-yet"><b>Not made yet.</b> These are ideas I could make. I'll pick 2–5 to try first; the sketches show what each could look like.</p>`}
+      <p class="ask">Explore the inquiry space by making: 2–5 explorations, each addressing a different question. For each, what did I learn, did it answer my question, and what new questions came up for the next research-by-making cycle?</p>
+      ${PU3.intro ? paras(PU3.intro, '') : ''}
+      <div class="stats">
+        <div><b>${XPS.length}</b>ideas</div>
+        <div><b>${XPS.filter(x => x.status === 'Done').length}</b>made so far</div>
+        <div><b>${new Set(XPS.map(x => x.q && x.q.hunch.id).filter(Boolean)).size}</b>hunches explored</div>
+      </div>
+      <h4>Idea bank</h4>
+      <ol class="xp-overview">${XPS.map(x => `
+        <li><a href="#xp-${x.id}" data-xp="${x.id}" style="--tint:${x.q ? x.q.hunch.tint : 'rgba(31,29,26,.05)'}">
+          ${x.concept ? `<img class="thumb" src="${esc(x.concept)}" alt="" loading="lazy">` : `<span class="n">${String(x.n).padStart(2, '0')}</span>`}
+          <span>${esc(x.title)}<span class="k">${esc(x.kind)}${x.q ? ` · ${esc(x.q.hunch.name)}` : ''}</span></span>
+          <span class="status ${statusCls(x.status)}">${esc(statusLabel(x.status))}</span>
+        </a></li>`).join('')}
+      </ol>
+      ${XPS.map(x => `
+        <section class="xp" id="xp-${x.id}">
+          <div class="xp-head"><h3><span class="n">${String(x.n).padStart(2, '0')}</span>${esc(x.title)}</h3><span class="status ${statusCls(x.status)}">${esc(statusLabel(x.status))}</span></div>
+          <div class="xp-tags"><span>${esc(x.kind)}</span>${x.q ? `<span>${esc(x.q.hunch.name)}</span>` : ''}</div>
+          ${x.concept ? `<figure class="concept"><img src="${esc(x.concept)}" alt="Concept sketch of ${esc(x.title)}" loading="lazy"><figcaption>Concept sketch of what this could look like. Not made yet.</figcaption></figure>` : ''}
+          ${x.q ? `<a class="xp-q" href="#/${x.q.key}"><span class="sw" style="background:${x.q.hunch.color}"></span><em>${esc(x.q.text)}</em><b>${x.q.sources.length} sources →</b></a>` : ''}
+          <h4>${x.status === 'Done' || x.status === 'In progress' ? "What I'm making" : 'What I could make'}</h4>
+          ${x.medium ? `<p class="xp-medium">${esc(x.medium)}</p>` : ''}
+          ${paras(x.plan, 'To fill in: what I will make and how.')}
+          <h4>What I expect to find</h4>
+          ${paras(x.expect, 'To fill in: my hunch about what will happen.')}
+          <h4>How I'll know</h4>
+          ${paras(x.measure, 'To fill in: what I will watch, ask, or measure.')}
+          ${hasResults(x) ? resultsHTML(x) : `<h4>Results</h4><p class="todo">After I make it: photos or video, what I learned, whether it answered my question, and new questions for the next cycle.</p>`}
         </section>`).join('')}
       <section>
         <h3><span class="n">?</span>Questions for my readers</h3>
@@ -1961,11 +2001,12 @@ body.mobile .top .long{display:none}
       </section>`;
   }
   function openXP(id) {
-    if (!pu3.classList.contains('open')) openOverlay(pu3);
+    const wasOpen = pu3.classList.contains('open');
+    if (!wasOpen) openOverlay(pu3);
     const sec = $('xp-' + id);
     if (!sec) return;
     requestAnimationFrame(() => {
-      sec.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      pu3.scrollTo({ top: sec.offsetTop - 16, behavior: wasOpen && !reduce ? 'smooth' : 'auto' });
       sec.classList.remove('flash'); void sec.offsetWidth; sec.classList.add('flash');
     });
   }

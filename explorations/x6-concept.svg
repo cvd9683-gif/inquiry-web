@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="IBM Plex Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="640" height="400" fill="#fbf9f4"/>
+<ellipse cx="320" cy="215" rx="300" ry="160" fill="#c9bca8" opacity=".3"/>
+<rect x="16" y="14" width="236" height="24" rx="12" fill="#fff" stroke="#1f1d1a" stroke-opacity=".18"/><text x="134" y="30" text-anchor="middle" font-size="11" letter-spacing=".8" fill="#6f6a61">CONCEPT SKETCH · NOT MADE YET</text>
+<text x="320" y="70" text-anchor="middle" font-size="14" font-weight="600" fill="#1f1d1a">What does "AI safety" mean to a 10-year-old?</text>
+<g stroke="#1f1d1a" stroke-width="1.6" fill="#fff"><rect x="30" y="90" width="186" height="250" rx="10"/><rect x="227" y="90" width="186" height="250" rx="10"/><rect x="424" y="90" width="186" height="250" rx="10"/></g>
+<g stroke="#1f1d1a" stroke-width="1.5" fill="#fff">
+<rect x="120" y="230" width="44" height="40" rx="8"/><line x1="142" y1="230" x2="142" y2="216"/><circle cx="142" cy="212" r="4" fill="#c9bca8"/><rect x="124" y="270" width="36" height="46" rx="6"/>
+<circle cx="72" cy="246" r="18"/><path d="M52 318 q20 -60 40 0"/>
+<circle cx="276" cy="246" r="18"/><path d="M256 318 q20 -60 40 0"/>
+<rect x="340" y="230" width="44" height="40" rx="8"/><line x1="362" y1="230" x2="362" y2="216"/><circle cx="362" cy="212" r="4" fill="#c9bca8"/><rect x="344" y="270" width="36" height="46" rx="6"/>
+<rect x="540" y="230" width="44" height="40" rx="8"/><line x1="562" y1="230" x2="562" y2="216"/><circle cx="562" cy="212" r="4" fill="#c9bca8"/><rect x="544" y="270" width="36" height="46" rx="6"/>
+<circle cx="470" cy="246" r="18"/><path d="M450 318 q20 -60 40 0"/>
+</g>
+<g fill="#1f1d1a"><circle cx="133" cy="248" r="3"/><circle cx="151" cy="248" r="3"/><circle cx="353" cy="248" r="3"/><circle cx="371" cy="248" r="3"/><circle cx="553" cy="248" r="3"/><circle cx="571" cy="248" r="3"/></g>
+<g stroke="#1f1d1a" stroke-width="1.2" fill="#fbf9f4">
+<path d="M44 108 h158 a8 8 0 0 1 8 8 v44 a8 8 0 0 1 -8 8 h-50 l-10 14 l-4 -14 h-94 a8 8 0 0 1 -8 -8 v-44 a8 8 0 0 1 8 -8 z"/>
+<path d="M241 108 h158 a8 8 0 0 1 8 8 v44 a8 8 0 0 1 -8 8 h-110 l-12 14 l-2 -14 h-34 a8 8 0 0 1 -8 -8 v-44 a8 8 0 0 1 8 -8 z"/>
+<path d="M438 108 h158 a8 8 0 0 1 8 8 v58 a8 8 0 0 1 -8 8 h-30 l-6 14 l-8 -14 h-114 a8 8 0 0 1 -8 -8 v-58 a8 8 0 0 1 8 -8 z"/>
+</g>
+<g font-size="12" fill="#1f1d1a"><text x="50" y="132">I'm an AI! Ask me</text><text x="50" y="150">anything!</text>
+<text x="247" y="132">Can I trust everything</text><text x="247" y="150">you say?</text>
+<text x="444" y="128">Not always. I can be</text><text x="444" y="145">wrong, so check with a</text><text x="444" y="162">grown-up or a book.</text></g>
+<g font-size="11" fill="#6f6a61"><text x="40" y="332">1</text><text x="237" y="332">2</text><text x="434" y="332">3</text></g>
+<text x="320" y="372" text-anchor="middle" font-size="12" fill="#6f6a61">A short comic, read with a kid (with a parent's OK) or shown to a teacher</text>
+</svg>

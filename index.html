@@ -490,6 +490,40 @@ button{font:inherit;color:inherit}
 .scene{position:absolute;inset:0;transform-origin:0 0}
 .scene-svg{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
 .layer{position:absolute;left:0;top:0;transform-origin:0 0}
+.lp{position:absolute;inset:0;overflow-y:auto;padding:92px 32px 200px;transition:padding .55s var(--ease)}
+#inner.card-open .lp{padding-right:calc(min(440px, 100vw - 40px) + 52px)}
+.lp-col{max-width:740px;margin:0 auto}
+.lp-head{margin-bottom:26px}
+.lp-head .eyebrow{display:flex;align-items:center;gap:8px}
+.lp-head h1{font-size:clamp(44px,5vw,64px);font-weight:300;letter-spacing:-.025em;line-height:1.05;margin:4px 0 10px;outline:none}
+.lp-head h1.q{font-size:clamp(26px,2.6vw,34px);font-style:italic;font-weight:300;line-height:1.3;letter-spacing:-.01em;margin-bottom:18px}
+.lp-sub{font-size:14px;color:var(--ink-3);margin:0}
+.lp-rels{align-items:flex-start}
+.lp-hunch{border-radius:22px;background:var(--tint);padding:22px 24px 14px;margin:0 0 16px}
+.lp-hunch h2{font-size:24px;font-weight:500;margin:0 0 6px;letter-spacing:-.01em}
+.lp-hunch h2 a{text-decoration:none}
+.lp-hunch h2 a span{display:inline-block;transition:transform .25s var(--ease);color:var(--ink-3)}
+.lp-hunch h2 a:hover span{transform:translateX(4px);color:var(--ink)}
+.lp-hunch .bl{font-size:15px;line-height:1.55;color:var(--ink-2);margin:0 0 14px;max-width:600px}
+.lp-qs{list-style:none;margin:0;padding:0}
+.lp-q{display:flex;align-items:baseline;gap:16px;text-decoration:none;background:rgba(255,253,248,.86);border-radius:14px;padding:14px 18px;margin:0 0 8px;transition:background .2s,transform .25s var(--ease)}
+.lp-q:hover{background:#fff;transform:translateX(3px)}
+.lp-q em{flex:1;font-size:16.5px;line-height:1.45}
+.lp-q .m{font-size:12px;color:var(--ink-3);white-space:nowrap}
+.lp-count{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:6px 0 10px;font-weight:500}
+.lp-srcs{list-style:none;margin:0;padding:6px;border-radius:22px;background:var(--tint)}
+.lp-src{display:grid;grid-template-columns:14px 1fr auto;gap:16px;align-items:start;text-decoration:none;padding:18px 18px;border-radius:16px;background:rgba(255,253,248,.86);margin:4px 0;transition:background .2s,box-shadow .2s,transform .25s var(--ease)}
+.lp-src:hover{background:#fff;transform:translateX(3px)}
+.lp-src.active{background:#fff;box-shadow:0 0 0 1.5px var(--ink)}
+.lp-src .mk{width:10px;height:10px;border-radius:50%;background:var(--ink);margin-top:24px;border:1.5px solid var(--ink)}
+.lp-src .mk.ring{background:transparent}
+.lp-src .body{display:grid;gap:4px;min-width:0}
+.lp-src .ty{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.lp-src .ti{font-size:17px;font-weight:500;line-height:1.35}
+.lp-src .me{font-size:13px;color:var(--ink-3)}
+.lp-src .tk{font-size:14.5px;line-height:1.5;color:var(--ink-2);margin-top:4px}
+.lp-src .go{font-size:18px;color:var(--ink-3);margin-top:20px;transition:transform .25s var(--ease)}
+.lp-src:hover .go{transform:translateX(3px);color:var(--ink)}
 .blob{mix-blend-mode:multiply;transition:opacity .35s,fill-opacity .35s;transform-box:fill-box;transform-origin:center;animation:drift 18s ease-in-out infinite}
 .blob.hl{fill-opacity:.62}
 .link{fill:none;stroke:var(--line);stroke-width:1;transition:opacity .3s,stroke .3s}
@@ -603,6 +637,10 @@ button{font:inherit;color:inherit}
 .imap svg{position:absolute;inset:0;overflow:visible;pointer-events:none}
 .imap .rblob{mix-blend-mode:multiply;transform-box:fill-box;transform-origin:center;animation:drift 20s ease-in-out infinite;transition:fill-opacity .3s}
 .imap .rlabel{font-size:11.5px;letter-spacing:.01em;font-weight:500}
+.imap .overlap-bubble{fill:#fffdf8;fill-opacity:.88;stroke:rgba(31,29,26,.28);stroke-width:1;filter:drop-shadow(0 6px 14px rgba(40,30,10,.12));transform-box:fill-box;transform-origin:center;animation:breathe-b 6s ease-in-out infinite}
+.imap .overlap-label{fill:var(--ink-3);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+.imap.carry .overlap-bubble{fill-opacity:.95}
+@keyframes breathe-b{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 .word{position:absolute;display:flex;align-items:center;gap:6px;border:0;background:none;padding:2px 4px 2px 0;margin:0;cursor:pointer;
   font:inherit;font-size:11px;color:var(--ink);white-space:nowrap;transform:translate(-4px,-50%);border-radius:5px;transition:opacity .3s,background .2s}
 .word::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ink);flex:none}
@@ -1113,6 +1151,17 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
         t.setAttribute('transform', `rotate(${rot} ${f(lx)} ${f(ly)})`);
         [-half, half].forEach(k => [-9, 9].forEach(v => grow(lx + ux * k - uy * v, ly + uy * k + ux * v)));
       });
+      // words that sit where every region overlaps (Music) get their own bubble, drawn on top
+      const shared = B.filter(o => !REGION[o.w.r]);
+      if (shared.length) {
+        const x0 = Math.min(...shared.map(o => o.x - 4)), x1 = Math.max(...shared.map(o => o.x - 4 + o.bw));
+        const y0 = Math.min(...shared.map(o => o.y - o.bh / 2)), y1 = Math.max(...shared.map(o => o.y + o.bh / 2));
+        const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, rx = (x1 - x0) / 2 + 30, ry = (y1 - y0) / 2 + 24;
+        S('path', { d: blobPath(cx, cy, rx, ry, 5, 9, .08), class: 'overlap-bubble' }, gb);
+        const t = S('text', { x: f(cx), y: f(cy - ry - 9), 'text-anchor': 'middle', class: 'rlabel overlap-label' }, gl);
+        t.textContent = 'Where everything overlaps';
+        grow(cx - rx, cy - ry - 18); grow(cx + rx, cy + ry);
+      }
       const at = {};
       B.forEach(o => { at[o.w.t] = o; });
       IS.lines.forEach(([a, b]) => {
@@ -1263,41 +1312,70 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
   }
 
   /* ---------- level 1b: a word from the map, zoomed in ---------- */
-  function buildWord(sc, g, w) {
+  // Word page: a readable list of the hunches the word fed, with their questions.
+  function buildWordList(sc, w) {
+    const r = REGION[w.r] || {};
     const hs = w.hunches.map(id => HUNCH[id]).filter(Boolean);
-    const C = { x: g.cx, y: g.cy - (hs.length > 2 ? g.h * .035 : 0) }, r = REGION[w.r] || {};
-    const n = hs.length, br = clamp(g.m * .12, 64, 112);
-    const rx = Math.min(g.W * (n > 2 ? .24 : .3), 460), ry = g.h * (n > 2 ? .25 : .3), d = 64;
-    const angles = { 1: [0], 2: [180, 0], 3: [-90, 25, 155], 4: [-145, -35, 35, 145] }[n] || hs.map((_, i) => -90 + i * 360 / n);
-    const mw = clamp(C.x - rx - d - 40, 150, 230);
-    const gap = clamp(g.h * (n > 2 ? .085 : .11), 58, 92);
-    if (r.color) S('path', { d: blobPath(C.x, C.y, 170, 105, 77, 9, .14), fill: r.color, 'fill-opacity': .22, class: 'blob' }, sc.gBlobs);
-    addCenter(sc, 'center-word', `
-      <p class="eyebrow" style="color:${r.color ? shade(r.color, .55) : 'inherit'}">${esc(r.label || 'Where the regions overlap')}</p>
-      <h2>${esc(w.t)}</h2>
-      <p class="wsub">${n ? `Shows up in ${n} of my hunches` : 'Not in a hunch yet'}</p>`, C.x, C.y);
-    hs.forEach((h, i) => {
-      const a = rad(angles[i]);
-      const x = C.x + Math.cos(a) * rx, y = C.y + Math.sin(a) * ry * (n === 2 ? 0 : 1);
-      const side = x < C.x - 1 ? -1 : 1;
-      const nq = h.questions.length;
-      S('path', { d: blobPath(x + side * (d * .9), y, d * 1.9, Math.max(br, (nq - 1) * gap * .5 + 60), h.n + 40, 9, .12), fill: h.color, 'fill-opacity': .36,
-        class: 'blob dimmable', 'data-branch': h.id, style: `animation-delay:-${h.n * 3.3}s` }, sc.gBlobs);
-      // title sits on the inner side, away from the spoke, so the question column stays clear
-      const lab = `in-${side > 0 ? 'l' : 'r'}-${y > C.y + 1 ? 'down' : 'up'}`;
-      addNode(sc, { x, y, href: '#/' + h.id, side: lab, cls: 'node-hunch', branch: h.id, color: h.color, mw: 200, key: h.id,
-        html: `<span class="l-name">${esc(h.name)}</span><span class="l-sub">${esc(trunc(h.blurb, 80))}</span>` });
-      sc.pos[h.id] = { x, y };
-      sc.spokes.push({ to: { x, y }, branch: h.id });
-      h.questions.forEach((q, j) => {
-        const qx = x + side * d, qy = y + (j - (nq - 1) / 2) * gap;
-        S('path', { d: curve({ x, y }, { x: qx, y: qy }, side * .18), class: 'link faint dimmable bloom-line', pathLength: 1, 'data-branch': h.id }, sc.gLinks);
-        addNode(sc, { x: qx, y: qy, href: '#/' + q.key, side: side < 0 ? 'left' : 'right', cls: 'q-small', branch: h.id, color: h.color, mw, key: q.key,
-          html: `<span class="l-q">${esc(q.text)}</span>` });
-        sc.pos[q.key] = { x: qx, y: qy };
-      });
+    sc.list = true;
+    const lp = E('div', 'lp', `<div class="lp-col">
+      <header class="lp-head">
+        <p class="eyebrow" style="color:${r.color ? shade(r.color, .55) : 'var(--ink-3)'}">${esc(r.label || 'Where everything overlaps')}</p>
+        <h1 tabindex="-1">${esc(w.t)}</h1>
+        <p class="lp-sub">${hs.length ? `Shows up in ${hs.length} of my hunches` : 'Not in a hunch yet'}</p>
+      </header>
+      ${hs.map(h => `
+        <section class="lp-hunch bloom-row" style="--tint:${h.tint}" data-key="${h.id}">
+          <p class="eyebrow" style="color:${h.ink}">Hunch ${h.n}</p>
+          <h2><a href="#/${h.id}">${esc(h.name)} <span aria-hidden="true">→</span></a></h2>
+          <p class="bl">${esc(h.blurb)}</p>
+          <ul class="lp-qs">${h.questions.map(q => `
+            <li><a class="lp-q" href="#/${q.key}" data-key="${q.key}"><em>${esc(q.text)}</em><span class="m">${q.sources.length} source${q.sources.length === 1 ? '' : 's'} →</span></a></li>`).join('')}
+          </ul>
+        </section>`).join('')}
+    </div>`, sc.el);
+    sc.center = lp.querySelector('h1');
+    sc.after = () => listPositions(sc, lp);
+  }
+
+  // Question page: the sources as a list; selecting one opens the source window.
+  function buildQuestionList(sc, q) {
+    const h = q.hunch, rels = related(q);
+    sc.list = true;
+    const lp = E('div', 'lp', `<div class="lp-col">
+      <header class="lp-head">
+        <p class="eyebrow" style="color:${h.ink}"><span class="sw" style="background:${h.color}"></span>Hunch ${h.n} · ${esc(h.name)} · Question ${q.n}</p>
+        <h1 class="q" tabindex="-1">${esc(q.text)}</h1>
+        ${rels.length ? `<div class="rels lp-rels">${rels.map(r => `
+          <a class="rel-chip" href="#/${r.q.key}" title="${esc(r.note)}">
+            <span class="sw" style="background:${r.q.hunch.color}"></span>
+            <span><span class="k">Related in another hunch → ${esc(r.q.hunch.name)}</span><span class="t">${esc(r.q.text)}</span></span>
+          </a>`).join('')}</div>` : ''}
+      </header>
+      <p class="lp-count">${q.sources.length} source${q.sources.length === 1 ? '' : 's'}</p>
+      <ol class="lp-srcs" style="--tint:${h.tint}">${q.sources.map(s => `
+        <li class="bloom-row"><a class="lp-src" href="#/${s.key}" data-key="${s.key}">
+          <i class="mk ${s.type === 'project' ? 'ring' : ''}" aria-hidden="true"></i>
+          <span class="body">
+            <span class="ty">${s.type === 'project' ? 'Project' : 'Paper'}</span>
+            <span class="ti">${esc(s.title)}</span>
+            <span class="me">${esc(s.authors)} · ${esc(s.year)} · ${esc(s.venue)}</span>
+            <span class="tk">${esc(s.takeaway)}</span>
+          </span>
+          <span class="go" aria-hidden="true">→</span>
+        </a></li>`).join('')}
+      </ol>
+    </div>`, sc.el);
+    sc.center = lp.querySelector('h1');
+    sc.after = () => listPositions(sc, lp);
+  }
+
+  // where each row sits, so zooms in and out start from the right place
+  function listPositions(sc, lp) {
+    const s0 = sc.el.getBoundingClientRect();
+    lp.querySelectorAll('[data-key]').forEach(el => {
+      const r = el.getBoundingClientRect();
+      sc.pos[el.dataset.key] = { x: r.left - s0.left + Math.min(r.width / 2, 200), y: r.top - s0.top + Math.min(r.height / 2, 40) };
     });
-    sc.after = () => drawSpokes(sc);
   }
 
   /* ---------- level 2: hunch ---------- */
@@ -1323,53 +1401,12 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
     sc.after = () => drawSpokes(sc);
   }
 
-  /* ---------- level 3: question ---------- */
-  function buildQuestion(sc, g, q) {
-    const h = q.hunch, C = { x: g.cx, y: g.cy + g.h * .08 };
-    S('path', { d: blobPath(C.x, C.y, Math.min(g.W * .25, 390), g.h * .3, h.n * 3 + q.n), fill: h.color, 'fill-opacity': .34, class: 'blob' }, sc.gBlobs);
-    const rels = related(q);
-    addCenter(sc, 'center-q', `
-      <p class="eyebrow" style="color:${h.ink}"><span class="sw" style="background:${h.color}"></span>Hunch ${h.n} · ${esc(h.name)}</p>
-      <h2>${esc(q.text)}</h2>
-      ${rels.length ? `<div class="rels">${rels.map(r => `
-        <a class="rel-chip" href="#/${r.q.key}" title="${esc(r.note)}">
-          <span class="sw" style="background:${r.q.hunch.color}"></span>
-          <span><span class="k">Related in another hunch → ${esc(r.q.hunch.name)}</span><span class="t">${esc(r.q.text)}</span></span>
-        </a>`).join('')}</div>` : ''}`, C.x, C.y);
-    const rx = Math.min(g.W * .31, 500), ry = g.h * .36;
-    const angles = fan(q.sources.length, { 1: [-90], 2: [-148, -32], 3: [-155, -90, -25] });
-    q.sources.forEach((s, i) => {
-      const a = rad(angles[i]), x = C.x + Math.cos(a) * rx, y = C.y + Math.sin(a) * ry;
-      addNode(sc, { x, y, href: '#/' + s.key, side: y < C.y - 1 ? 'above' : 'below', branch: s.key, color: h.color, mw: 250, key: s.key,
-        dotCls: s.type === 'project' ? 'ring' : '',
-        html: `<span class="l-tag">${s.type === 'project' ? 'Project' : 'Paper'}</span><span class="l-title">${esc(s.title)}</span><span class="l-meta">${esc(s.authors)} · ${esc(s.year)}</span>` });
-      sc.pos[s.key] = { x, y };
-      sc.spokes.push({ to: { x, y }, branch: s.key });
-    });
-    sc.after = () => drawSpokes(sc);
-  }
-
-  // Below this width the word view is laid out larger and scaled to fit.
-  const WORD_MIN_W = 1240;
   function build(route, g) {
     const sc = newScene(route.key, g);
-    if (route.word && g.W < WORD_MIN_W) {
-      const k = g.W / WORD_MIN_W;
-      const gl = { W: g.W / k, H: g.H / k, h: g.h / k, cx: g.cx / k, cy: g.cy / k };
-      gl.m = Math.min(gl.W, gl.h);
-      sc.k = k;
-      sc.root = E('div', 'layer', null, sc.el);
-      sc.root.style.transform = `scale(${k.toFixed(4)})`;
-      sc.root.appendChild(sc.svg);
-      sc.svg.setAttribute('width', gl.W); sc.svg.setAttribute('height', gl.H);
-      buildWord(sc, gl, route.word);
-      wireHover(sc);
-      return sc;
-    }
     if (route.key === 'intro') buildIntro(sc);
     else if (route.key === 'web') buildWeb(sc, g);
-    else if (route.word) buildWord(sc, g, route.word);
-    else if (route.q) buildQuestion(sc, g, route.q);
+    else if (route.word) buildWordList(sc, route.word);
+    else if (route.q) buildQuestionList(sc, route.q);
     else buildHunch(sc, g, route.h);
     wireHover(sc);
     return sc;
@@ -1427,6 +1464,12 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
 
   function bloom(sc) {
     if (reduce) return;
+    if (sc.list) {
+      sc.el.querySelectorAll('.lp-head, .bloom-row, .lp-count').forEach((el, i) =>
+        el.animate([{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }],
+          { duration: 560, delay: 140 + i * 60, easing: 'cubic-bezier(.2,.75,.25,1)', fill: 'backwards' }));
+      return;
+    }
     const C = sc.C;
     if (sc.center && sc.center.classList.contains('center')) sc.center.animate([{ opacity: 0, transform: 'translate(-50%,-50%) scale(.94)' }, { opacity: 1, transform: 'translate(-50%,-50%) scale(1)' }],
       { duration: 600, delay: 120, easing: EASE, fill: 'backwards' });
@@ -1527,16 +1570,17 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
   }
   function updateLegend(r) {
     legend.classList.toggle('hidden', r.key === 'intro');
-    if (r.word) legend.innerHTML = `<span>Select a hunch to zoom in</span><span><i class="lm"></i>question</span><span>Esc to return to the map</span>`;
+    if (r.word) legend.innerHTML = `<span>Select a hunch or a question</span><span>Esc to return to the map</span>`;
     else if (r.key === 'web') legend.innerHTML = `<span>Select a hunch to zoom in</span>
       <span><i class="lm"></i>question</span>
       <span><svg width="26" height="6"><path d="M1 3H25" stroke="#1f1d1a" stroke-opacity=".55" stroke-dasharray="1.5 4" stroke-linecap="round"/></svg>related across hunches</span>`;
-    else if (r.q) legend.innerHTML = `<span><i class="ld"></i>paper</span><span><i class="lr"></i>project</span><span>Select a source to read it</span>`;
+    else if (r.q) legend.innerHTML = `<span><i class="ld"></i>paper</span><span><i class="lr"></i>project</span><span>Select a source to open it</span>`;
     else if (r.h) legend.innerHTML = `<span>Select a question to see its sources</span><span>Esc to go back</span>`;
   }
 
   function fitForCard(open) {
-    if (!open || !current) { inner.style.transform = ''; inner.style.opacity = ''; return; }
+    inner.classList.toggle('card-open', !!open && !!current && !!current.list);
+    if (!open || !current || current.list) { inner.style.transform = ''; inner.style.opacity = ''; return; }
     const W = innerWidth, cw = card.offsetWidth + 40, avail = W - cw;
     const g = current.g, half = Math.min(W * .31, 500) + 135;
     const s = clamp(avail / (half * 2), .6, 1);
@@ -1544,7 +1588,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
     inner.style.transform = `translate(${f(tx)}px,${f(ty)}px) scale(${s.toFixed(3)})`;
   }
   function updateCard(r) {
-    current && current.el.querySelectorAll('.node.active').forEach(n => n.classList.remove('active'));
+    current && current.el.querySelectorAll('.active').forEach(n => n.classList.remove('active'));
     if (!r.s) {
       card.classList.remove('open'); card.inert = true; fitForCard(false);
       return;
@@ -1571,7 +1615,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
       </nav>`;
     card.style.setProperty('--c', h.color);
     card.inert = false; card.classList.add('open');
-    const n = current && current.el.querySelector(`.node[data-key="${s.key}"]`);
+    const n = current && current.el.querySelector(`[data-key="${s.key}"]`);
     if (n) n.classList.add('active');
     fitForCard(true);
     requestAnimationFrame(() => card.querySelector('h2').focus({ preventScroll: true }));

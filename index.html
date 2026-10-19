@@ -568,6 +568,48 @@ button{font:inherit;color:inherit}
 .lp{position:absolute;inset:0;overflow-y:auto;padding:92px 32px 200px;transition:padding .55s var(--ease)}
 #inner.card-open .lp{padding-right:calc(min(440px, 100vw - 40px) + 52px)}
 .lp-col{max-width:740px;margin:0 auto}
+.lp-col.wide{max-width:980px}
+.lp-ask{font-size:13.5px;color:var(--ink-3);font-style:italic;margin:0 0 14px;max-width:720px}
+.lp-intro p{font-size:15.5px;line-height:1.6;color:var(--ink-2);margin:0 0 10px;max-width:720px}
+.lp-stats{display:flex;gap:28px;padding:14px 0;margin-top:8px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.lp-stats div{font-size:12px;color:var(--ink-3)} .lp-stats b{display:block;font-size:24px;font-weight:300;color:var(--ink)}
+.lp .not-yet{font-size:14px;line-height:1.5;background:rgba(227,191,79,.18);border:1px solid rgba(227,191,79,.5);border-radius:12px;padding:10px 14px;margin:0 0 16px;max-width:720px}
+.lp .not-yet b{font-weight:600}
+.idea-grid{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.idea-card{display:flex;flex-direction:column;height:100%;text-decoration:none;color:var(--ink);background:var(--tint);border-radius:20px;padding:10px;transition:transform .25s var(--ease),box-shadow .25s}
+.idea-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(40,30,10,.4)}
+.idea-card img{width:100%;aspect-ratio:8/5;object-fit:cover;border-radius:12px;display:block;box-shadow:0 0 0 1px var(--hair)}
+.ic-body{display:flex;flex-direction:column;gap:6px;padding:12px 8px 8px}
+.ic-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ic-n{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.ic-t{font-size:19px;font-weight:500;line-height:1.25;letter-spacing:-.01em}
+.ic-k{font-size:12.5px;color:var(--ink-2);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.lp-readers{margin-top:40px}
+.lp-readers h2{font-size:22px;font-weight:500;margin:0 0 4px}
+.xpage .concept{margin:0 0 26px}
+.xpage .concept img{width:100%;aspect-ratio:8/5;display:block;border-radius:18px;box-shadow:0 0 0 1px var(--hair),0 24px 50px -32px rgba(40,30,10,.35)}
+.xpage .concept figcaption{font-size:12px;color:var(--ink-3);font-style:italic;margin-top:8px}
+.xpage section{margin:0 0 22px}
+.xpage h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin:0 0 8px}
+.xpage p{font-size:16px;line-height:1.62;margin:0 0 10px;color:var(--ink)}
+.xpage .xp-medium{font-size:13.5px;color:var(--ink-3);margin:0 0 6px}
+.xpage .xp-tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.xpage .xp-tags > span:not(.status){font-size:12.5px;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2)}
+.xpage .xp-q{font-size:15.5px;padding:14px 16px}
+.xp-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 22px}
+.xp-two section{background:rgba(255,253,248,.85);border:1px solid var(--hair);border-radius:16px;padding:16px 18px;margin:0}
+.xp-two p{font-size:15px}
+.xpage .todo{color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.22);border-radius:12px;padding:12px 14px;font-size:14px}
+.xp-pager{display:flex;justify-content:space-between;gap:16px;margin-top:34px;padding-top:18px;border-top:1px solid var(--hair)}
+.xp-pager a{display:flex;flex-direction:column;gap:3px;text-decoration:none;font-size:15px;font-weight:500;max-width:48%}
+.xp-pager a span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:400}
+.xp-pager a.nx{text-align:right;align-items:flex-end}
+.xp-pager a:hover{text-decoration:underline;text-underline-offset:4px}
+.lp .readers{display:grid;gap:8px}
+.lp .readers div{border:1px solid var(--hair);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.5)}
+.lp .readers b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:4px}
+.lp .readers p{margin:0;font-size:15px;line-height:1.5}
+@media (max-width: 900px){.xp-two{grid-template-columns:1fr}}
 .lp-head{margin-bottom:26px}
 .lp-head .eyebrow{display:flex;align-items:center;gap:8px}
 .lp-head h1{font-size:clamp(44px,5vw,64px);font-weight:300;letter-spacing:-.025em;line-height:1.05;margin:4px 0 10px;outline:none}
@@ -884,6 +926,17 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
 .m-hunch{margin:0 0 22px;padding:20px 18px 10px;border-radius:20px;background:var(--tint);scroll-margin-top:72px}
 .m-hunch h3{font-size:22px;font-weight:500;margin:0 0 6px}
 .m-hunch>p{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0 0 12px}
+.m-ideas{margin:0 0 22px;padding:20px 18px 10px;border-radius:20px;background:#fff;border:1px solid var(--hair);scroll-margin-top:72px}
+.m-ideas h3{font-size:22px;font-weight:500;margin:0 0 10px}
+.m-ideas .not-yet{font-size:13.5px;line-height:1.5;background:rgba(227,191,79,.18);border:1px solid rgba(227,191,79,.5);border-radius:12px;padding:10px 12px}
+.m-ideas details{border-top:1px solid var(--hair);padding:0 2px;scroll-margin-top:72px}
+.m-ideas summary{cursor:pointer;padding:14px 0;font-size:16px;font-weight:500;list-style:none;display:flex;flex-direction:column;gap:2px}
+.m-ideas summary span{font-size:12px;font-weight:400;color:var(--ink-3)}
+.m-ideas summary::-webkit-details-marker{display:none}
+.m-ideas img{width:100%;border-radius:12px;box-shadow:0 0 0 1px var(--hair);margin-bottom:10px}
+.m-ideas p{font-size:14px;line-height:1.55;margin:0 0 8px}
+.m-ideas p b{font-weight:500}
+.m-ideas .w{font-style:italic;color:var(--ink-2)}
 .m-hunch details{background:rgba(255,253,248,.82);border-radius:14px;margin:0 0 10px;padding:0 14px;scroll-margin-top:72px}
 .m-hunch summary{padding:14px 0;font-style:italic;font-size:15.5px;line-height:1.42;list-style:none;display:flex;gap:10px}
 .m-hunch summary::-webkit-details-marker{display:none}
@@ -945,7 +998,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
 .readers div{border:1px solid var(--hair);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.5)}
 .readers b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:4px}
 .readers p{margin:0 !important}
-.xp-chip{display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:13px;text-align:left;cursor:pointer;border:1px solid rgba(31,29,26,.2);background:var(--panel);border-radius:14px;padding:9px 14px;margin:0 0 4px;transition:background .2s,border-color .2s}
+.xp-chip{text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:13px;text-align:left;cursor:pointer;border:1px solid rgba(31,29,26,.2);background:var(--panel);border-radius:14px;padding:9px 14px;margin:0 0 4px;transition:background .2s,border-color .2s}
 .xp-chip:hover{background:#fff;border-color:var(--ink)}
 .xp-chip .k{display:block;font-size:11px;color:var(--ink-3)}
 .xp-chip .spark{font-size:15px}
@@ -962,7 +1015,7 @@ body.mobile .top .long{display:none}
   <div class="actions">
     <button class="btn" id="backBtn" type="button" aria-label="Go up one level"><span aria-hidden="true">←</span> Back</button>
     <button class="btn" id="pu2Btn" type="button" aria-haspopup="dialog"><span class="long">Progress </span>Update 2</button>
-    <button class="btn" id="pu3Btn" type="button" aria-haspopup="dialog"><span class="long">Progress </span>Update 3</button>
+    <button class="btn" id="pu3Btn" type="button"><span class="long">Progress </span>Update 3</button>
   </div>
 </header>
 
@@ -982,7 +1035,6 @@ body.mobile .top .long{display:none}
   <p class="body" id="stanceBody"></p>
 </div>
 <div id="pu2" class="drawer" role="dialog" aria-modal="true" aria-labelledby="pu2Title" inert></div>
-<div id="pu3" class="drawer" role="dialog" aria-modal="true" aria-labelledby="pu3Title" inert></div>
 <div id="tip" role="tooltip"></div>
 <div id="live" class="sr-only" aria-live="polite"></div>
 
@@ -1031,6 +1083,10 @@ body.mobile .top .long{display:none}
     if (!p.length || p[0] === 'intro') return { key: 'intro' };
     if (p[0] === 'web') return { key: 'web' };
     if (p[0] === 'w') { const w = WORD[p[1]]; return w ? { key: 'w:' + w.slug, word: w } : { key: 'intro' }; }
+    if (p[0] === 'x') {
+      const x = p[1] && XPS.find(e => e.id === p[1]);
+      return x ? { key: 'x:' + x.id, xp: x } : { key: 'xs', xs: true };
+    }
     const h = HUNCH[p[0]];
     if (!h) return { key: 'intro' };
     const q = p[1] && h.questions.find(x => x.id === p[1]);
@@ -1043,12 +1099,14 @@ body.mobile .top .long{display:none}
   let via = null;
   function pathOf(key) {
     if (key === 'intro') return ['intro'];
-    if (key === 'web' || key.startsWith('w:')) return ['intro', key];
+    if (key === 'web' || key.startsWith('w:') || key === 'xs') return ['intro', key];
+    if (key.startsWith('x:')) return ['intro', 'xs', key];
     const mid = via ? 'w:' + via : 'web';
     const [h, q] = key.split('/');
     return q ? ['intro', mid, h, key] : ['intro', mid, h];
   }
-  const hashFor = key => key === 'intro' ? '#/' : key.startsWith('w:') ? '#/w/' + key.slice(2) : '#/' + key;
+  const hashFor = key => key === 'intro' ? '#/' : key === 'xs' ? '#/x' : key.startsWith('x:') ? '#/x/' + key.slice(2)
+    : key.startsWith('w:') ? '#/w/' + key.slice(2) : '#/' + key;
   function parentHash(r) {
     if (r.s) return hashFor(r.key);
     const p = pathOf(r.key);
@@ -1513,8 +1571,8 @@ body.mobile .top .long{display:none}
             <span><span class="k">Related in another hunch → ${esc(r.q.hunch.name)}</span><span class="t">${esc(r.q.text)}</span></span>
           </a>`).join('')}</div>` : ''}
         ${xpsFor(q).length ? `<div class="lp-xps">${xpsFor(q).map(x => `
-          <button class="xp-chip" type="button" data-xp="${x.id}"><span class="spark" aria-hidden="true">✦</span>
-            <span><span class="k">Exploration idea ${x.n} · ${esc(x.status && x.status !== 'Idea' ? x.status : 'not made yet')}</span>${esc(x.title)}</span></button>`).join('')}</div>` : ''}
+          <a class="xp-chip" href="#/x/${x.id}" data-key="x:${x.id}"><span class="spark" aria-hidden="true">✦</span>
+            <span><span class="k">Exploration idea ${x.n} · ${esc(x.status && x.status !== 'Idea' ? x.status : 'not made yet')}</span>${esc(x.title)}</span></a>`).join('')}</div>` : ''}
       </header>
       <p class="lp-count">${q.sources.length} source${q.sources.length === 1 ? '' : 's'}</p>
       <ol class="lp-srcs" style="--tint:${h.tint}">${q.sources.map(s => `
@@ -1570,6 +1628,8 @@ body.mobile .top .long{display:none}
     if (route.key === 'intro') buildIntro(sc);
     else if (route.key === 'web') buildWeb(sc, g);
     else if (route.word) buildWordList(sc, route.word);
+    else if (route.xs) buildIdeas(sc);
+    else if (route.xp) buildIdea(sc, route.xp);
     else if (route.q) buildQuestionList(sc, route.q);
     else buildHunch(sc, g, route.h);
     wireHover(sc);
@@ -1675,9 +1735,11 @@ body.mobile .top .long{display:none}
   /* ---------- chrome: crumbs, minimap, legend, card ---------- */
   function updateCrumbs(r) {
     const items = [{ label: 'Intro', href: '#/' }];
+    if (r.xs || r.xp) items.push({ label: 'Exploration ideas', href: '#/x' });
+    if (r.xp) items.push({ label: r.xp.title });
     const vw = r.word || (via && r.h ? WORD[via] : null);
     if (vw) items.push({ label: `“${vw.t}”`, href: hashFor('w:' + vw.slug) });
-    else if (r.key !== 'intro') items.push({ label: 'Thesis', href: '#/web' });
+    else if (r.key !== 'intro' && !r.xs && !r.xp) items.push({ label: 'Thesis', href: '#/web' });
     if (r.h) items.push({ label: r.h.name, href: '#/' + r.h.id, color: r.h.color });
     if (r.q) items.push({ label: trunc(r.q.text, 46), href: '#/' + r.q.key, title: r.q.text, cls: 'q' });
     if (r.s) items.push({ label: trunc(r.s.title, 40), title: r.s.title });
@@ -1727,14 +1789,17 @@ body.mobile .top .long{display:none}
   }
   function updateMinimap(r) {
     minimap.classList.toggle('hidden', r.key === 'intro');
-    minimap.classList.toggle('focused', !!(r.h || r.word));
-    for (const id in mm.h) mm.h[id].classList.toggle('on', r.h ? r.h.id === id : !!r.word && r.word.hunches.includes(id));
-    for (const key in mm.q) mm.q[key].forEach(c => c.classList.toggle('cur', !!r.q && r.q.key === key));
-    minimap.querySelector('.cap').innerHTML = r.word ? `“<b>${esc(r.word.t)}</b>” across ${r.word.hunches.length} hunch${r.word.hunches.length === 1 ? '' : 'es'}` : r.q ? `You are here: <b>${esc(r.h.name)}</b> · Q${r.q.n}` : r.h ? `You are here: <b>${esc(r.h.name)}</b>` : `You are here: <b>the thesis web</b>`;
+    const xq = r.xp && r.xp.q, xh = xq ? xq.hunch : null;
+    minimap.classList.toggle('focused', !!(r.h || r.word || xh));
+    for (const id in mm.h) mm.h[id].classList.toggle('on', r.h ? r.h.id === id : xh ? xh.id === id : !!r.word && r.word.hunches.includes(id));
+    for (const key in mm.q) mm.q[key].forEach(c => c.classList.toggle('cur', (!!r.q && r.q.key === key) || (!!xq && xq.key === key)));
+    minimap.querySelector('.cap').innerHTML = r.xs ? `<b>Exploration ideas</b> across the web` : xh ? `Idea for <b>${esc(xh.name)}</b> · Q${xq.n}` : r.word ? `“<b>${esc(r.word.t)}</b>” across ${r.word.hunches.length} hunch${r.word.hunches.length === 1 ? '' : 'es'}` : r.q ? `You are here: <b>${esc(r.h.name)}</b> · Q${r.q.n}` : r.h ? `You are here: <b>${esc(r.h.name)}</b>` : `You are here: <b>the thesis web</b>`;
   }
   function updateLegend(r) {
     legend.classList.toggle('hidden', r.key === 'intro');
     if (r.word) legend.innerHTML = `<span>Select a hunch or a question</span><span>Esc to return to the map</span>`;
+    else if (r.xs) legend.innerHTML = `<span>Select an idea to see what it could be</span><span>Esc to go back</span>`;
+    else if (r.xp) legend.innerHTML = `<span>Not made yet</span><span>Esc to see all ideas</span>`;
     else if (r.key === 'web') legend.innerHTML = `<span>Select a hunch to zoom in</span>
       <span><i class="lm"></i>question</span>
       <span><svg width="26" height="6"><path d="M1 3H25" stroke="#1f1d1a" stroke-opacity=".55" stroke-dasharray="1.5 4" stroke-linecap="round"/></svg>related across hunches</span>`;
@@ -1796,6 +1861,8 @@ body.mobile .top .long{display:none}
     if (r.h) return `Hunch ${r.h.n}: ${r.h.name}`;
     if (r.key === 'web') return 'Thesis web';
     if (r.word) return `Word: ${r.word.t}`;
+    if (r.xs) return 'Exploration ideas';
+    if (r.xp) return `Exploration idea: ${r.xp.title}`;
     return 'Intro';
   }
   function render() {
@@ -1829,7 +1896,7 @@ body.mobile .top .long{display:none}
   }
 
   /* ---------- overlays: stance & Progress Update 2 ---------- */
-  const scrim = $('scrim'), stance = $('stance'), pu2 = $('pu2'), pu3 = $('pu3');
+  const scrim = $('scrim'), stance = $('stance'), pu2 = $('pu2');
   let lastFocus = null;
   function openOverlay(el) {
     lastFocus = document.activeElement;
@@ -1837,7 +1904,7 @@ body.mobile .top .long{display:none}
     requestAnimationFrame(() => el.querySelector('[data-focus]').focus({ preventScroll: true }));
   }
   function closeOverlays(restore = true) {
-    const open = [stance, pu2, pu3].filter(e => e.classList.contains('open'));
+    const open = [stance, pu2].filter(e => e.classList.contains('open'));
     open.forEach(e => { e.classList.remove('open'); e.inert = true; });
     scrim.classList.remove('on');
     if (open.length && restore && lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
@@ -1957,63 +2024,81 @@ body.mobile .top .long{display:none}
           <h4>New questions for the next cycle</h4>
           ${x.newQuestions && x.newQuestions.length ? `<ul class="nq">${x.newQuestions.map(n => `<li>${esc(n)}</li>`).join('')}</ul>` : `<p class="todo">To fill in: questions this raised for the next research-by-making cycle.</p>`}
 `;
-  function buildPU3() {
-    const statusCls = st => (st || 'Idea').toLowerCase().replace(/\s+/g, '-');
-    pu3.innerHTML = `
-      <button class="x" type="button" data-close aria-label="Close">×</button>
-      <p class="eyebrow">Progress Update 3</p>
-      <h2 id="pu3Title" tabindex="-1" data-focus>${XPS.some(x => x.status === 'Done') ? 'Creative explorations' : 'Creative exploration ideas'}</h2>
-      ${XPS.some(x => x.status === 'Done') ? '' : `<p class="not-yet"><b>Not made yet.</b> These are ideas I could make. I'll pick 2–5 to try first; the sketches show what each could look like.</p>`}
-      <p class="ask">Explore the inquiry space by making: 2–5 explorations, each addressing a different question. For each, what did I learn, did it answer my question, and what new questions came up for the next research-by-making cycle?</p>
-      ${PU3.intro ? paras(PU3.intro, '') : ''}
-      <div class="stats">
-        <div><b>${XPS.length}</b>ideas</div>
-        <div><b>${XPS.filter(x => x.status === 'Done').length}</b>made so far</div>
-        <div><b>${new Set(XPS.map(x => x.q && x.q.hunch.id).filter(Boolean)).size}</b>hunches explored</div>
-      </div>
-      <h4>Idea bank</h4>
-      <ol class="xp-overview">${XPS.map(x => `
-        <li><a href="#xp-${x.id}" data-xp="${x.id}" style="--tint:${x.q ? x.q.hunch.tint : 'rgba(31,29,26,.05)'}">
-          ${x.concept ? `<img class="thumb" src="${esc(x.concept)}" alt="" loading="lazy">` : `<span class="n">${String(x.n).padStart(2, '0')}</span>`}
-          <span>${esc(x.title)}<span class="k">${esc(x.kind)}${x.q ? ` · ${esc(x.q.hunch.name)}` : ''}</span></span>
-          <span class="status ${statusCls(x.status)}">${esc(statusLabel(x.status))}</span>
+  const statusCls = st => (st || 'Idea').toLowerCase().replace(/\s+/g, '-');
+  const anyMade = () => XPS.some(x => x.status === 'Done');
+  const NOT_YET = `<p class="not-yet"><b>Not made yet.</b> These are ideas I could make. I'll pick 2–5 to try first; the sketches show what each could look like.</p>`;
+
+  // Progress Update 3, page 1: every idea as a card
+  function buildIdeas(sc) {
+    sc.list = true;
+    const lp = E('div', 'lp', `<div class="lp-col wide">
+      <header class="lp-head">
+        <p class="eyebrow">Progress Update 3</p>
+        <h1 tabindex="-1">${anyMade() ? 'Creative explorations' : 'Creative exploration ideas'}</h1>
+        ${anyMade() ? '' : NOT_YET}
+        <p class="lp-ask">Explore the inquiry space by making: 2–5 explorations, each addressing a different question. For each, what did I learn, did it answer my question, and what new questions came up for the next research-by-making cycle?</p>
+        ${PU3.intro ? `<div class="lp-intro">${paras(PU3.intro, '')}</div>` : ''}
+        <div class="lp-stats">
+          <div><b>${XPS.length}</b>ideas</div>
+          <div><b>${XPS.filter(x => x.status === 'Done').length}</b>made so far</div>
+          <div><b>${new Set(XPS.map(x => x.q && x.q.hunch.id).filter(Boolean)).size}</b>hunches explored</div>
+        </div>
+      </header>
+      <ol class="idea-grid">${XPS.map(x => `
+        <li class="bloom-row"><a class="idea-card" href="#/x/${x.id}" data-key="x:${x.id}" style="--tint:${x.q ? x.q.hunch.tint : 'rgba(31,29,26,.05)'}">
+          ${x.concept ? `<img src="${esc(x.concept)}" alt="" loading="lazy">` : ''}
+          <span class="ic-body">
+            <span class="ic-top"><span class="ic-n">Idea ${x.n}</span><span class="status ${statusCls(x.status)}">${esc(statusLabel(x.status))}</span></span>
+            <span class="ic-t">${esc(x.title)}</span>
+            <span class="ic-k">${esc(x.kind)}${x.q ? ` · <span class="sw" style="background:${x.q.hunch.color}"></span>${esc(x.q.hunch.name)}` : ''}</span>
+          </span>
         </a></li>`).join('')}
       </ol>
-      ${XPS.map(x => `
-        <section class="xp" id="xp-${x.id}">
-          <div class="xp-head"><h3><span class="n">${String(x.n).padStart(2, '0')}</span>${esc(x.title)}</h3><span class="status ${statusCls(x.status)}">${esc(statusLabel(x.status))}</span></div>
-          <div class="xp-tags"><span>${esc(x.kind)}</span>${x.q ? `<span>${esc(x.q.hunch.name)}</span>` : ''}</div>
-          ${x.concept ? `<figure class="concept"><img src="${esc(x.concept)}" alt="Concept sketch of ${esc(x.title)}" loading="lazy"><figcaption>Concept sketch of what this could look like. Not made yet.</figcaption></figure>` : ''}
-          ${x.q ? `<a class="xp-q" href="#/${x.q.key}"><span class="sw" style="background:${x.q.hunch.color}"></span><em>${esc(x.q.text)}</em><b>${x.q.sources.length} sources →</b></a>` : ''}
-          <h4>${x.status === 'Done' || x.status === 'In progress' ? "What I'm making" : 'What I could make'}</h4>
-          ${x.medium ? `<p class="xp-medium">${esc(x.medium)}</p>` : ''}
-          ${paras(x.plan, 'To fill in: what I will make and how.')}
-          <h4>What I expect to find</h4>
-          ${paras(x.expect, 'To fill in: my hunch about what will happen.')}
-          <h4>How I'll know</h4>
-          ${paras(x.measure, 'To fill in: what I will watch, ask, or measure.')}
-          ${hasResults(x) ? resultsHTML(x) : `<h4>Results</h4><p class="todo">After I make it: photos or video, what I learned, whether it answered my question, and new questions for the next cycle.</p>`}
-        </section>`).join('')}
-      <section>
-        <h3><span class="n">?</span>Questions for my readers</h3>
-        <p class="ask">For my advisor, resident, and peers.</p>
+      <section class="lp-readers">
+        <h2>Questions for my readers</h2>
+        <p class="lp-ask">For my advisor, resident, and peers.</p>
         ${PU3.questionsForReaders && PU3.questionsForReaders.length ? `<div class="readers">${PU3.questionsForReaders.map(r => `<div><b>${esc(r.who)}</b><p>${esc(r.q)}</p></div>`).join('')}</div>` : `<p class="todo">To fill in: what I want to ask my advisor, resident, and peers.</p>`}
-      </section>`;
+      </section>
+    </div>`, sc.el);
+    sc.center = lp.querySelector('h1');
+    sc.after = () => listPositions(sc, lp);
   }
-  function openXP(id) {
-    const wasOpen = pu3.classList.contains('open');
-    if (!wasOpen) openOverlay(pu3);
-    const sec = $('xp-' + id);
-    if (!sec) return;
-    requestAnimationFrame(() => {
-      pu3.scrollTo({ top: sec.offsetTop - 16, behavior: wasOpen && !reduce ? 'smooth' : 'auto' });
-      sec.classList.remove('flash'); void sec.offsetWidth; sec.classList.add('flash');
-    });
+
+  // Progress Update 3, page 2: one idea in full
+  function buildIdea(sc, x) {
+    sc.list = true;
+    const i = XPS.indexOf(x), prev = XPS[i - 1], next = XPS[i + 1], h = x.q && x.q.hunch;
+    const made = x.status === 'Done' || x.status === 'In progress';
+    const lp = E('div', 'lp', `<div class="lp-col xpage">
+      <header class="lp-head">
+        <p class="eyebrow"${h ? ` style="color:${h.ink}"` : ''}>Exploration idea ${x.n} of ${XPS.length} · ${esc(x.kind)}</p>
+        <h1 tabindex="-1">${esc(x.title)}</h1>
+        <div class="xp-tags"><span class="status ${statusCls(x.status)}">${esc(statusLabel(x.status))}</span>${h ? `<span><span class="sw" style="background:${h.color}"></span>${esc(h.name)}</span>` : ''}</div>
+      </header>
+      ${x.concept ? `<figure class="concept bloom-row"><img src="${esc(x.concept)}" alt="Concept sketch of ${esc(x.title)}"><figcaption>Concept sketch of what this could look like. ${made ? '' : 'Not made yet.'}</figcaption></figure>` : ''}
+      ${x.q ? `<section class="bloom-row"><h4>The question it explores</h4><a class="xp-q" href="#/${x.q.key}" data-key="${x.q.key}"><span class="sw" style="background:${h.color}"></span><em>${esc(x.q.text)}</em><b>${x.q.sources.length} sources →</b></a></section>` : ''}
+      <section class="bloom-row">
+        <h4>${made ? "What I'm making" : 'What I could make'}</h4>
+        ${x.medium ? `<p class="xp-medium">${esc(x.medium)}</p>` : ''}
+        ${paras(x.plan, 'To fill in: what I will make and how.')}
+      </section>
+      <div class="xp-two bloom-row">
+        <section><h4>What I expect to find</h4>${paras(x.expect, 'To fill in: my hunch about what will happen.')}</section>
+        <section><h4>How I'll know</h4>${paras(x.measure, 'To fill in: what I will watch, ask, or measure.')}</section>
+      </div>
+      <section class="bloom-row">
+        ${hasResults(x) ? resultsHTML(x) : `<h4>Results</h4><p class="todo">After I make it: photos or video, what I learned, whether it answered my question, and new questions for the next cycle.</p>`}
+      </section>
+      <nav class="xp-pager" aria-label="Other ideas">
+        ${prev ? `<a href="#/x/${prev.id}"><span>← Idea ${prev.n}</span>${esc(prev.title)}</a>` : '<span></span>'}
+        ${next ? `<a class="nx" href="#/x/${next.id}"><span>Idea ${next.n} →</span>${esc(next.title)}</a>` : '<span></span>'}
+      </nav>
+    </div>`, sc.el);
+    sc.center = lp.querySelector('h1');
+    sc.after = () => listPositions(sc, lp);
   }
 
   document.addEventListener('click', e => {
-    const xp = e.target.closest('[data-xp]');
-    if (xp) { e.preventDefault(); openXP(xp.dataset.xp); return; }
     if (e.target.closest('[data-stance]')) { e.preventDefault(); openOverlay(stance); }
     else if (e.target.closest('[data-compare]')) {
       carryMode = true;
@@ -2026,7 +2111,7 @@ body.mobile .top .long{display:none}
     else if (e.target.closest('[data-close]') || e.target === scrim) closeOverlays();
   });
   $('pu2Btn').addEventListener('click', () => openOverlay(pu2));
-  $('pu3Btn').addEventListener('click', () => openOverlay(pu3));
+  $('pu3Btn').addEventListener('click', () => { closeOverlays(false); location.hash = '#/x'; });
   $('backBtn').addEventListener('click', goUp);
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
@@ -2069,11 +2154,27 @@ body.mobile .top .long{display:none}
                 </li>`).join('')}</ul>
               ${related(q).map(r => `<a class="m-rel" href="#/${r.q.key}">Related in another hunch → <em>${esc(r.q.hunch.name)}</em></a>`).join('')}
             </details>`).join('')}
-        </section>`).join('')}`;
+        </section>`).join('')}
+      <section class="m-ideas" id="m-ideas">
+        <p class="eyebrow">Progress Update 3</p>
+        <h3>Creative exploration ideas</h3>
+        ${anyMade() ? '' : NOT_YET}
+        ${XPS.map(x => `
+          <details id="m-x-${x.id}">
+            <summary>${esc(x.title)}<span>${esc(x.kind)}${x.q ? ` · ${esc(x.q.hunch.name)}` : ''}</span></summary>
+            ${x.concept ? `<img src="${esc(x.concept)}" alt="Concept sketch of ${esc(x.title)}" loading="lazy">` : ''}
+            ${x.q ? `<p class="w">${esc(x.q.text)}</p>` : ''}
+            <p><b>What I could make:</b> ${esc(x.plan)}</p>
+            <p><b>What I expect:</b> ${esc(x.expect || '')}</p>
+            <p><b>How I'll know:</b> ${esc(x.measure || '')}</p>
+          </details>`).join('')}
+      </section>`;
   }
   function renderList(r) {
     let target = null;
-    if (r.q) { target = $(`m-${r.h.id}-${r.q.id}`); target.open = true; }
+    if (r.xp) { target = $(`m-x-${r.xp.id}`); target.open = true; }
+    else if (r.xs) target = $('m-ideas');
+    else if (r.q) { target = $(`m-${r.h.id}-${r.q.id}`); target.open = true; }
     else if (r.h) target = $(`m-${r.h.id}`);
     if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   }
@@ -2092,7 +2193,6 @@ body.mobile .top .long{display:none}
   $('brandName').textContent = DATA.title;
   $('stanceBody').textContent = DATA.stance;
   buildPU2();
-  buildPU3();
   buildMinimap();
   addEventListener('hashchange', render);
   mq.addEventListener('change', applyMode);

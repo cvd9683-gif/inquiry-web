@@ -10,7 +10,7 @@ An interactive map of my thesis inquiry. It combines two progress updates:
 
 - **Progress Update 1:** my inquiry space map. Click any word to zoom into the hunches it fed.
 - **Progress Update 2:** research findings and a refined inquiry space. Open the **Progress Update 2** button in the header.
-- **Progress Update 3:** a bank of 8 creative exploration ideas across all five hunches, each with a concept sketch (none are made yet; I'll pick 2–5). Open the **Progress Update 3** button, or the ✦ exploration idea chip on a question's page.
+- **Progress Update 3:** a bank of 8 creative exploration ideas across all five hunches, each with a concept sketch (none are made yet; I'll pick 2–5). Open **Progress Update 3** in the header (`#/x`); each idea has its own page (e.g. `#/x/x1`), also linked from the ✦ chip on its question's page.
 
 ## Exploring it
 

@@ -188,12 +188,12 @@ const DATA = {
         {
           id: `q1`, text: `If AI made most of it, is it still mine? Does it matter to me, or to anyone else?`,
           sources: [
-            { type: `paper`, title: `The AI Ghostwriter Effect: When Users do not Perceive Ownership of AI-Generated Text but Self-Declare as Authors`, authors: `Draxler et al.`, year: `2024`, venue: `ACM TOCHI`, url: `https://doi.org/10.1145/3637875`,
+            { type: `paper`, title: `The AI Ghostwriter Effect: When Users do not Perceive Ownership of AI-Generated Text but Self-Declare as Authors`, aka: [`the Ghostwriter effect`], authors: `Draxler et al.`, year: `2024`, venue: `ACM TOCHI`, url: `https://doi.org/10.1145/3637875`,
               takeaway: `People don't feel they own AI-written text, but they still put their name on it.`,
               why: `That gap between feeling and claiming authorship is exactly what I'm curious about.`,
               surprised: `People still put their name on the text even when they didn't feel it was theirs.`,
               quote: `` },
-            { type: `paper`, title: `The IKEA effect: When labor leads to love`, authors: `Norton, Mochon & Ariely`, year: `2012`, venue: `Journal of Consumer Psychology`, url: `https://doi.org/10.1016/j.jcps.2011.08.002`,
+            { type: `paper`, title: `The IKEA effect: When labor leads to love`, aka: [`the IKEA effect`], authors: `Norton, Mochon & Ariely`, year: `2012`, venue: `Journal of Consumer Psychology`, url: `https://doi.org/10.1016/j.jcps.2011.08.002`,
               takeaway: `We value things more when we put effort into making them.`,
               why: `If AI does the labor, do we lose some of the love?`,
               surprised: `Effort itself makes us value something more, even when the result isn't any better.`,
@@ -203,7 +203,7 @@ const DATA = {
         {
           id: `q2`, text: `Which kinds of control make me feel like the author, and not just the audience?`,
           sources: [
-            { type: `paper`, title: `Novice-AI Music Co-Creation via AI-Steering Tools for Deep Generative Models (Cococo)`, authors: `Louie et al.`, year: `2020`, venue: `CHI '20`, url: `https://doi.org/10.1145/3313831.3376739`,
+            { type: `paper`, title: `Novice-AI Music Co-Creation via AI-Steering Tools for Deep Generative Models (Cococo)`, aka: [`Cococo`], authors: `Louie et al.`, year: `2020`, venue: `CHI '20`, url: `https://doi.org/10.1145/3313831.3376739`,
               takeaway: `Giving people simple steering controls made them feel more ownership over AI-made music.`,
               why: `A direct design precedent: control can protect authorship.`,
               surprised: `Even simple controls were enough to shift how much ownership people felt.`,
@@ -295,7 +295,7 @@ const DATA = {
               why: `The clearest evidence that design choices decide whether AI helps or hurts learning.`,
               surprised: `Practice scores went up while test scores went down. It looked like help but hurt learning.`,
               quote: `` },
-            { type: `paper`, title: `The generation effect: Delineation of a phenomenon`, authors: `Slamecka & Graf`, year: `1978`, venue: `JEP: Human Learning and Memory`, url: `https://doi.org/10.1037/0278-7393.4.6.592`,
+            { type: `paper`, title: `The generation effect: Delineation of a phenomenon`, aka: [`the generation effect`], authors: `Slamecka & Graf`, year: `1978`, venue: `JEP: Human Learning and Memory`, url: `https://doi.org/10.1037/0278-7393.4.6.592`,
               takeaway: `We remember what we come up with ourselves better than what we just read.`,
               why: `The argument for an AI that holds back the answer.`,
               surprised: `This was found in 1978, long before AI, but it explains exactly why answer-giving AI is a problem.`,
@@ -310,7 +310,7 @@ const DATA = {
               why: `The best-known attempt at 'guardrailed' AI for students.`,
               surprised: `A major education company chose to design its tutor to hold back answers.`,
               quote: `` },
-            { type: `project`, title: `ChatGPT Study Mode`, authors: `OpenAI`, year: `2025`, venue: `Product feature`, url: `https://openai.com/index/chatgpt-study-mode/`,
+            { type: `project`, title: `ChatGPT Study Mode`, aka: [`Study Mode`], authors: `OpenAI`, year: `2025`, venue: `Product feature`, url: `https://openai.com/index/chatgpt-study-mode/`,
               takeaway: `A mode that walks students through problems step by step instead of solving them.`,
               why: `A sign the big companies see this problem too.`,
               surprised: `Even OpenAI built a mode that slows students down on purpose.`,
@@ -512,7 +512,8 @@ button{font:inherit;color:inherit}
 .lp-q .m{font-size:12px;color:var(--ink-3);white-space:nowrap}
 .lp-count{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:6px 0 10px;font-weight:500}
 .lp-srcs{list-style:none;margin:0;padding:6px;border-radius:22px;background:var(--tint)}
-.lp-src{display:grid;grid-template-columns:14px 1fr auto;gap:16px;align-items:start;text-decoration:none;padding:18px 18px;border-radius:16px;background:rgba(255,253,248,.86);margin:4px 0;transition:background .2s,box-shadow .2s,transform .25s var(--ease)}
+.lp-srcs li{position:relative}
+.lp-src{display:grid;grid-template-columns:14px 1fr;padding-right:104px !important;gap:16px;align-items:start;text-decoration:none;padding:18px 18px;border-radius:16px;background:rgba(255,253,248,.86);margin:4px 0;transition:background .2s,box-shadow .2s,transform .25s var(--ease)}
 .lp-src:hover{background:#fff;transform:translateX(3px)}
 .lp-src.active{background:#fff;box-shadow:0 0 0 1.5px var(--ink)}
 .lp-src .mk{width:10px;height:10px;border-radius:50%;background:var(--ink);margin-top:24px;border:1.5px solid var(--ink)}
@@ -522,8 +523,9 @@ button{font:inherit;color:inherit}
 .lp-src .ti{font-size:17px;font-weight:500;line-height:1.35}
 .lp-src .me{font-size:13px;color:var(--ink-3)}
 .lp-src .tk{font-size:14.5px;line-height:1.5;color:var(--ink-2);margin-top:4px}
-.lp-src .go{font-size:18px;color:var(--ink-3);margin-top:20px;transition:transform .25s var(--ease)}
-.lp-src:hover .go{transform:translateX(3px);color:var(--ink)}
+.lp-read{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:500;text-decoration:none;color:var(--ink);
+  border:1px solid rgba(31,29,26,.2);background:var(--panel);border-radius:999px;padding:7px 13px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.lp-read:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .blob{mix-blend-mode:multiply;transition:opacity .35s,fill-opacity .35s;transform-box:fill-box;transform-origin:center;animation:drift 18s ease-in-out infinite}
 .blob.hl{fill-opacity:.62}
 .link{fill:none;stroke:var(--line);stroke-width:1;transition:opacity .3s,stroke .3s}
@@ -637,10 +639,9 @@ button{font:inherit;color:inherit}
 .imap svg{position:absolute;inset:0;overflow:visible;pointer-events:none}
 .imap .rblob{mix-blend-mode:multiply;transform-box:fill-box;transform-origin:center;animation:drift 20s ease-in-out infinite;transition:fill-opacity .3s}
 .imap .rlabel{font-size:11.5px;letter-spacing:.01em;font-weight:500}
-.imap .overlap-bubble{fill:#fffdf8;fill-opacity:.88;stroke:rgba(31,29,26,.28);stroke-width:1;filter:drop-shadow(0 6px 14px rgba(40,30,10,.12));transform-box:fill-box;transform-origin:center;animation:breathe-b 6s ease-in-out infinite}
-.imap .overlap-label{fill:var(--ink-3);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
-.imap.carry .overlap-bubble{fill-opacity:.95}
-@keyframes breathe-b{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.imap .overlap-bubble{transform-box:fill-box;transform-origin:center;animation:breathe-b 7s ease-in-out infinite}
+.imap .overlap-label{fill:var(--ink-3)}
+@keyframes breathe-b{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
 .word{position:absolute;display:flex;align-items:center;gap:6px;border:0;background:none;padding:2px 4px 2px 0;margin:0;cursor:pointer;
   font:inherit;font-size:11px;color:var(--ink);white-space:nowrap;transform:translate(-4px,-50%);border-radius:5px;transition:opacity .3s,background .2s}
 .word::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ink);flex:none}
@@ -760,7 +761,10 @@ button{font:inherit;color:inherit}
 .src-group summary::-webkit-details-marker{display:none}
 .src-group summary .cnt{margin-left:auto;font-size:12px;color:var(--ink-3)}
 .src-group ul{list-style:none;margin:0;padding:0 8px 8px}
-.src-group li a{display:flex;gap:12px;align-items:center;text-decoration:none;font-size:13px;line-height:1.35;padding:8px 8px;border-radius:8px;background:rgba(255,253,248,.75);margin-top:4px}
+.src-group li{display:flex;gap:4px;align-items:stretch}
+.src-group li a.ext{flex:none;width:34px;justify-content:center;color:var(--ink-3);font-size:14px}
+.src-group li a.ext:hover{color:var(--ink)}
+.src-group li a{flex:1;display:flex;gap:12px;align-items:center;text-decoration:none;font-size:13px;line-height:1.35;padding:8px 8px;border-radius:8px;background:rgba(255,253,248,.75);margin-top:4px}
 .src-group li a:hover{background:#fff}
 .src-group .st{flex:1;min-width:0}
 .src-group .mks{display:inline-flex;gap:4px;flex:none}
@@ -771,6 +775,8 @@ button{font:inherit;color:inherit}
 .xl .via{font-size:11px;color:var(--ink-3);padding-left:17px}
 .pu2-cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .expert p{font-size:13.5px;margin:8px 0 0}
+#pu2 a.cite{color:inherit;text-decoration:underline;text-decoration-color:rgba(31,29,26,.35);text-underline-offset:3px;text-decoration-thickness:1px}
+#pu2 a.cite:hover{text-decoration-color:var(--ink)}
 .expert .iv{display:inline-block;margin-top:10px;font-size:11.5px;font-style:normal;color:var(--ink-3);border:1px solid var(--hair);border-radius:999px;padding:3px 10px}
 .expert .iv.on{color:var(--ink);background:rgba(163,193,154,.35);border-color:transparent}
 .experts{display:grid;gap:10px}
@@ -1156,9 +1162,18 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
       if (shared.length) {
         const x0 = Math.min(...shared.map(o => o.x - 4)), x1 = Math.max(...shared.map(o => o.x - 4 + o.bw));
         const y0 = Math.min(...shared.map(o => o.y - o.bh / 2)), y1 = Math.max(...shared.map(o => o.y + o.bh / 2));
-        const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, rx = (x1 - x0) / 2 + 30, ry = (y1 - y0) / 2 + 24;
-        S('path', { d: blobPath(cx, cy, rx, ry, 5, 9, .08), class: 'overlap-bubble' }, gb);
-        const t = S('text', { x: f(cx), y: f(cy - ry - 9), 'text-anchor': 'middle', class: 'rlabel overlap-label' }, gl);
+        const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, rx = (x1 - x0) / 2 + 40, ry = (y1 - y0) / 2 + 30;
+        // a soft pastel bubble mixing every region's color, feathered at the edge
+        const uid = 'ov' + Math.random().toString(36).slice(2, 7);
+        const defs = S('defs', {}, gb);
+        const grad = S('linearGradient', { id: uid + 'g', x1: 0, y1: 0, x2: 1, y2: 1 }, defs);
+        IS.regions.forEach((r, i) => S('stop', { offset: f(i / (IS.regions.length - 1) * 100) + '%', 'stop-color': r.color }, grad));
+        const blur = S('filter', { id: uid + 'f', x: '-30%', y: '-30%', width: '160%', height: '160%' }, defs);
+        S('feGaussianBlur', { stdDeviation: 3.5 }, blur);
+        const d = blobPath(cx, cy, rx, ry, 5, 9, .08);
+        S('path', { d, fill: '#fffdf8', 'fill-opacity': .96, filter: `url(#${uid}f)`, class: 'overlap-bubble' }, gb);
+        S('path', { d, fill: `url(#${uid}g)`, 'fill-opacity': .6, filter: `url(#${uid}f)`, class: 'overlap-bubble' }, gb);
+        const t = S('text', { x: f(cx), y: f(cy + ry + 14), 'text-anchor': 'middle', class: 'rlabel overlap-label' }, gl);
         t.textContent = 'Where everything overlaps';
         grow(cx - rx, cy - ry - 18); grow(cx + rx, cy + ry);
       }
@@ -1361,8 +1376,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
             <span class="me">${esc(s.authors)} · ${esc(s.year)} · ${esc(s.venue)}</span>
             <span class="tk">${esc(s.takeaway)}</span>
           </span>
-          <span class="go" aria-hidden="true">→</span>
-        </a></li>`).join('')}
+        </a><a class="lp-read" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${s.type === 'project' ? 'Visit' : 'Read'} <span aria-hidden="true">↗</span><span class="sr-only"> ${esc(s.title)} (opens in a new tab)</span></a></li>`).join('')}
       </ol>
     </div>`, sc.el);
     sc.center = lp.querySelector('h1');
@@ -1679,8 +1693,29 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
     if (open.length && restore && lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
     return open.length > 0;
   }
+  // Names like "Hove & Risen", "Bastani et al." or "Cococo" in the write-up link to the paper.
+  const CITES = (() => {
+    const all = DATA.hunches.flatMap(h => h.questions.flatMap(q => q.sources));
+    const names = new Map();
+    const add = (name, s) => { if (!name) return; names.set(name, names.has(name) && names.get(name) !== s ? null : s); };
+    all.forEach(s => {
+      const a = s.authors.replace(/\s*\(.*\)\s*$/, '').trim();
+      add(a, s);
+      const people = a.split(/,|&/).map(x => x.trim()).filter(Boolean);
+      if (people.length >= 3) add(people[0] + ' et al.', s);
+      (s.aka || []).forEach(n => add(n, s));
+      if (s.type === 'project') add(s.title, s);
+    });
+    return [...names].filter(([, s]) => s).sort((a, b) => b[0].length - a[0].length);
+  })();
+  const citeRe = new RegExp(CITES.map(([n]) => esc(n).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'g');
+  const citeMap = new Map(CITES.map(([n, s]) => [esc(n), s]));
+  const linkCites = html => CITES.length ? html.replace(citeRe, m => {
+    const s = citeMap.get(m);
+    return `<a class="cite" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="${esc(s.title)}">${m}</a>`;
+  }) : html;
   const paras = (txt, ph) => txt && txt.trim()
-    ? txt.trim().split(/\n\s*\n/).map(p => `<p>${esc(p)}</p>`).join('')
+    ? txt.trim().split(/\n\s*\n/).map(p => `<p>${linkCites(esc(p))}</p>`).join('')
     : `<p class="ph">${ph}</p>`;
   function buildPU2() {
     const P = DATA.progressUpdate2;
@@ -1714,7 +1749,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
           <details class="src-group" style="--tint:${h.tint}">
             <summary><span class="sw" style="background:${h.color}"></span>${esc(h.name)}<span class="cnt">${h.questions.reduce((n, q) => n + q.sources.length, 0)}</span></summary>
             <ul>${h.questions.flatMap(q => q.sources).map(s => `
-              <li><a href="#/${s.key}"><span class="st">${esc(s.title)}</span><span class="mks">${mark(!!s.takeaway, 'Learned')}${mark(!!s.surprised, 'Surprise')}${mark(!!s.quote, 'Quote')}</span></a></li>`).join('')}
+              <li><a href="#/${s.key}"><span class="st">${esc(s.title)}</span><span class="mks">${mark(!!s.takeaway, 'Learned')}${mark(!!s.surprised, 'Surprise')}${mark(!!s.quote, 'Quote')}</span></a><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="Open the ${s.type === 'project' ? 'project' : 'paper'}">↗<span class="sr-only"> open ${esc(s.title)} in a new tab</span></a></li>`).join('')}
             </ul>
           </details>`).join('')}
       </section>

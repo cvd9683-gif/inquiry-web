@@ -10,6 +10,7 @@ An interactive map of my thesis inquiry. It combines two progress updates:
 
 - **Progress Update 1:** my inquiry space map. Click any word to zoom into the hunches it fed.
 - **Progress Update 2:** research findings and a refined inquiry space. Open the **Progress Update 2** button in the header.
+- **Progress Update 3:** creative explorations, each testing one question from the web: the plan, documentation, what I learned, and new questions. Open the **Progress Update 3** button, or the ✦ exploration chip on a question's page.
 
 ## Exploring it
 
@@ -20,4 +21,4 @@ An interactive map of my thesis inquiry. It combines two progress updates:
 
 ## Editing
 
-Everything is one file, `index.html`. All the text (hunches, questions, sources, findings, experts, and the map's words) lives in the `DATA` block at the top. Edit it, commit, and push; the live site updates within a minute or two.
+Everything is one file, `index.html`. All the text (hunches, questions, sources, findings, experts, explorations, and the map's words) lives in the `DATA` block at the top. Photos and videos for explorations go in an `explorations/` folder and are listed in each exploration's `media`. Edit it, commit, and push; the live site updates within a minute or two.

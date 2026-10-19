@@ -399,6 +399,42 @@ const DATA = {
 
   // Progress Update 2 panel. Empty strings show as placeholders.
   // Separate paragraphs with a blank line.
+  // Progress Update 3: creative explorations (2–5, each addressing a different question).
+  // question = the "hunchId/questionId" it explores; it links both ways on the site.
+  // kind: `Sensory experience`, `Tech / workflow experiment`,
+  //       `Series: same question, different media`, `Series: same medium, different questions`
+  // status: `Planned`, `In progress`, or `Done`
+  // media: photos or video, e.g. [{ src: `explorations/x1-tapping.jpg`, caption: `Two of us tapping` }]
+  //        (.mp4 / .webm / .mov play as video). Put the files in an explorations/ folder.
+  // answered: `Yes`, `Partly`, or `No`. newQuestions: one question per item.
+  progressUpdate3: {
+    intro: ``,
+    explorations: [
+      { id: `x1`, title: `In time with a machine`, kind: `Sensory experience`, question: `h1/q1`, status: `Planned`,
+        medium: `p5.js or Max/MSP, a keyboard or tap sensor, two people`,
+        plan: `Two people tap a simple beat together. Then each person taps along with a generated partner that adapts to their timing. Afterward, a quick rating: how connected did you feel? I'm comparing person-to-person sync with person-to-machine sync.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
+      { id: `x2`, title: `Three ways to make a loop`, kind: `Tech / workflow experiment`, question: `h2/q2`, status: `Planned`,
+        medium: `Ableton Live with Magenta Studio, Suno`,
+        plan: `Make a short loop three ways: fully by hand, with Magenta Studio's tools steering parts of it, and from a single Suno prompt. Journal the effort, the time, and how much each one feels like mine.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
+      { id: `x3`, title: `The tutor that holds back`, kind: `Series: same question, different media`, question: `h4/q2`, status: `Planned`,
+        medium: `A clickable Figma prototype and a deck of paper hint cards`,
+        plan: `Design a hint-only study helper twice: once as a clickable Figma prototype, once as paper hint cards. Peers solve a small puzzle with each and tell me whether holding back the answer still felt helpful.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] },
+      { id: `x4`, title: `The yes-bot`, kind: `Sensory experience`, question: `h5/q3`, status: `Planned`,
+        medium: `Wizard-of-Oz chat (I play the bot), short reflection afterward`,
+        plan: `Peers chat for five minutes with a "bot" (secretly me) that agrees with everything, then with one that gently pushes back. Afterward they describe how each conversation left them feeling: heard, flattered, connected, or lonelier.`,
+        media: [], learned: ``, answered: ``, answerNote: ``, newQuestions: [] }
+    ],
+    // Questions for the people reading the post. Drafts; edit or replace.
+    questionsForReaders: [
+      { who: `Advisor`, q: `Which of these explorations seems most worth pushing into the next research-by-making cycle?` },
+      { who: `Resident`, q: `For "In time with a machine", is p5.js or Max/MSP the better tool for measuring tapping in sync?` },
+      { who: `Peers`, q: `Would you try the yes-bot? What would make you trust, or stop trusting, a bot that always agrees?` }
+    ]
+  },
+
   // Mirrors the three parts of the assignment.
   progressUpdate2: {
     // 1. Findings. Per-source findings live on each source above.
@@ -733,25 +769,25 @@ button{font:inherit;color:inherit}
 #stance.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
 #stance p.body{font-size:17px;line-height:1.62;margin:0;font-weight:300}
 #stance .x{position:absolute;top:18px;right:18px}
-#pu2{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(640px,100vw);background:var(--panel);border-left:1px solid var(--hair);
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(640px,100vw);background:var(--panel);border-left:1px solid var(--hair);
   box-shadow:-30px 0 80px -40px rgba(40,30,10,.35);overflow:auto;padding:34px 40px 50px;transform:translateX(102%);transition:transform .55s var(--ease)}
-#pu2.open{transform:none}
-#pu2 .x{position:absolute;top:24px;right:24px}
-#pu2 h2{font-size:28px;font-weight:300;letter-spacing:-.015em;line-height:1.2;margin:0 0 18px;padding-right:40px;outline:none}
-#pu2 .lede{color:var(--ink-2);margin:0 0 18px;font-size:14.5px}
-#pu2 .stats{display:flex;gap:22px;margin:0 0 10px;padding:14px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-#pu2 .stats div{font-size:12px;color:var(--ink-3)} #pu2 .stats b{display:block;font-size:22px;font-weight:400;color:var(--ink)}
-#pu2 section{padding:22px 0 6px}
-#pu2 h3{font-size:16px;font-weight:500;margin:0 0 10px;display:flex;align-items:center;gap:10px}
-#pu2 h3 .n{font-size:11px;color:var(--ink-3);font-weight:400;letter-spacing:.1em}
-#pu2 p{font-size:15px;line-height:1.6;margin:0 0 10px}
-#pu2 .ph{color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.22);border-radius:12px;padding:14px 16px;font-size:14px}
-#pu2 img{max-width:100%;border-radius:12px;box-shadow:0 0 0 1px var(--hair);margin-bottom:10px}
-#pu2 section{border-top:1px solid var(--hair);margin-top:18px}
-#pu2 h3{font-size:19px;font-weight:500}
-#pu2 h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin:22px 0 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-#pu2 .ask{font-size:13px;color:var(--ink-3);font-style:italic;margin:0 0 14px}
-#pu2 .todo{color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.22);border-radius:10px;padding:9px 12px;font-size:13px;margin:6px 0 0}
+.drawer.open{transform:none}
+.drawer .x{position:absolute;top:24px;right:24px}
+.drawer h2{font-size:28px;font-weight:300;letter-spacing:-.015em;line-height:1.2;margin:0 0 18px;padding-right:40px;outline:none}
+.drawer .lede{color:var(--ink-2);margin:0 0 18px;font-size:14.5px}
+.drawer .stats{display:flex;gap:22px;margin:0 0 10px;padding:14px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.drawer .stats div{font-size:12px;color:var(--ink-3)} .drawer .stats b{display:block;font-size:22px;font-weight:400;color:var(--ink)}
+.drawer section{padding:22px 0 6px}
+.drawer h3{font-size:16px;font-weight:500;margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.drawer h3 .n{font-size:11px;color:var(--ink-3);font-weight:400;letter-spacing:.1em}
+.drawer p{font-size:15px;line-height:1.6;margin:0 0 10px}
+.drawer .ph{color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.22);border-radius:12px;padding:14px 16px;font-size:14px}
+.drawer img{max-width:100%;border-radius:12px;box-shadow:0 0 0 1px var(--hair);margin-bottom:10px}
+.drawer section{border-top:1px solid var(--hair);margin-top:18px}
+.drawer h3{font-size:19px;font-weight:500}
+.drawer h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin:22px 0 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.drawer .ask{font-size:13px;color:var(--ink-3);font-style:italic;margin:0 0 14px}
+.drawer .todo{color:var(--ink-3);font-style:italic;border:1px dashed rgba(31,29,26,.22);border-radius:10px;padding:9px 12px;font-size:13px;margin:6px 0 0}
 .meter{display:flex;gap:8px;flex-wrap:wrap}
 .meter span{font-size:12px;color:var(--ink-3);background:rgba(31,29,26,.05);border-radius:999px;padding:5px 11px}
 .meter b{color:var(--ink);font-weight:500}
@@ -778,8 +814,8 @@ button{font:inherit;color:inherit}
 .xl .via{font-size:11px;color:var(--ink-3);padding-left:17px}
 .pu2-cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .expert p{font-size:13.5px;margin:8px 0 0}
-#pu2 a.cite{color:inherit;text-decoration:underline;text-decoration-color:rgba(31,29,26,.35);text-underline-offset:3px;text-decoration-thickness:1px}
-#pu2 a.cite:hover{text-decoration-color:var(--ink)}
+.drawer a.cite{color:inherit;text-decoration:underline;text-decoration-color:rgba(31,29,26,.35);text-underline-offset:3px;text-decoration-thickness:1px}
+.drawer a.cite:hover{text-decoration-color:var(--ink)}
 .expert .iv{display:inline-block;margin-top:10px;font-size:11.5px;font-style:normal;color:var(--ink-3);border:1px solid var(--hair);border-radius:999px;padding:3px 10px}
 .expert .iv.on{color:var(--ink);background:rgba(163,193,154,.35);border-color:transparent}
 .experts{display:grid;gap:10px}
@@ -830,8 +866,48 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
 @keyframes halo{0%,100%{transform:scale(.55);opacity:0}50%{transform:scale(1.3);opacity:.5}}
 @media (prefers-reduced-motion: reduce){
   .blob,.node .dot::after{animation:none}
-  #inner,#card,#pu2,#stance{transition-duration:.01s}
+  #inner,#card,.drawer,#stance{transition-duration:.01s}
 }
+
+/* ---------- Progress Update 3 ---------- */
+.xp-overview{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.xp-overview a{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;text-decoration:none;padding:10px 12px;border-radius:12px;background:var(--tint);font-size:14px}
+.xp-overview a:hover{filter:saturate(1.3) brightness(.98)}
+.xp-overview .n{font-size:12px;color:var(--ink-3)}
+.xp-overview .k{display:block;font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.status{font-size:11px;border-radius:999px;padding:3px 9px;border:1px solid var(--hair);background:var(--panel);white-space:nowrap;color:var(--ink-2)}
+.status.done{background:rgba(163,193,154,.45);border-color:transparent;color:var(--ink)}
+.status.in-progress{background:rgba(227,191,79,.35);border-color:transparent;color:var(--ink)}
+.xp{border-top:1px solid var(--hair);margin-top:22px;padding-top:22px;scroll-margin-top:20px}
+.xp.flash{animation:xpflash 1.6s ease-out}
+@keyframes xpflash{0%{background:rgba(227,191,79,.25)}100%{background:transparent}}
+.xp-head{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.xp-head h3{margin:0}
+.xp-tags{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.xp-tags span{font-size:11.5px;border-radius:999px;padding:3px 10px;background:rgba(31,29,26,.05);color:var(--ink-2)}
+.xp-q{display:flex;gap:10px;align-items:baseline;text-decoration:none;border:1px dashed rgba(31,29,26,.25);border-radius:12px;padding:10px 12px;margin:0 0 6px;font-size:14px}
+.xp-q:hover{border-style:solid;background:#fff}
+.xp-q em{flex:1;line-height:1.45}
+.xp-q b{font-weight:400;font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+.xp-medium{font-size:13px;color:var(--ink-3);margin:0 0 6px !important}
+.xp-media{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin:0}
+.xp-media figure{margin:0}
+.xp-media img,.xp-media video{width:100%;border-radius:10px;display:block;box-shadow:0 0 0 1px var(--hair);margin:0}
+.xp-media figcaption{font-size:11.5px;color:var(--ink-3);margin-top:4px}
+.ans{display:inline-block;font-size:12px;font-weight:500;border-radius:999px;padding:3px 10px;margin:0 8px 6px 0;background:rgba(31,29,26,.07)}
+.ans.yes{background:rgba(163,193,154,.5)} .ans.partly{background:rgba(227,191,79,.4)} .ans.no{background:rgba(221,161,166,.5)}
+.drawer ul.nq{margin:0;padding-left:18px} .drawer ul.nq li{font-size:15px;line-height:1.55;margin-bottom:4px;font-style:italic}
+.readers{display:grid;gap:8px}
+.readers div{border:1px solid var(--hair);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.5)}
+.readers b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:4px}
+.readers p{margin:0 !important}
+.xp-chip{display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:13px;text-align:left;cursor:pointer;border:1px solid rgba(31,29,26,.2);background:var(--panel);border-radius:14px;padding:9px 14px;margin:0 0 4px;transition:background .2s,border-color .2s}
+.xp-chip:hover{background:#fff;border-color:var(--ink)}
+.xp-chip .k{display:block;font-size:11px;color:var(--ink-3)}
+.xp-chip .spark{font-size:15px}
+.lp-xps{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.lp-q .xpb{font-style:normal;font-size:11px;color:var(--ink-2);background:rgba(31,29,26,.06);border-radius:999px;padding:2px 8px;margin-left:8px;white-space:nowrap}
+body.mobile .top .long{display:none}
 </style>
 </head>
 <body>
@@ -841,7 +917,8 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
   <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
   <div class="actions">
     <button class="btn" id="backBtn" type="button" aria-label="Go up one level"><span aria-hidden="true">←</span> Back</button>
-    <button class="btn" id="pu2Btn" type="button" aria-haspopup="dialog">Progress Update 2</button>
+    <button class="btn" id="pu2Btn" type="button" aria-haspopup="dialog"><span class="long">Progress </span>Update 2</button>
+    <button class="btn" id="pu3Btn" type="button" aria-haspopup="dialog"><span class="long">Progress </span>Update 3</button>
   </div>
 </header>
 
@@ -860,7 +937,8 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
   <p class="eyebrow" id="stanceTitle" tabindex="-1" data-focus>My stance</p>
   <p class="body" id="stanceBody"></p>
 </div>
-<div id="pu2" role="dialog" aria-modal="true" aria-labelledby="pu2Title" inert></div>
+<div id="pu2" class="drawer" role="dialog" aria-modal="true" aria-labelledby="pu2Title" inert></div>
+<div id="pu3" class="drawer" role="dialog" aria-modal="true" aria-labelledby="pu3Title" inert></div>
 <div id="tip" role="tooltip"></div>
 <div id="live" class="sr-only" aria-live="polite"></div>
 
@@ -1369,7 +1447,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
           <h2><a href="#/${h.id}">${esc(h.name)} <span aria-hidden="true">→</span></a></h2>
           <p class="bl">${esc(h.blurb)}</p>
           <ul class="lp-qs">${h.questions.map(q => `
-            <li><a class="lp-q" href="#/${q.key}" data-key="${q.key}"><em>${esc(q.text)}</em><span class="m">${q.sources.length} source${q.sources.length === 1 ? '' : 's'} →</span></a></li>`).join('')}
+            <li><a class="lp-q" href="#/${q.key}" data-key="${q.key}"><em>${esc(q.text)}${xpsFor(q).length ? `<span class="xpb">✦ exploration</span>` : ''}</em><span class="m">${q.sources.length} source${q.sources.length === 1 ? '' : 's'} →</span></a></li>`).join('')}
           </ul>
         </section>`).join('')}
     </div>`, sc.el);
@@ -1390,6 +1468,9 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
             <span class="sw" style="background:${r.q.hunch.color}"></span>
             <span><span class="k">Related in another hunch → ${esc(r.q.hunch.name)}</span><span class="t">${esc(r.q.text)}</span></span>
           </a>`).join('')}</div>` : ''}
+        ${xpsFor(q).length ? `<div class="lp-xps">${xpsFor(q).map(x => `
+          <button class="xp-chip" type="button" data-xp="${x.id}"><span class="spark" aria-hidden="true">✦</span>
+            <span><span class="k">Creative exploration ${x.n} · ${esc(x.status || 'Planned')}</span>${esc(x.title)}</span></button>`).join('')}</div>` : ''}
       </header>
       <p class="lp-count">${q.sources.length} source${q.sources.length === 1 ? '' : 's'}</p>
       <ol class="lp-srcs" style="--tint:${h.tint}">${q.sources.map(s => `
@@ -1704,7 +1785,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
   }
 
   /* ---------- overlays: stance & Progress Update 2 ---------- */
-  const scrim = $('scrim'), stance = $('stance'), pu2 = $('pu2');
+  const scrim = $('scrim'), stance = $('stance'), pu2 = $('pu2'), pu3 = $('pu3');
   let lastFocus = null;
   function openOverlay(el) {
     lastFocus = document.activeElement;
@@ -1712,7 +1793,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
     requestAnimationFrame(() => el.querySelector('[data-focus]').focus({ preventScroll: true }));
   }
   function closeOverlays(restore = true) {
-    const open = [stance, pu2].filter(e => e.classList.contains('open'));
+    const open = [stance, pu2, pu3].filter(e => e.classList.contains('open'));
     open.forEach(e => { e.classList.remove('open'); e.inert = true; });
     scrim.classList.remove('on');
     if (open.length && restore && lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
@@ -1811,7 +1892,72 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
       </section>`;
   }
 
+
+  /* ---------- Progress Update 3: creative explorations ---------- */
+  const PU3 = DATA.progressUpdate3 || { explorations: [], questionsForReaders: [] };
+  const XPS = PU3.explorations.map((x, i) => ({ ...x, n: i + 1, q: Q(x.question || '') }));
+  const xpsFor = q => XPS.filter(x => x.q === q);
+  const isVideo = src => /\.(mp4|webm|mov|m4v)$/i.test(src);
+  function buildPU3() {
+    const statusCls = st => (st || 'Planned').toLowerCase().replace(/\s+/g, '-');
+    pu3.innerHTML = `
+      <button class="x" type="button" data-close aria-label="Close">×</button>
+      <p class="eyebrow">Progress Update 3</p>
+      <h2 id="pu3Title" tabindex="-1" data-focus>Creative explorations</h2>
+      <p class="ask">Explore the inquiry space by making: 2–5 explorations, each addressing a different question. For each, what did I learn, did it answer my question, and what new questions came up for the next research-by-making cycle?</p>
+      ${PU3.intro ? paras(PU3.intro, '') : ''}
+      <div class="stats">
+        <div><b>${XPS.length}</b>explorations</div>
+        <div><b>${XPS.filter(x => x.status === 'Done').length}</b>done</div>
+        <div><b>${new Set(XPS.map(x => x.q && x.q.hunch.id).filter(Boolean)).size}</b>hunches explored</div>
+      </div>
+      <h4>The plan</h4>
+      <ol class="xp-overview">${XPS.map(x => `
+        <li><a href="#xp-${x.id}" data-xp="${x.id}" style="--tint:${x.q ? x.q.hunch.tint : 'rgba(31,29,26,.05)'}">
+          <span class="n">${String(x.n).padStart(2, '0')}</span>
+          <span>${esc(x.title)}<span class="k">${esc(x.kind)}${x.q ? ` · ${esc(x.q.hunch.name)}` : ''}</span></span>
+          <span class="status ${statusCls(x.status)}">${esc(x.status || 'Planned')}</span>
+        </a></li>`).join('')}
+      </ol>
+      ${XPS.map(x => `
+        <section class="xp" id="xp-${x.id}">
+          <div class="xp-head"><h3><span class="n">${String(x.n).padStart(2, '0')}</span>${esc(x.title)}</h3><span class="status ${statusCls(x.status)}">${esc(x.status || 'Planned')}</span></div>
+          <div class="xp-tags"><span>${esc(x.kind)}</span>${x.q ? `<span>${esc(x.q.hunch.name)}</span>` : ''}</div>
+          ${x.q ? `<a class="xp-q" href="#/${x.q.key}"><span class="sw" style="background:${x.q.hunch.color}"></span><em>${esc(x.q.text)}</em><b>${x.q.sources.length} sources →</b></a>` : ''}
+          <h4>What I'm making</h4>
+          ${x.medium ? `<p class="xp-medium">${esc(x.medium)}</p>` : ''}
+          ${paras(x.plan, 'To fill in: what I will make and how.')}
+          <h4>Documentation</h4>
+          ${x.media && x.media.length ? `<div class="xp-media">${x.media.map(m => `<figure>${isVideo(m.src)
+            ? `<video src="${esc(m.src)}" controls playsinline preload="metadata"></video>`
+            : `<img src="${esc(m.src)}" alt="${esc(m.caption || x.title)}" loading="lazy">`}${m.caption ? `<figcaption>${esc(m.caption)}</figcaption>` : ''}</figure>`).join('')}</div>`
+            : `<p class="todo">To add: photos or video of the exploration.</p>`}
+          <h4>What I learned</h4>
+          ${paras(x.learned, 'To fill in after making it.')}
+          <h4>Did it answer my question?</h4>
+          ${x.answered || x.answerNote ? `${x.answered ? `<span class="ans ${x.answered.toLowerCase()}">${esc(x.answered)}</span>` : ''}${paras(x.answerNote, '')}` : `<p class="todo">To fill in: yes, partly, or no, and why.</p>`}
+          <h4>New questions for the next cycle</h4>
+          ${x.newQuestions && x.newQuestions.length ? `<ul class="nq">${x.newQuestions.map(n => `<li>${esc(n)}</li>`).join('')}</ul>` : `<p class="todo">To fill in: questions this raised for the next research-by-making cycle.</p>`}
+        </section>`).join('')}
+      <section>
+        <h3><span class="n">?</span>Questions for my readers</h3>
+        <p class="ask">For my advisor, resident, and peers.</p>
+        ${PU3.questionsForReaders && PU3.questionsForReaders.length ? `<div class="readers">${PU3.questionsForReaders.map(r => `<div><b>${esc(r.who)}</b><p>${esc(r.q)}</p></div>`).join('')}</div>` : `<p class="todo">To fill in: what I want to ask my advisor, resident, and peers.</p>`}
+      </section>`;
+  }
+  function openXP(id) {
+    if (!pu3.classList.contains('open')) openOverlay(pu3);
+    const sec = $('xp-' + id);
+    if (!sec) return;
+    requestAnimationFrame(() => {
+      sec.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      sec.classList.remove('flash'); void sec.offsetWidth; sec.classList.add('flash');
+    });
+  }
+
   document.addEventListener('click', e => {
+    const xp = e.target.closest('[data-xp]');
+    if (xp) { e.preventDefault(); openXP(xp.dataset.xp); return; }
     if (e.target.closest('[data-stance]')) { e.preventDefault(); openOverlay(stance); }
     else if (e.target.closest('[data-compare]')) {
       carryMode = true;
@@ -1824,6 +1970,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
     else if (e.target.closest('[data-close]') || e.target === scrim) closeOverlays();
   });
   $('pu2Btn').addEventListener('click', () => openOverlay(pu2));
+  $('pu3Btn').addEventListener('click', () => openOverlay(pu3));
   $('backBtn').addEventListener('click', goUp);
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
@@ -1889,6 +2036,7 @@ body.mobile .top{padding:0 16px;justify-content:space-between;background:var(--b
   $('brandName').textContent = DATA.title;
   $('stanceBody').textContent = DATA.stance;
   buildPU2();
+  buildPU3();
   buildMinimap();
   addEventListener('hashchange', render);
   mq.addEventListener('change', applyMode);
